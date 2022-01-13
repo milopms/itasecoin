@@ -1,4 +1,4 @@
-qt/test/qt_test_test_itasecoin_qt-moc_uritests.o: \
+qt/test/qt_test_test_itasecore_qt-moc_uritests.o: \
  qt/test/moc_uritests.cpp qt/test/uritests.h \
  /home/milovan/Bureau/itase/depends/x86_64-w64-mingw32/share/../include/QtCore/QObject \
  /home/milovan/Bureau/itase/depends/x86_64-w64-mingw32/share/../include/QtCore/qobject.h \

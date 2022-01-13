@@ -166,19 +166,19 @@ unhidden by clicking on the progress bar at the bottom of the window.
 Support for JSON-RPC Named Arguments
 ------------------------------------
 
-Commands sent over the JSON-RPC interface and through the `itasecoin-cli` binary
+Commands sent over the JSON-RPC interface and through the `itasecore-cli` binary
 can now use named arguments. This follows the [JSON-RPC specification](http://www.jsonrpc.org/specification)
 for passing parameters by-name with an object.
 
-`itasecoin-cli` has been updated to support this by parsing `name=value` arguments
+`itasecore-cli` has been updated to support this by parsing `name=value` arguments
 when the `-named` option is given.
 
 Some examples:
 
-    src/itasecoin-cli -named help command="help"
-    src/itasecoin-cli -named getblockhash height=0
-    src/itasecoin-cli -named getblock blockhash=000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
-    src/itasecoin-cli -named sendtoaddress address="(snip)" amount="1.0" subtractfeefromamount=true
+    src/itasecore-cli -named help command="help"
+    src/itasecore-cli -named getblockhash height=0
+    src/itasecore-cli -named getblock blockhash=000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
+    src/itasecore-cli -named sendtoaddress address="(snip)" amount="1.0" subtractfeefromamount=true
 
 The order of arguments doesn't matter in this case. Named arguments are also
 useful to leave out arguments that should stay at their default value. The

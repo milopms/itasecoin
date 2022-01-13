@@ -60,8 +60,8 @@ from test_framework.blocktools import create_block, create_coinbase, create_tran
 class AcceptBlockTest(BitcoinTestFramework):
     def add_options(self, parser):
         parser.add_option("--testbinary", dest="testbinary",
-                          default=os.getenv("LITECOIND", "itasecoind"),
-                          help="itasecoind binary to test")
+                          default=os.getenv("LITECOIND", "itasecored"),
+                          help="itasecored binary to test")
 
     def set_test_params(self):
         self.setup_clean_chain = True

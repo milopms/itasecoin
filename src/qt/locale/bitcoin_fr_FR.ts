@@ -1,9 +1,11 @@
-<TS language="fr_FR" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="fr_FR">
 <context>
     <name>AddressBookPage</name>
     <message>
         <source>Right-click to edit address or label</source>
-        <translation>Double cliquez afin de modifier l'adresse ou l'étiquette</translation>
+        <translation>Double cliquez afin de modifier l&apos;adresse ou l&apos;étiquette</translation>
     </message>
     <message>
         <source>Create a new address</source>
@@ -15,7 +17,7 @@
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
-        <translation>Copier l'adresse sélectionnée dans le presse-papiers</translation>
+        <translation>Copier l&apos;adresse sélectionnée dans le presse-papiers</translation>
     </message>
     <message>
         <source>&amp;Copy</source>
@@ -27,11 +29,11 @@
     </message>
     <message>
         <source>Delete the currently selected address from the list</source>
-        <translation>Supprimer l'adresse sélectionnée de la liste</translation>
+        <translation>Supprimer l&apos;adresse sélectionnée de la liste</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
-        <translation>Exporter les données de l'onglet courant vers un fichier</translation>
+        <translation>Exporter les données de l&apos;onglet courant vers un fichier</translation>
     </message>
     <message>
         <source>&amp;Export</source>
@@ -55,7 +57,7 @@
     </message>
     <message>
         <source>Sending addresses</source>
-        <translation>Adresses d'envoi</translation>
+        <translation>Adresses d&apos;envoi</translation>
     </message>
     <message>
         <source>Receiving addresses</source>
@@ -71,7 +73,7 @@
     </message>
     <message>
         <source>Export Address List</source>
-        <translation>Exporter la liste d'adresses</translation>
+        <translation>Exporter la liste d&apos;adresses</translation>
     </message>
     <message>
         <source>Comma separated file (*.csv)</source>
@@ -79,9 +81,9 @@
     </message>
     <message>
         <source>Exporting Failed</source>
-        <translation>Échec de l'export</translation>
+        <translation>Échec de l&apos;export</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>AddressTableModel</name>
     <message>
@@ -135,7 +137,7 @@
         <source>Wallet encrypted</source>
         <translation>Portefeuille chiffré</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>BanTableModel</name>
     <message>
@@ -159,7 +161,7 @@
     </message>
     <message>
         <source>&amp;Overview</source>
-        <translation>&amp;Vue d'ensemble</translation>
+        <translation>&amp;Vue d&apos;ensemble</translation>
     </message>
     <message>
         <source>Node</source>
@@ -167,7 +169,7 @@
     </message>
     <message>
         <source>Show general overview of wallet</source>
-        <translation>Affiche une vue d'ensemble du porte-monnaie</translation>
+        <translation>Affiche une vue d&apos;ensemble du porte-monnaie</translation>
     </message>
     <message>
         <source>&amp;Transactions</source>
@@ -175,7 +177,7 @@
     </message>
     <message>
         <source>Browse transaction history</source>
-        <translation>Permet de parcourir l'historique des transactions</translation>
+        <translation>Permet de parcourir l&apos;historique des transactions</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -183,7 +185,7 @@
     </message>
     <message>
         <source>Quit application</source>
-        <translation>Quitter l'application</translation>
+        <translation>Quitter l&apos;application</translation>
     </message>
     <message>
         <source>&amp;About %1</source>
@@ -223,7 +225,7 @@
     </message>
     <message>
         <source>&amp;Sending addresses...</source>
-        <translation>&amp;Adresses d'envoi</translation>
+        <translation>&amp;Adresses d&apos;envoi</translation>
     </message>
     <message>
         <source>&amp;Receiving addresses...</source>
@@ -307,7 +309,7 @@
     </message>
     <message>
         <source>Tabs toolbar</source>
-        <translation>Barre d'outils des onglets</translation>
+        <translation>Barre d&apos;outils des onglets</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and itasecoin: URIs)</source>
@@ -315,7 +317,7 @@
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
-        <translation>Montrer la liste des adresses d'envois utilisées et les étiquettes</translation>
+        <translation>Montrer la liste des adresses d&apos;envois utilisées et les étiquettes</translation>
     </message>
     <message>
         <source>Open a itasecoin: URI or payment request</source>
@@ -327,7 +329,10 @@
     </message>
     <message numerus="yes">
         <source>%n active connection(s) to Itasecoin network</source>
-        <translation><numerusform>%n connexion active au réseau Itasecoin</numerusform><numerusform>%n connexions actives au réseau Itasecoin</numerusform></translation>
+        <translation>
+            <numerusform>%n connexion active au réseau Itasecoin</numerusform>
+            <numerusform>%n connexions actives au réseau Itasecoin</numerusform>
+        </translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -415,7 +420,7 @@
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Le porte-monnaie est &lt;b&gt;chiffré&lt;/b&gt; et est actuellement &lt;b&gt;verrouillé&lt;/b&gt;</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>CoinControlDialog</name>
     <message>
@@ -472,7 +477,7 @@
     </message>
     <message>
         <source>Received with address</source>
-        <translation>Reçue avec l'adresse</translation>
+        <translation>Reçue avec l&apos;adresse</translation>
     </message>
     <message>
         <source>Date</source>
@@ -488,11 +493,11 @@
     </message>
     <message>
         <source>Copy address</source>
-        <translation>Copier l'adresse</translation>
+        <translation>Copier l&apos;adresse</translation>
     </message>
     <message>
         <source>Copy label</source>
-        <translation>Copier l'étiquette</translation>
+        <translation>Copier l&apos;étiquette</translation>
     </message>
     <message>
         <source>Copy amount</source>
@@ -500,7 +505,7 @@
     </message>
     <message>
         <source>Copy transaction ID</source>
-        <translation>Copier l'ID de transaction</translation>
+        <translation>Copier l&apos;ID de transaction</translation>
     </message>
     <message>
         <source>Copy quantity</source>
@@ -530,12 +535,12 @@
         <source>(no label)</source>
         <translation>(aucune étiquette)</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>EditAddressDialog</name>
     <message>
         <source>Edit Address</source>
-        <translation>Éditer l'adresse</translation>
+        <translation>Éditer l&apos;adresse</translation>
     </message>
     <message>
         <source>&amp;Label</source>
@@ -545,7 +550,7 @@
         <source>&amp;Address</source>
         <translation>&amp;Adresse</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>FreespaceChecker</name>
     <message>
@@ -558,7 +563,7 @@
     </message>
     <message>
         <source>Path already exists, and is not a directory.</source>
-        <translation>Le chemin existe déjà et ce n'est pas un répertoire. </translation>
+        <translation>Le chemin existe déjà et ce n&apos;est pas un répertoire. </translation>
     </message>
     <message>
         <source>Cannot create data directory here.</source>
@@ -599,7 +604,7 @@
         <source>Start minimized</source>
         <translation>Démarrer sous forme minimisée</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>Intro</name>
     <message>
@@ -619,8 +624,8 @@
         <translation>Utiliser votre propre répertoire</translation>
     </message>
     <message>
-        <source>Error: Specified data directory "%1" cannot be created.</source>
-        <translation>Erreur: Le répertoire de données "%1" n'a pas pu être créé. </translation>
+        <source>Error: Specified data directory &quot;%1&quot; cannot be created.</source>
+        <translation>Erreur: Le répertoire de données &quot;%1&quot; n&apos;a pas pu être créé. </translation>
     </message>
     <message>
         <source>Error</source>
@@ -628,11 +633,17 @@
     </message>
     <message numerus="yes">
         <source>%n GB of free space available</source>
-        <translation><numerusform>%n GO d'espace libre disponible</numerusform><numerusform>%n GO d'espace libre disponible</numerusform></translation>
+        <translation>
+            <numerusform>%n GO d&apos;espace libre disponible</numerusform>
+            <numerusform>%n GO d&apos;espace libre disponible</numerusform>
+        </translation>
     </message>
     <message numerus="yes">
         <source>(of %n GB needed)</source>
-        <translation><numerusform>(%n GB nécessaire)</numerusform><numerusform>(%n GB nécessaire)</numerusform></translation>
+        <translation>
+            <numerusform>(%n GB nécessaire)</numerusform>
+            <numerusform>(%n GB nécessaire)</numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -645,7 +656,7 @@
         <source>Hide</source>
         <translation>Cacher</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OpenURIDialog</name>
     <message>
@@ -664,7 +675,7 @@
         <source>Select payment request file</source>
         <translation>Sélectionner un fichier de demande de paiement</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>OptionsDialog</name>
     <message>
@@ -685,7 +696,7 @@
     </message>
     <message>
         <source>Accept connections from outside</source>
-        <translation>Accepter les connexions venant de l'extérieur</translation>
+        <translation>Accepter les connexions venant de l&apos;extérieur</translation>
     </message>
     <message>
         <source>Allow incoming connections</source>
@@ -713,11 +724,11 @@
     </message>
     <message>
         <source>Automatically open the Itasecoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Ouvrir le port du client Itasecoin automatiquement sur le routeur. Cela ne fonctionne que si votre routeur supporte l'UPnP et si la fonctionnalité est activée.</translation>
+        <translation>Ouvrir le port du client Itasecoin automatiquement sur le routeur. Cela ne fonctionne que si votre routeur supporte l&apos;UPnP et si la fonctionnalité est activée.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
-        <translation>Ouvrir le port avec l'&amp;UPnP</translation>
+        <translation>Ouvrir le port avec l&apos;&amp;UPnP</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -753,11 +764,11 @@
     </message>
     <message>
         <source>&amp;Hide the icon from the system tray.</source>
-        <translation>&amp;Cacher l'icône dans la zone de notification.</translation>
+        <translation>&amp;Cacher l&apos;icône dans la zone de notification.</translation>
     </message>
     <message>
         <source>Hide tray icon</source>
-        <translation>Cacher l'icône de la zone de notification</translation>
+        <translation>Cacher l&apos;icône de la zone de notification</translation>
     </message>
     <message>
         <source>&amp;Minimize to the tray instead of the taskbar</source>
@@ -805,7 +816,7 @@
     </message>
     <message>
         <source>The supplied proxy address is invalid.</source>
-        <translation>L'adresse du proxy est invalide.</translation>
+        <translation>L&apos;adresse du proxy est invalide.</translation>
     </message>
 </context>
 <context>
@@ -850,10 +861,7 @@
         <source>Recent transactions</source>
         <translation>Transactions récentes </translation>
     </message>
-    </context>
-<context>
-    <name>PaymentServer</name>
-    </context>
+</context>
 <context>
     <name>PeerTableModel</name>
     <message>
@@ -864,7 +872,7 @@
         <source>Node/Service</source>
         <translation>Nœud/Service </translation>
     </message>
-    </context>
+</context>
 <context>
     <name>QObject</name>
     <message>
@@ -907,10 +915,7 @@
         <source>%1 and %2</source>
         <translation>%1 et %2</translation>
     </message>
-    </context>
-<context>
-    <name>QObject::QObject</name>
-    </context>
+</context>
 <context>
     <name>QRImageWidget</name>
     <message>
@@ -921,7 +926,7 @@
         <source>Save QR Code</source>
         <translation>Sauvegarder QR code</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>RPCConsole</name>
     <message>
@@ -1181,7 +1186,7 @@
     </message>
     <message>
         <source>Copy label</source>
-        <translation>Copier l'étiquette</translation>
+        <translation>Copier l&apos;étiquette</translation>
     </message>
     <message>
         <source>Copy amount</source>
@@ -1226,7 +1231,7 @@
         <source>Message</source>
         <translation>Message</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>RecentRequestsTableModel</name>
     <message>
@@ -1245,7 +1250,7 @@
         <source>(no label)</source>
         <translation>(aucune étiquette)</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>SendCoinsDialog</name>
     <message>
@@ -1342,7 +1347,7 @@
     </message>
     <message>
         <source>Confirm the send action</source>
-        <translation>Confirmer l'action d'envoi</translation>
+        <translation>Confirmer l&apos;action d&apos;envoi</translation>
     </message>
     <message>
         <source>S&amp;end</source>
@@ -1397,7 +1402,7 @@
     </message>
     <message>
         <source>This is a normal payment.</source>
-        <translation>C'est un paiement normal.</translation>
+        <translation>C&apos;est un paiement normal.</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -1427,7 +1432,7 @@
         <source>Memo:</source>
         <translation>Memo:</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>SendConfirmationDialog</name>
     <message>
@@ -1435,9 +1440,6 @@
         <translation>Oui</translation>
     </message>
 </context>
-<context>
-    <name>ShutdownWindow</name>
-    </context>
 <context>
     <name>SignVerifyMessageDialog</name>
     <message>
@@ -1470,7 +1472,7 @@
     </message>
     <message>
         <source>Copy the current signature to the system clipboard</source>
-        <translation>Copier l'adresse courante dans le presse papier</translation>
+        <translation>Copier l&apos;adresse courante dans le presse papier</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1488,7 +1490,7 @@
         <source>Verify &amp;Message</source>
         <translation>Vérifier &amp;Message</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>SplashScreen</name>
     <message>
@@ -1592,7 +1594,7 @@
         <source>This pane shows a detailed description of the transaction</source>
         <translation>Ce panneau affiche une description détaillée de la transaction</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>TransactionTableModel</name>
     <message>
@@ -1615,7 +1617,7 @@
         <source>(no label)</source>
         <translation>(aucune étiquette)</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>TransactionView</name>
     <message>
@@ -1624,7 +1626,7 @@
     </message>
     <message>
         <source>Today</source>
-        <translation>Aujourd'hui</translation>
+        <translation>Aujourd&apos;hui</translation>
     </message>
     <message>
         <source>This week</source>
@@ -1648,11 +1650,11 @@
     </message>
     <message>
         <source>Copy address</source>
-        <translation>Copier l'adresse</translation>
+        <translation>Copier l&apos;adresse</translation>
     </message>
     <message>
         <source>Copy label</source>
-        <translation>Copier l'étiquette</translation>
+        <translation>Copier l&apos;étiquette</translation>
     </message>
     <message>
         <source>Copy amount</source>
@@ -1660,7 +1662,7 @@
     </message>
     <message>
         <source>Copy transaction ID</source>
-        <translation>Copier l'ID de transaction</translation>
+        <translation>Copier l&apos;ID de transaction</translation>
     </message>
     <message>
         <source>Comma separated file (*.csv)</source>
@@ -1688,25 +1690,13 @@
     </message>
     <message>
         <source>Exporting Failed</source>
-        <translation>Échec de l'export</translation>
+        <translation>Échec de l&apos;export</translation>
     </message>
     <message>
         <source>to</source>
         <translation>à</translation>
     </message>
 </context>
-<context>
-    <name>UnitDisplayStatusBarControl</name>
-    </context>
-<context>
-    <name>WalletFrame</name>
-    </context>
-<context>
-    <name>WalletModel</name>
-    </context>
-<context>
-    <name>WalletView</name>
-    </context>
 <context>
     <name>bitcoin-core</name>
     <message>
@@ -1800,7 +1790,7 @@ Importation ...</translation>
     </message>
     <message>
         <source>This is experimental software.</source>
-        <translation>C'est un logiciel expérimental.</translation>
+        <translation>C&apos;est un logiciel expérimental.</translation>
     </message>
     <message>
         <source>Transaction amount too small</source>
@@ -1816,7 +1806,7 @@ Importation ...</translation>
     </message>
     <message>
         <source>Username for JSON-RPC connections</source>
-        <translation>Nom d'utilisateur pour les connexions JSON-RPC</translation>
+        <translation>Nom d&apos;utilisateur pour les connexions JSON-RPC</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1835,8 +1825,8 @@ Importation ...</translation>
         <translation>(défaut: %s)</translation>
     </message>
     <message>
-        <source>Invalid -proxy address: '%s'</source>
-        <translation>Adresse -proxy invalide: '%s'</translation>
+        <source>Invalid -proxy address: &apos;%s&apos;</source>
+        <translation>Adresse -proxy invalide: &apos;%s&apos;</translation>
     </message>
     <message>
         <source>Specify pid file (default: %s)</source>
@@ -1848,7 +1838,7 @@ Importation ...</translation>
     </message>
     <message>
         <source>Loading block index...</source>
-        <translation>Chargement de l'index des blocs...</translation>
+        <translation>Chargement de l&apos;index des blocs...</translation>
     </message>
     <message>
         <source>Loading wallet...</source>
@@ -1860,7 +1850,7 @@ Importation ...</translation>
     </message>
     <message>
         <source>Cannot write default address</source>
-        <translation>Impossible d'écrire l'adresse par défaut</translation>
+        <translation>Impossible d&apos;écrire l&apos;adresse par défaut</translation>
     </message>
     <message>
         <source>Rescanning...</source>

@@ -1,60 +1,59 @@
 compat/libbitcoin_util_a-strnlen.o: compat/strnlen.cpp \
- /usr/arm-linux-gnueabihf/include/stdc-predef.h config/bitcoin-config.h \
- /usr/arm-linux-gnueabihf/include/c++/7/cstring \
- /usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/c++config.h \
- /usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/os_defines.h \
- /usr/arm-linux-gnueabihf/include/features.h \
- /usr/arm-linux-gnueabihf/include/sys/cdefs.h \
- /usr/arm-linux-gnueabihf/include/bits/wordsize.h \
- /usr/arm-linux-gnueabihf/include/bits/long-double.h \
- /usr/arm-linux-gnueabihf/include/gnu/stubs.h \
- /usr/arm-linux-gnueabihf/include/gnu/stubs-hard.h \
- /usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/cpu_defines.h \
- /usr/arm-linux-gnueabihf/include/string.h \
- /usr/arm-linux-gnueabihf/include/bits/libc-header-start.h \
- /usr/lib/gcc-cross/arm-linux-gnueabihf/7/include/stddef.h \
- /usr/arm-linux-gnueabihf/include/bits/types/locale_t.h \
- /usr/arm-linux-gnueabihf/include/bits/types/__locale_t.h \
- /usr/arm-linux-gnueabihf/include/strings.h \
- /usr/arm-linux-gnueabihf/include/bits/strings_fortified.h \
- /usr/arm-linux-gnueabihf/include/bits/string_fortified.h
+ /usr/include/stdc-predef.h config/bitcoin-config.h \
+ /usr/include/c++/7/cstring \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/bits/long-double.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/cpu_defines.h \
+ /usr/include/string.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h \
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+ /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+ /usr/include/x86_64-linux-gnu/bits/string_fortified.h
 
-/usr/arm-linux-gnueabihf/include/stdc-predef.h:
+/usr/include/stdc-predef.h:
 
 config/bitcoin-config.h:
 
-/usr/arm-linux-gnueabihf/include/c++/7/cstring:
+/usr/include/c++/7/cstring:
 
-/usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/c++config.h:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h:
 
-/usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/os_defines.h:
+/usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h:
 
-/usr/arm-linux-gnueabihf/include/features.h:
+/usr/include/features.h:
 
-/usr/arm-linux-gnueabihf/include/sys/cdefs.h:
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
-/usr/arm-linux-gnueabihf/include/bits/wordsize.h:
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
-/usr/arm-linux-gnueabihf/include/bits/long-double.h:
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
 
-/usr/arm-linux-gnueabihf/include/gnu/stubs.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
-/usr/arm-linux-gnueabihf/include/gnu/stubs-hard.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
-/usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/cpu_defines.h:
+/usr/include/x86_64-linux-gnu/c++/7/bits/cpu_defines.h:
 
-/usr/arm-linux-gnueabihf/include/string.h:
+/usr/include/string.h:
 
-/usr/arm-linux-gnueabihf/include/bits/libc-header-start.h:
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
-/usr/lib/gcc-cross/arm-linux-gnueabihf/7/include/stddef.h:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h:
 
-/usr/arm-linux-gnueabihf/include/bits/types/locale_t.h:
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
-/usr/arm-linux-gnueabihf/include/bits/types/__locale_t.h:
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
-/usr/arm-linux-gnueabihf/include/strings.h:
+/usr/include/strings.h:
 
-/usr/arm-linux-gnueabihf/include/bits/strings_fortified.h:
+/usr/include/x86_64-linux-gnu/bits/strings_fortified.h:
 
-/usr/arm-linux-gnueabihf/include/bits/string_fortified.h:
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:

@@ -18,8 +18,8 @@ How to Upgrade
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the 
-installer (on Windows) or just copy over `/Applications/Itasecoin-Qt` (on Mac)
-or `itasecoind`/`itasecoin-qt` (on Linux).
+installer (on Windows) or just copy over `/Applications/itasecore-qt` (on Mac)
+or `itasecored`/`itasecore-qt` (on Linux).
 
 The first time you run version 0.15.0, your chainstate database will be converted to a
 new format, which will take anywhere from a few minutes to half an hour,
@@ -139,13 +139,13 @@ Itasecoin Core now supports loading multiple, separate wallets (See [PR 8694](ht
 
 Multi-wallet is enabled by using more than one `-wallet` argument when starting Itasecoin, either on the command line or in the Itasecoin config file.
 
-**In Itasecoin-Qt, only the first wallet will be displayed and accessible for creating and signing transactions.** GUI selectable multiple wallets will be supported in a future version. However, even in 0.15 other loaded wallets will remain synchronized to the node's current tip in the background. This can be useful if running a pruned node, since loading a wallet where the most recent sync is beyond the pruned height results in having to download and revalidate the whole blockchain. Continuing to synchronize all wallets in the background avoids this problem.
+**In itasecore-qt, only the first wallet will be displayed and accessible for creating and signing transactions.** GUI selectable multiple wallets will be supported in a future version. However, even in 0.15 other loaded wallets will remain synchronized to the node's current tip in the background. This can be useful if running a pruned node, since loading a wallet where the most recent sync is beyond the pruned height results in having to download and revalidate the whole blockchain. Continuing to synchronize all wallets in the background avoids this problem.
 
-Itasecoin Core 0.15.0 contains the following changes to the RPC interface and `itasecoin-cli` for multi-wallet:
+Itasecoin Core 0.15.0 contains the following changes to the RPC interface and `itasecore-cli` for multi-wallet:
 
-* When running Itasecoin Core with a single wallet, there are **no** changes to the RPC interface or `itasecoin-cli`. All RPC calls and `itasecoin-cli` commands continue to work as before.
-* When running Itasecoin Core with multi-wallet, all *node-level* RPC methods continue to work as before. HTTP RPC requests should be send to the normal `<RPC IP address>:<RPC port>/` endpoint, and `itasecoin-cli` commands should be run as before. A *node-level* RPC method is any method which does not require access to the wallet.
-* When running Itasecoin Core with multi-wallet, *wallet-level* RPC methods must specify the wallet for which they're intended in every request. HTTP RPC requests should be send to the `<RPC IP address>:<RPC port>/wallet/<wallet name>/` endpoint, for example `127.0.0.1:9332/wallet/wallet1.dat/`. `itasecoin-cli` commands should be run with a `-rpcwallet` option, for example `itasecoin-cli -rpcwallet=wallet1.dat getbalance`.
+* When running Itasecoin Core with a single wallet, there are **no** changes to the RPC interface or `itasecore-cli`. All RPC calls and `itasecore-cli` commands continue to work as before.
+* When running Itasecoin Core with multi-wallet, all *node-level* RPC methods continue to work as before. HTTP RPC requests should be send to the normal `<RPC IP address>:<RPC port>/` endpoint, and `itasecore-cli` commands should be run as before. A *node-level* RPC method is any method which does not require access to the wallet.
+* When running Itasecoin Core with multi-wallet, *wallet-level* RPC methods must specify the wallet for which they're intended in every request. HTTP RPC requests should be send to the `<RPC IP address>:<RPC port>/wallet/<wallet name>/` endpoint, for example `127.0.0.1:9332/wallet/wallet1.dat/`. `itasecore-cli` commands should be run with a `-rpcwallet` option, for example `itasecore-cli -rpcwallet=wallet1.dat getbalance`.
 * A new *node-level* `listwallets` RPC method is added to display which wallets are currently loaded. The names returned by this method are the same as those used in the HTTP endpoint and for the `rpcwallet` argument.
 
 Note that while multi-wallet is now fully supported, the RPC multi-wallet interface should be considered unstable for version 0.15.0, and there may backwards-incompatible changes in future versions.

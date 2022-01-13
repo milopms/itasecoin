@@ -50,7 +50,7 @@ static const int MAX_URI_LENGTH = 255;
 
 #define QAPP_ORG_NAME "Itasecoin"
 #define QAPP_ORG_DOMAIN "itasecoin.org"
-#define QAPP_APP_NAME_DEFAULT "Itasecoin-Qt"
-#define QAPP_APP_NAME_TESTNET "Itasecoin-Qt-testnet"
+#define QAPP_APP_NAME_DEFAULT "itasecore-qt"
+#define QAPP_APP_NAME_TESTNET "itasecore-qt-testnet"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

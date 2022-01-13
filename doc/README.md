@@ -15,12 +15,12 @@ The following are some helpful notes on how to run Itasecoin on your native plat
 
 Unpack the files into a directory and run:
 
-- `bin/itasecoin-qt` (GUI) or
-- `bin/itasecoind` (headless)
+- `bin/itasecore-qt` (GUI) or
+- `bin/itasecored` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run itasecoin-qt.exe.
+Unpack the files into a directory, and then run itasecore-qt.exe.
 
 ### OS X
 

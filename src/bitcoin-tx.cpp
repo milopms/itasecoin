@@ -54,10 +54,10 @@ static int AppInitRawTx(int argc, char* argv[])
     if (argc<2 || gArgs.IsArgSet("-?") || gArgs.IsArgSet("-h") || gArgs.IsArgSet("-help"))
     {
         // First part of help message is specific to this utility
-        std::string strUsage = strprintf(_("%s itasecoin-tx utility version"), _(PACKAGE_NAME)) + " " + FormatFullVersion() + "\n\n" +
+        std::string strUsage = strprintf(_("%s itasecore-tx utility version"), _(PACKAGE_NAME)) + " " + FormatFullVersion() + "\n\n" +
             _("Usage:") + "\n" +
-              "  itasecoin-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded itasecoin transaction") + "\n" +
-              "  itasecoin-tx [options] -create [commands]   " + _("Create hex-encoded itasecoin transaction") + "\n" +
+              "  itasecore-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded itasecoin transaction") + "\n" +
+              "  itasecore-tx [options] -create [commands]   " + _("Create hex-encoded itasecoin transaction") + "\n" +
               "\n";
 
         fprintf(stdout, "%s", strUsage.c_str());

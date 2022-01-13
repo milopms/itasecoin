@@ -124,7 +124,7 @@ overridden with the option `-rpccookiefile`.
 This is similar to Tor's CookieAuthentication: see
 https://www.torproject.org/docs/tor-manual.html.en
 
-This allows running itasecoind without having to do any manual configuration.
+This allows running itasecored without having to do any manual configuration.
 
 Relay: Any sequence of pushdatas in OP_RETURN outputs now allowed
 -----------------------------------------------------------------
@@ -201,7 +201,7 @@ information, pass `-debug=tor`.
 Notifications through ZMQ
 -------------------------
 
-Itasecoind can now (optionally) asynchronously notify clients through a
+itasecored can now (optionally) asynchronously notify clients through a
 ZMQ-based PUB socket of the arrival of new transactions and blocks.
 This feature requires installation of the ZMQ C API library 4.x and
 configuring its use through the command line or configuration file.
@@ -330,7 +330,7 @@ and are affected by this change:
 - RPC `decodescript`
 - REST `/rest/tx/` (JSON format)
 - REST `/rest/block/` (JSON format when including extended tx details)
-- `itasecoin-tx -json`
+- `itasecore-tx -json`
 
 For example, the `scriptSig.asm` property of a transaction input that
 previously showed an assembly representation of:
@@ -387,7 +387,7 @@ caching. A sample config for apache2 could look like:
         # AuthType Digest
         # ...
 
-        # optional bypass itasecoind rpc basic auth
+        # optional bypass itasecored rpc basic auth
         # RequestHeader set Authorization "Basic <hash>"
         # get the <hash> from the shell with: base64 <<< itasecoinrpc:<password>
     </Location>
@@ -401,7 +401,7 @@ Other P2P Changes
 -----------------
 
 The list of banned peers is now stored on disk rather than in memory.
-Restarting itasecoind will no longer clear out the list of banned peers; instead
+Restarting itasecored will no longer clear out the list of banned peers; instead
 a new RPC call (`clearbanned`) can be used to manually clear the list.  The new
 `setban` RPC call can also be used to manually ban or unban a peer.
 
@@ -422,14 +422,14 @@ Note that the database cache setting has the most performance impact
 during initial sync of a node, and when catching up after downtime.
 
 
-itasecoin-cli: arguments privacy
+itasecore-cli: arguments privacy
 ------------------------------
 
 The RPC command line client gained a new argument, `-stdin`
 to read extra arguments from standard input, one per line until EOF/Ctrl-D.
 For example:
 
-    $ src/itasecoin-cli -stdin walletpassphrase
+    $ src/itasecore-cli -stdin walletpassphrase
     mysecretcode
     120
     ..... press Ctrl-D here to end input
@@ -645,7 +645,7 @@ files on disk. These two have now been split up, so that all blocks are known
 before validation starts. This was necessary to make certain optimizations that
 are available during normal synchronizations also available during reindexing.
 
-The two phases are distinct in the Itasecoin-Qt GUI. During the first one,
+The two phases are distinct in the itasecore-qt GUI. During the first one,
 "Reindexing blocks on disk" is shown. During the second (slower) one,
 "Processing blocks on disk" is shown.
 
@@ -751,7 +751,7 @@ Low-level RPC changes
     - RPC `decodescript`
     - REST `/rest/tx/` (JSON format)
     - REST `/rest/block/` (JSON format when including extended tx details)
-    - `itasecoin-tx -json`
+    - `itasecore-tx -json`
 
 - The sorting of the output of the `getrawmempool` output has changed.
 

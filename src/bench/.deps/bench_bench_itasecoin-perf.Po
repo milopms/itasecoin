@@ -1,138 +1,46 @@
 bench/bench_bench_itasecoin-perf.o: bench/perf.cpp \
- /usr/arm-linux-gnueabihf/include/stdc-predef.h bench/perf.h \
- /usr/lib/gcc-cross/arm-linux-gnueabihf/7/include/stdint.h \
- /usr/arm-linux-gnueabihf/include/stdint.h \
- /usr/arm-linux-gnueabihf/include/bits/libc-header-start.h \
- /usr/arm-linux-gnueabihf/include/features.h \
- /usr/arm-linux-gnueabihf/include/sys/cdefs.h \
- /usr/arm-linux-gnueabihf/include/bits/wordsize.h \
- /usr/arm-linux-gnueabihf/include/bits/long-double.h \
- /usr/arm-linux-gnueabihf/include/gnu/stubs.h \
- /usr/arm-linux-gnueabihf/include/gnu/stubs-hard.h \
- /usr/arm-linux-gnueabihf/include/bits/types.h \
- /usr/arm-linux-gnueabihf/include/bits/typesizes.h \
- /usr/arm-linux-gnueabihf/include/bits/wchar.h \
- /usr/arm-linux-gnueabihf/include/bits/stdint-intn.h \
- /usr/arm-linux-gnueabihf/include/bits/stdint-uintn.h \
- /usr/arm-linux-gnueabihf/include/unistd.h \
- /usr/arm-linux-gnueabihf/include/bits/posix_opt.h \
- /usr/arm-linux-gnueabihf/include/bits/environments.h \
- /usr/lib/gcc-cross/arm-linux-gnueabihf/7/include/stddef.h \
- /usr/arm-linux-gnueabihf/include/bits/confname.h \
- /usr/arm-linux-gnueabihf/include/bits/getopt_posix.h \
- /usr/arm-linux-gnueabihf/include/bits/getopt_core.h \
- /usr/arm-linux-gnueabihf/include/bits/unistd.h \
- /usr/arm-linux-gnueabihf/include/sys/syscall.h \
- /usr/arm-linux-gnueabihf/include/asm/unistd.h \
- /usr/arm-linux-gnueabihf/include/asm/unistd-eabi.h \
- /usr/arm-linux-gnueabihf/include/asm/unistd-common.h \
- /usr/arm-linux-gnueabihf/include/bits/syscall.h \
- /usr/arm-linux-gnueabihf/include/linux/perf_event.h \
- /usr/arm-linux-gnueabihf/include/linux/types.h \
- /usr/arm-linux-gnueabihf/include/asm/types.h \
- /usr/arm-linux-gnueabihf/include/asm-generic/int-ll64.h \
- /usr/arm-linux-gnueabihf/include/asm/bitsperlong.h \
- /usr/arm-linux-gnueabihf/include/asm-generic/bitsperlong.h \
- /usr/arm-linux-gnueabihf/include/linux/posix_types.h \
- /usr/arm-linux-gnueabihf/include/linux/stddef.h \
- /usr/arm-linux-gnueabihf/include/asm/posix_types.h \
- /usr/arm-linux-gnueabihf/include/asm-generic/posix_types.h \
- /usr/arm-linux-gnueabihf/include/linux/ioctl.h \
- /usr/arm-linux-gnueabihf/include/asm/ioctl.h \
- /usr/arm-linux-gnueabihf/include/asm-generic/ioctl.h \
- /usr/arm-linux-gnueabihf/include/asm/byteorder.h \
- /usr/arm-linux-gnueabihf/include/linux/byteorder/little_endian.h \
- /usr/arm-linux-gnueabihf/include/linux/swab.h \
- /usr/arm-linux-gnueabihf/include/asm/swab.h
+ /usr/include/stdc-predef.h bench/perf.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/bits/long-double.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h
 
-/usr/arm-linux-gnueabihf/include/stdc-predef.h:
+/usr/include/stdc-predef.h:
 
 bench/perf.h:
 
-/usr/lib/gcc-cross/arm-linux-gnueabihf/7/include/stdint.h:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h:
 
-/usr/arm-linux-gnueabihf/include/stdint.h:
+/usr/include/stdint.h:
 
-/usr/arm-linux-gnueabihf/include/bits/libc-header-start.h:
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
-/usr/arm-linux-gnueabihf/include/features.h:
+/usr/include/features.h:
 
-/usr/arm-linux-gnueabihf/include/sys/cdefs.h:
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
-/usr/arm-linux-gnueabihf/include/bits/wordsize.h:
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
-/usr/arm-linux-gnueabihf/include/bits/long-double.h:
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
 
-/usr/arm-linux-gnueabihf/include/gnu/stubs.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
-/usr/arm-linux-gnueabihf/include/gnu/stubs-hard.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
-/usr/arm-linux-gnueabihf/include/bits/types.h:
+/usr/include/x86_64-linux-gnu/bits/types.h:
 
-/usr/arm-linux-gnueabihf/include/bits/typesizes.h:
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
-/usr/arm-linux-gnueabihf/include/bits/wchar.h:
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
 
-/usr/arm-linux-gnueabihf/include/bits/stdint-intn.h:
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
-/usr/arm-linux-gnueabihf/include/bits/stdint-uintn.h:
-
-/usr/arm-linux-gnueabihf/include/unistd.h:
-
-/usr/arm-linux-gnueabihf/include/bits/posix_opt.h:
-
-/usr/arm-linux-gnueabihf/include/bits/environments.h:
-
-/usr/lib/gcc-cross/arm-linux-gnueabihf/7/include/stddef.h:
-
-/usr/arm-linux-gnueabihf/include/bits/confname.h:
-
-/usr/arm-linux-gnueabihf/include/bits/getopt_posix.h:
-
-/usr/arm-linux-gnueabihf/include/bits/getopt_core.h:
-
-/usr/arm-linux-gnueabihf/include/bits/unistd.h:
-
-/usr/arm-linux-gnueabihf/include/sys/syscall.h:
-
-/usr/arm-linux-gnueabihf/include/asm/unistd.h:
-
-/usr/arm-linux-gnueabihf/include/asm/unistd-eabi.h:
-
-/usr/arm-linux-gnueabihf/include/asm/unistd-common.h:
-
-/usr/arm-linux-gnueabihf/include/bits/syscall.h:
-
-/usr/arm-linux-gnueabihf/include/linux/perf_event.h:
-
-/usr/arm-linux-gnueabihf/include/linux/types.h:
-
-/usr/arm-linux-gnueabihf/include/asm/types.h:
-
-/usr/arm-linux-gnueabihf/include/asm-generic/int-ll64.h:
-
-/usr/arm-linux-gnueabihf/include/asm/bitsperlong.h:
-
-/usr/arm-linux-gnueabihf/include/asm-generic/bitsperlong.h:
-
-/usr/arm-linux-gnueabihf/include/linux/posix_types.h:
-
-/usr/arm-linux-gnueabihf/include/linux/stddef.h:
-
-/usr/arm-linux-gnueabihf/include/asm/posix_types.h:
-
-/usr/arm-linux-gnueabihf/include/asm-generic/posix_types.h:
-
-/usr/arm-linux-gnueabihf/include/linux/ioctl.h:
-
-/usr/arm-linux-gnueabihf/include/asm/ioctl.h:
-
-/usr/arm-linux-gnueabihf/include/asm-generic/ioctl.h:
-
-/usr/arm-linux-gnueabihf/include/asm/byteorder.h:
-
-/usr/arm-linux-gnueabihf/include/linux/byteorder/little_endian.h:
-
-/usr/arm-linux-gnueabihf/include/linux/swab.h:
-
-/usr/arm-linux-gnueabihf/include/asm/swab.h:
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:

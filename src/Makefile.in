@@ -118,8 +118,8 @@ bin_PROGRAMS = $(am__EXEEXT_1) $(am__EXEEXT_2) $(am__EXEEXT_3) \
 	$(am__EXEEXT_4) $(am__EXEEXT_5) $(am__EXEEXT_6)
 noinst_PROGRAMS = $(am__EXEEXT_7)
 TESTS = $(am__EXEEXT_3) $(am__EXEEXT_6)
-@BUILD_BITCOIND_TRUE@am__append_1 = itasecoind
-@BUILD_BITCOIN_UTILS_TRUE@am__append_2 = itasecoin-cli itasecoin-tx
+@BUILD_BITCOIND_TRUE@am__append_1 = itasecored
+@BUILD_BITCOIN_UTILS_TRUE@am__append_2 = itasecore-cli itasecore-tx
 @EXPERIMENTAL_ASM_TRUE@am__append_3 = crypto/sha256_sse4.cpp
 @GLIBC_BACK_COMPAT_TRUE@am__append_4 = compat/glibc_compat.cpp
 @TARGET_WINDOWS_TRUE@am__append_5 = bitcoind-res.rc
@@ -158,7 +158,7 @@ TESTS = $(am__EXEEXT_3) $(am__EXEEXT_6)
 @ENABLE_BENCH_TRUE@@ENABLE_WALLET_TRUE@am__append_28 = bench/coin_selection.cpp
 @ENABLE_BENCH_TRUE@@ENABLE_WALLET_TRUE@am__append_29 = $(LIBBITCOIN_WALLET) $(LIBBITCOIN_CRYPTO)
 @ENABLE_BENCH_TRUE@am__append_30 = $(CLEAN_BITCOIN_BENCH)
-@ENABLE_QT_TRUE@am__append_31 = qt/itasecoin-qt
+@ENABLE_QT_TRUE@am__append_31 = qt/itasecore-qt
 @ENABLE_QT_TRUE@am__append_32 = qt/libbitcoinqt.a
 @ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__append_33 = $(BITCOIN_QT_WINDOWS_CPP)
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@am__append_34 = $(BITCOIN_QT_WALLET_CPP)
@@ -167,8 +167,8 @@ TESTS = $(am__EXEEXT_3) $(am__EXEEXT_6)
 @ENABLE_QT_TRUE@@ENABLE_WALLET_TRUE@am__append_37 = $(LIBBITCOIN_WALLET)
 @ENABLE_QT_TRUE@@ENABLE_ZMQ_TRUE@am__append_38 = $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 @ENABLE_QT_TRUE@am__append_39 = $(CLEAN_QT)
-@ENABLE_QT_TESTS_TRUE@am__append_40 = qt/test/test_itasecoin-qt
-@ENABLE_QT_TESTS_TRUE@am__append_41 = qt/test/test_itasecoin-qt
+@ENABLE_QT_TESTS_TRUE@am__append_40 = qt/test/test_itasecore-qt
+@ENABLE_QT_TESTS_TRUE@am__append_41 = qt/test/test_itasecore-qt
 @ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__append_42 = \
 @ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@  qt/test/moc_paymentservertests.cpp \
 @ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@  qt/test/moc_wallettests.cpp
@@ -853,14 +853,14 @@ libbitcoinconsensus_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(libbitcoinconsensus_la_LDFLAGS) $(LDFLAGS) -o $@
 @BUILD_BITCOIN_LIBS_TRUE@am_libbitcoinconsensus_la_rpath = -rpath \
 @BUILD_BITCOIN_LIBS_TRUE@	$(libdir)
-@BUILD_BITCOIND_TRUE@am__EXEEXT_1 = itasecoind$(EXEEXT)
-@BUILD_BITCOIN_UTILS_TRUE@am__EXEEXT_2 = itasecoin-cli$(EXEEXT) \
-@BUILD_BITCOIN_UTILS_TRUE@	itasecoin-tx$(EXEEXT)
+@BUILD_BITCOIND_TRUE@am__EXEEXT_1 = itasecored$(EXEEXT)
+@BUILD_BITCOIN_UTILS_TRUE@am__EXEEXT_2 = itasecore-cli$(EXEEXT) \
+@BUILD_BITCOIN_UTILS_TRUE@	itasecore-tx$(EXEEXT)
 @ENABLE_TESTS_TRUE@am__EXEEXT_3 = test/test_itasecoin$(EXEEXT)
 @ENABLE_BENCH_TRUE@am__EXEEXT_4 = bench/bench_itasecoin$(EXEEXT)
-@ENABLE_QT_TRUE@am__EXEEXT_5 = qt/itasecoin-qt$(EXEEXT)
+@ENABLE_QT_TRUE@am__EXEEXT_5 = qt/itasecore-qt$(EXEEXT)
 @ENABLE_QT_TESTS_TRUE@am__EXEEXT_6 =  \
-@ENABLE_QT_TESTS_TRUE@	qt/test/test_itasecoin-qt$(EXEEXT)
+@ENABLE_QT_TESTS_TRUE@	qt/test/test_itasecore-qt$(EXEEXT)
 @ENABLE_TESTS_TRUE@am__EXEEXT_7 = test/test_itasecoin_fuzzy$(EXEEXT)
 PROGRAMS = $(bin_PROGRAMS) $(noinst_PROGRAMS)
 am__bench_bench_itasecoin_SOURCES_DIST = bench/bench_bitcoin.cpp \
@@ -917,37 +917,37 @@ bench_bench_itasecoin_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
 	$(bench_bench_itasecoin_CXXFLAGS) $(CXXFLAGS) \
 	$(bench_bench_itasecoin_LDFLAGS) $(LDFLAGS) -o $@
-am__itasecoin_cli_SOURCES_DIST = bitcoin-cli.cpp bitcoin-cli-res.rc
+am__itasecore_cli_SOURCES_DIST = bitcoin-cli.cpp bitcoin-cli-res.rc
 @TARGET_WINDOWS_TRUE@am__objects_22 = bitcoin-cli-res.$(OBJEXT)
-am_itasecoin_cli_OBJECTS = itasecoin_cli-bitcoin-cli.$(OBJEXT) \
+am_itasecore_cli_OBJECTS = itasecore_cli-bitcoin-cli.$(OBJEXT) \
 	$(am__objects_22)
-itasecoin_cli_OBJECTS = $(am_itasecoin_cli_OBJECTS)
-itasecoin_cli_DEPENDENCIES = $(LIBBITCOIN_CLI) $(am__DEPENDENCIES_4) \
+itasecore_cli_OBJECTS = $(am_itasecore_cli_OBJECTS)
+itasecore_cli_DEPENDENCIES = $(LIBBITCOIN_CLI) $(am__DEPENDENCIES_4) \
 	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-itasecoin_cli_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
+itasecore_cli_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
-	$(itasecoin_cli_CXXFLAGS) $(CXXFLAGS) $(itasecoin_cli_LDFLAGS) \
+	$(itasecore_cli_CXXFLAGS) $(CXXFLAGS) $(itasecore_cli_LDFLAGS) \
 	$(LDFLAGS) -o $@
-am__itasecoin_tx_SOURCES_DIST = bitcoin-tx.cpp bitcoin-tx-res.rc
+am__itasecore_tx_SOURCES_DIST = bitcoin-tx.cpp bitcoin-tx-res.rc
 @TARGET_WINDOWS_TRUE@am__objects_23 = bitcoin-tx-res.$(OBJEXT)
-am_itasecoin_tx_OBJECTS = itasecoin_tx-bitcoin-tx.$(OBJEXT) \
+am_itasecore_tx_OBJECTS = itasecore_tx-bitcoin-tx.$(OBJEXT) \
 	$(am__objects_23)
-itasecoin_tx_OBJECTS = $(am_itasecoin_tx_OBJECTS)
-itasecoin_tx_DEPENDENCIES = $(am__DEPENDENCIES_4) $(LIBBITCOIN_COMMON) \
+itasecore_tx_OBJECTS = $(am_itasecore_tx_OBJECTS)
+itasecore_tx_DEPENDENCIES = $(am__DEPENDENCIES_4) $(LIBBITCOIN_COMMON) \
 	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) \
 	$(LIBBITCOIN_CRYPTO) $(LIBSECP256K1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-itasecoin_tx_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(itasecoin_tx_CXXFLAGS) \
-	$(CXXFLAGS) $(itasecoin_tx_LDFLAGS) $(LDFLAGS) -o $@
-am__itasecoind_SOURCES_DIST = bitcoind.cpp bitcoind-res.rc
+itasecore_tx_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(itasecore_tx_CXXFLAGS) \
+	$(CXXFLAGS) $(itasecore_tx_LDFLAGS) $(LDFLAGS) -o $@
+am__itasecored_SOURCES_DIST = bitcoind.cpp bitcoind-res.rc
 @TARGET_WINDOWS_TRUE@am__objects_24 = bitcoind-res.$(OBJEXT)
-am_itasecoind_OBJECTS = itasecoind-bitcoind.$(OBJEXT) \
+am_itasecored_OBJECTS = itasecored-bitcoind.$(OBJEXT) \
 	$(am__objects_24)
-itasecoind_OBJECTS = $(am_itasecoind_OBJECTS)
-itasecoind_DEPENDENCIES = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) \
+itasecored_OBJECTS = $(am_itasecored_OBJECTS)
+itasecored_DEPENDENCIES = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) \
 	$(am__DEPENDENCIES_4) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET) \
 	$(LIBBITCOIN_ZMQ) $(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) \
 	$(am__DEPENDENCIES_2) $(LIBLEVELDB_SSE42) \
@@ -956,27 +956,27 @@ itasecoind_DEPENDENCIES = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
-itasecoind_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(itasecoind_CXXFLAGS) \
-	$(CXXFLAGS) $(itasecoind_LDFLAGS) $(LDFLAGS) -o $@
-am__qt_itasecoin_qt_SOURCES_DIST = qt/bitcoin.cpp \
+itasecored_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
+	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(itasecored_CXXFLAGS) \
+	$(CXXFLAGS) $(itasecored_LDFLAGS) $(LDFLAGS) -o $@
+am__qt_itasecore_qt_SOURCES_DIST = qt/bitcoin.cpp \
 	qt/macdockiconhandler.mm qt/macnotificationhandler.mm \
 	qt/res/bitcoin-qt-res.rc
-@ENABLE_QT_TRUE@am__objects_25 = qt/qt_itasecoin_qt-macdockiconhandler.$(OBJEXT) \
-@ENABLE_QT_TRUE@	qt/qt_itasecoin_qt-macnotificationhandler.$(OBJEXT)
+@ENABLE_QT_TRUE@am__objects_25 = qt/qt_itasecore_qt-macdockiconhandler.$(OBJEXT) \
+@ENABLE_QT_TRUE@	qt/qt_itasecore_qt-macnotificationhandler.$(OBJEXT)
 @ENABLE_QT_TRUE@@TARGET_DARWIN_TRUE@am__objects_26 =  \
 @ENABLE_QT_TRUE@@TARGET_DARWIN_TRUE@	$(am__objects_25)
 @ENABLE_QT_TRUE@am__objects_27 = qt/res/bitcoin-qt-res.$(OBJEXT)
 @ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@am__objects_28 =  \
 @ENABLE_QT_TRUE@@TARGET_WINDOWS_TRUE@	$(am__objects_27)
-@ENABLE_QT_TRUE@am_qt_itasecoin_qt_OBJECTS =  \
-@ENABLE_QT_TRUE@	qt/qt_itasecoin_qt-bitcoin.$(OBJEXT) \
+@ENABLE_QT_TRUE@am_qt_itasecore_qt_OBJECTS =  \
+@ENABLE_QT_TRUE@	qt/qt_itasecore_qt-bitcoin.$(OBJEXT) \
 @ENABLE_QT_TRUE@	$(am__objects_26) $(am__objects_28)
-qt_itasecoin_qt_OBJECTS = $(am_qt_itasecoin_qt_OBJECTS)
+qt_itasecore_qt_OBJECTS = $(am_qt_itasecore_qt_OBJECTS)
 @ENABLE_QT_TRUE@@ENABLE_ZMQ_TRUE@am__DEPENDENCIES_6 =  \
 @ENABLE_QT_TRUE@@ENABLE_ZMQ_TRUE@	$(LIBBITCOIN_ZMQ) \
 @ENABLE_QT_TRUE@@ENABLE_ZMQ_TRUE@	$(am__DEPENDENCIES_1)
-@ENABLE_QT_TRUE@qt_itasecoin_qt_DEPENDENCIES = qt/libbitcoinqt.a \
+@ENABLE_QT_TRUE@qt_itasecore_qt_DEPENDENCIES = qt/libbitcoinqt.a \
 @ENABLE_QT_TRUE@	$(LIBBITCOIN_SERVER) $(am__append_37) \
 @ENABLE_QT_TRUE@	$(am__DEPENDENCIES_6) $(LIBBITCOIN_CLI) \
 @ENABLE_QT_TRUE@	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
@@ -989,11 +989,11 @@ qt_itasecoin_qt_OBJECTS = $(am_qt_itasecoin_qt_OBJECTS)
 @ENABLE_QT_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 @ENABLE_QT_TRUE@	$(am__DEPENDENCIES_1) $(LIBSECP256K1) \
 @ENABLE_QT_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
-qt_itasecoin_qt_LINK = $(LIBTOOL) $(AM_V_lt) \
-	$(qt_itasecoin_qt_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link \
+qt_itasecore_qt_LINK = $(LIBTOOL) $(AM_V_lt) \
+	$(qt_itasecore_qt_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link \
 	$(OBJCXXLD) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) \
-	$(qt_itasecoin_qt_LDFLAGS) $(LDFLAGS) -o $@
-am__qt_test_test_itasecoin_qt_SOURCES_DIST = qt/test/compattests.cpp \
+	$(qt_itasecore_qt_LDFLAGS) $(LDFLAGS) -o $@
+am__qt_test_test_itasecore_qt_SOURCES_DIST = qt/test/compattests.cpp \
 	qt/test/rpcnestedtests.cpp qt/test/test_main.cpp \
 	qt/test/uritests.cpp qt/test/compattests.h \
 	qt/test/rpcnestedtests.h qt/test/uritests.h \
@@ -1001,31 +1001,31 @@ am__qt_test_test_itasecoin_qt_SOURCES_DIST = qt/test/compattests.cpp \
 	qt/test/wallettests.h test/test_bitcoin.cpp \
 	test/test_bitcoin.h qt/test/paymentservertests.cpp \
 	qt/test/wallettests.cpp wallet/test/wallet_test_fixture.cpp
-@ENABLE_QT_TESTS_TRUE@am__objects_29 = test/qt_test_test_itasecoin_qt-test_bitcoin.$(OBJEXT)
-@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__objects_30 = qt/test/qt_test_test_itasecoin_qt-paymentservertests.$(OBJEXT) \
-@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@	qt/test/qt_test_test_itasecoin_qt-wallettests.$(OBJEXT) \
-@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@	wallet/test/qt_test_test_itasecoin_qt-wallet_test_fixture.$(OBJEXT)
-@ENABLE_QT_TESTS_TRUE@am_qt_test_test_itasecoin_qt_OBJECTS = qt/test/qt_test_test_itasecoin_qt-compattests.$(OBJEXT) \
-@ENABLE_QT_TESTS_TRUE@	qt/test/qt_test_test_itasecoin_qt-rpcnestedtests.$(OBJEXT) \
-@ENABLE_QT_TESTS_TRUE@	qt/test/qt_test_test_itasecoin_qt-test_main.$(OBJEXT) \
-@ENABLE_QT_TESTS_TRUE@	qt/test/qt_test_test_itasecoin_qt-uritests.$(OBJEXT) \
+@ENABLE_QT_TESTS_TRUE@am__objects_29 = test/qt_test_test_itasecore_qt-test_bitcoin.$(OBJEXT)
+@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__objects_30 = qt/test/qt_test_test_itasecore_qt-paymentservertests.$(OBJEXT) \
+@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@	qt/test/qt_test_test_itasecore_qt-wallettests.$(OBJEXT) \
+@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@	wallet/test/qt_test_test_itasecore_qt-wallet_test_fixture.$(OBJEXT)
+@ENABLE_QT_TESTS_TRUE@am_qt_test_test_itasecore_qt_OBJECTS = qt/test/qt_test_test_itasecore_qt-compattests.$(OBJEXT) \
+@ENABLE_QT_TESTS_TRUE@	qt/test/qt_test_test_itasecore_qt-rpcnestedtests.$(OBJEXT) \
+@ENABLE_QT_TESTS_TRUE@	qt/test/qt_test_test_itasecore_qt-test_main.$(OBJEXT) \
+@ENABLE_QT_TESTS_TRUE@	qt/test/qt_test_test_itasecore_qt-uritests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@	$(am__objects_4) $(am__objects_29) \
 @ENABLE_QT_TESTS_TRUE@	$(am__objects_4) $(am__objects_30)
-@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__objects_31 = qt/test/qt_test_test_itasecoin_qt-moc_paymentservertests.$(OBJEXT) \
-@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@	qt/test/qt_test_test_itasecoin_qt-moc_wallettests.$(OBJEXT)
-@ENABLE_QT_TESTS_TRUE@am__objects_32 = qt/test/qt_test_test_itasecoin_qt-moc_compattests.$(OBJEXT) \
-@ENABLE_QT_TESTS_TRUE@	qt/test/qt_test_test_itasecoin_qt-moc_rpcnestedtests.$(OBJEXT) \
-@ENABLE_QT_TESTS_TRUE@	qt/test/qt_test_test_itasecoin_qt-moc_uritests.$(OBJEXT) \
+@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@am__objects_31 = qt/test/qt_test_test_itasecore_qt-moc_paymentservertests.$(OBJEXT) \
+@ENABLE_QT_TESTS_TRUE@@ENABLE_WALLET_TRUE@	qt/test/qt_test_test_itasecore_qt-moc_wallettests.$(OBJEXT)
+@ENABLE_QT_TESTS_TRUE@am__objects_32 = qt/test/qt_test_test_itasecore_qt-moc_compattests.$(OBJEXT) \
+@ENABLE_QT_TESTS_TRUE@	qt/test/qt_test_test_itasecore_qt-moc_rpcnestedtests.$(OBJEXT) \
+@ENABLE_QT_TESTS_TRUE@	qt/test/qt_test_test_itasecore_qt-moc_uritests.$(OBJEXT) \
 @ENABLE_QT_TESTS_TRUE@	$(am__objects_31)
-@ENABLE_QT_TESTS_TRUE@nodist_qt_test_test_itasecoin_qt_OBJECTS =  \
+@ENABLE_QT_TESTS_TRUE@nodist_qt_test_test_itasecore_qt_OBJECTS =  \
 @ENABLE_QT_TESTS_TRUE@	$(am__objects_32)
-qt_test_test_itasecoin_qt_OBJECTS =  \
-	$(am_qt_test_test_itasecoin_qt_OBJECTS) \
-	$(nodist_qt_test_test_itasecoin_qt_OBJECTS)
+qt_test_test_itasecore_qt_OBJECTS =  \
+	$(am_qt_test_test_itasecore_qt_OBJECTS) \
+	$(nodist_qt_test_test_itasecore_qt_OBJECTS)
 @ENABLE_QT_TESTS_TRUE@@ENABLE_ZMQ_TRUE@am__DEPENDENCIES_7 =  \
 @ENABLE_QT_TESTS_TRUE@@ENABLE_ZMQ_TRUE@	$(LIBBITCOIN_ZMQ) \
 @ENABLE_QT_TESTS_TRUE@@ENABLE_ZMQ_TRUE@	$(am__DEPENDENCIES_1)
-@ENABLE_QT_TESTS_TRUE@qt_test_test_itasecoin_qt_DEPENDENCIES =  \
+@ENABLE_QT_TESTS_TRUE@qt_test_test_itasecore_qt_DEPENDENCIES =  \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOINQT) $(LIBBITCOIN_SERVER) \
 @ENABLE_QT_TESTS_TRUE@	$(am__append_44) $(am__DEPENDENCIES_7) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
@@ -1048,10 +1048,10 @@ qt_test_test_itasecoin_qt_OBJECTS =  \
 @ENABLE_QT_TESTS_TRUE@	$(am__DEPENDENCIES_1) $(LIBSECP256K1) \
 @ENABLE_QT_TESTS_TRUE@	$(am__DEPENDENCIES_1) \
 @ENABLE_QT_TESTS_TRUE@	$(am__DEPENDENCIES_1)
-qt_test_test_itasecoin_qt_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
+qt_test_test_itasecore_qt_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
-	$(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) \
-	$(qt_test_test_itasecoin_qt_LDFLAGS) $(LDFLAGS) -o $@
+	$(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) \
+	$(qt_test_test_itasecore_qt_LDFLAGS) $(LDFLAGS) -o $@
 am__test_test_itasecoin_SOURCES_DIST = test/arith_uint256_tests.cpp \
 	test/scriptnum10.h test/addrman_tests.cpp \
 	test/amount_tests.cpp test/allocator_tests.cpp \
@@ -1278,10 +1278,10 @@ SOURCES = $(crypto_libbitcoin_crypto_a_SOURCES) \
 	$(libbitcoinconsensus_la_SOURCES) \
 	$(bench_bench_itasecoin_SOURCES) \
 	$(nodist_bench_bench_itasecoin_SOURCES) \
-	$(itasecoin_cli_SOURCES) $(itasecoin_tx_SOURCES) \
-	$(itasecoind_SOURCES) $(qt_itasecoin_qt_SOURCES) \
-	$(qt_test_test_itasecoin_qt_SOURCES) \
-	$(nodist_qt_test_test_itasecoin_qt_SOURCES) \
+	$(itasecore_cli_SOURCES) $(itasecore_tx_SOURCES) \
+	$(itasecored_SOURCES) $(qt_itasecore_qt_SOURCES) \
+	$(qt_test_test_itasecore_qt_SOURCES) \
+	$(nodist_qt_test_test_itasecore_qt_SOURCES) \
 	$(test_test_itasecoin_SOURCES) \
 	$(nodist_test_test_itasecoin_SOURCES) \
 	$(test_test_itasecoin_fuzzy_SOURCES)
@@ -1298,11 +1298,11 @@ DIST_SOURCES = $(am__crypto_libbitcoin_crypto_a_SOURCES_DIST) \
 	$(am__qt_libbitcoinqt_a_SOURCES_DIST) \
 	$(am__libbitcoinconsensus_la_SOURCES_DIST) \
 	$(am__bench_bench_itasecoin_SOURCES_DIST) \
-	$(am__itasecoin_cli_SOURCES_DIST) \
-	$(am__itasecoin_tx_SOURCES_DIST) \
-	$(am__itasecoind_SOURCES_DIST) \
-	$(am__qt_itasecoin_qt_SOURCES_DIST) \
-	$(am__qt_test_test_itasecoin_qt_SOURCES_DIST) \
+	$(am__itasecore_cli_SOURCES_DIST) \
+	$(am__itasecore_tx_SOURCES_DIST) \
+	$(am__itasecored_SOURCES_DIST) \
+	$(am__qt_itasecore_qt_SOURCES_DIST) \
+	$(am__qt_test_test_itasecore_qt_SOURCES_DIST) \
 	$(am__test_test_itasecoin_SOURCES_DIST) \
 	$(am__test_test_itasecoin_fuzzy_SOURCES_DIST)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
@@ -2096,11 +2096,11 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-itasecoind_SOURCES = bitcoind.cpp $(am__append_5)
-itasecoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-itasecoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-itasecoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-itasecoind_LDADD = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) \
+itasecored_SOURCES = bitcoind.cpp $(am__append_5)
+itasecored_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+itasecored_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+itasecored_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+itasecored_LDADD = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) \
 	$(LIBUNIVALUE) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET) \
 	$(LIBBITCOIN_ZMQ) $(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) \
 	$(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) $(LIBSECP256K1) \
@@ -2109,21 +2109,21 @@ itasecoind_LDADD = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_COMMON) \
 	$(ZMQ_LIBS)
 
 # bitcoin-cli binary #
-itasecoin_cli_SOURCES = bitcoin-cli.cpp $(am__append_6)
-itasecoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-itasecoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-itasecoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-itasecoin_cli_LDADD = $(LIBBITCOIN_CLI) $(LIBUNIVALUE) \
+itasecore_cli_SOURCES = bitcoin-cli.cpp $(am__append_6)
+itasecore_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+itasecore_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+itasecore_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+itasecore_cli_LDADD = $(LIBBITCOIN_CLI) $(LIBUNIVALUE) \
 	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(BOOST_LIBS) \
 	$(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
 # bitcoin-tx binary #
-itasecoin_tx_SOURCES = bitcoin-tx.cpp $(am__append_7)
-itasecoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-itasecoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-itasecoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-itasecoin_tx_LDADD = $(LIBUNIVALUE) $(LIBBITCOIN_COMMON) \
+itasecore_tx_SOURCES = bitcoin-tx.cpp $(am__append_7)
+itasecore_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+itasecore_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+itasecore_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+itasecore_tx_LDADD = $(LIBUNIVALUE) $(LIBBITCOIN_COMMON) \
 	$(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) \
 	$(LIBBITCOIN_CRYPTO) $(LIBSECP256K1) $(BOOST_LIBS) \
 	$(CRYPTO_LIBS)
@@ -2777,13 +2777,13 @@ EXTRA_DIST = $(CTAES_DIST)
 @ENABLE_QT_TRUE@QT_FORMS_H = $(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:.ui=.h))))
 
 # bitcoin-qt binary #
-@ENABLE_QT_TRUE@qt_itasecoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+@ENABLE_QT_TRUE@qt_itasecore_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
 @ENABLE_QT_TRUE@  $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 
-@ENABLE_QT_TRUE@qt_itasecoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
-@ENABLE_QT_TRUE@qt_itasecoin_qt_SOURCES = qt/bitcoin.cpp \
+@ENABLE_QT_TRUE@qt_itasecore_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+@ENABLE_QT_TRUE@qt_itasecore_qt_SOURCES = qt/bitcoin.cpp \
 @ENABLE_QT_TRUE@	$(am__append_35) $(am__append_36)
-@ENABLE_QT_TRUE@qt_itasecoin_qt_LDADD = qt/libbitcoinqt.a \
+@ENABLE_QT_TRUE@qt_itasecore_qt_LDADD = qt/libbitcoinqt.a \
 @ENABLE_QT_TRUE@	$(LIBBITCOIN_SERVER) $(am__append_37) \
 @ENABLE_QT_TRUE@	$(am__append_38) $(LIBBITCOIN_CLI) \
 @ENABLE_QT_TRUE@	$(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) \
@@ -2795,8 +2795,8 @@ EXTRA_DIST = $(CTAES_DIST)
 @ENABLE_QT_TRUE@	$(CRYPTO_LIBS) $(MINIUPNPC_LIBS) \
 @ENABLE_QT_TRUE@	$(LIBSECP256K1) $(EVENT_PTHREADS_LIBS) \
 @ENABLE_QT_TRUE@	$(EVENT_LIBS)
-@ENABLE_QT_TRUE@qt_itasecoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-@ENABLE_QT_TRUE@qt_itasecoin_qt_LIBTOOLFLAGS = --tag CXX
+@ENABLE_QT_TRUE@qt_itasecore_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+@ENABLE_QT_TRUE@qt_itasecore_qt_LIBTOOLFLAGS = --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 @ENABLE_QT_TRUE@QT_QM = $(QT_TS:.ts=.qm)
@@ -2819,18 +2819,18 @@ EXTRA_DIST = $(CTAES_DIST)
 @ENABLE_QT_TESTS_TRUE@TEST_BITCOIN_H = \
 @ENABLE_QT_TESTS_TRUE@  test/test_bitcoin.h
 
-@ENABLE_QT_TESTS_TRUE@qt_test_test_itasecoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+@ENABLE_QT_TESTS_TRUE@qt_test_test_itasecore_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
 @ENABLE_QT_TESTS_TRUE@  $(QT_INCLUDES) $(QT_TEST_INCLUDES) $(PROTOBUF_CFLAGS)
 
-@ENABLE_QT_TESTS_TRUE@qt_test_test_itasecoin_qt_SOURCES =  \
+@ENABLE_QT_TESTS_TRUE@qt_test_test_itasecore_qt_SOURCES =  \
 @ENABLE_QT_TESTS_TRUE@	qt/test/compattests.cpp \
 @ENABLE_QT_TESTS_TRUE@	qt/test/rpcnestedtests.cpp \
 @ENABLE_QT_TESTS_TRUE@	qt/test/test_main.cpp \
 @ENABLE_QT_TESTS_TRUE@	qt/test/uritests.cpp $(TEST_QT_H) \
 @ENABLE_QT_TESTS_TRUE@	$(TEST_BITCOIN_CPP) $(TEST_BITCOIN_H) \
 @ENABLE_QT_TESTS_TRUE@	$(am__append_43)
-@ENABLE_QT_TESTS_TRUE@nodist_qt_test_test_itasecoin_qt_SOURCES = $(TEST_QT_MOC_CPP)
-@ENABLE_QT_TESTS_TRUE@qt_test_test_itasecoin_qt_LDADD =  \
+@ENABLE_QT_TESTS_TRUE@nodist_qt_test_test_itasecore_qt_SOURCES = $(TEST_QT_MOC_CPP)
+@ENABLE_QT_TESTS_TRUE@qt_test_test_itasecore_qt_LDADD =  \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOINQT) $(LIBBITCOIN_SERVER) \
 @ENABLE_QT_TESTS_TRUE@	$(am__append_44) $(am__append_45) \
 @ENABLE_QT_TESTS_TRUE@	$(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) \
@@ -2844,8 +2844,8 @@ EXTRA_DIST = $(CTAES_DIST)
 @ENABLE_QT_TESTS_TRUE@	$(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) \
 @ENABLE_QT_TESTS_TRUE@	$(MINIUPNPC_LIBS) $(LIBSECP256K1) \
 @ENABLE_QT_TESTS_TRUE@	$(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-@ENABLE_QT_TESTS_TRUE@qt_test_test_itasecoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-@ENABLE_QT_TESTS_TRUE@qt_test_test_itasecoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+@ENABLE_QT_TESTS_TRUE@qt_test_test_itasecore_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+@ENABLE_QT_TESTS_TRUE@qt_test_test_itasecore_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 @ENABLE_QT_TESTS_TRUE@CLEAN_BITCOIN_QT_TEST = $(TEST_QT_MOC_CPP) qt/test/*.gcda qt/test/*.gcno
 all: all-recursive
 
@@ -3646,22 +3646,22 @@ bench/bench_itasecoin$(EXEEXT): $(bench_bench_itasecoin_OBJECTS) $(bench_bench_i
 	@rm -f bench/bench_itasecoin$(EXEEXT)
 	$(AM_V_CXXLD)$(bench_bench_itasecoin_LINK) $(bench_bench_itasecoin_OBJECTS) $(bench_bench_itasecoin_LDADD) $(LIBS)
 
-itasecoin-cli$(EXEEXT): $(itasecoin_cli_OBJECTS) $(itasecoin_cli_DEPENDENCIES) $(EXTRA_itasecoin_cli_DEPENDENCIES) 
-	@rm -f itasecoin-cli$(EXEEXT)
-	$(AM_V_CXXLD)$(itasecoin_cli_LINK) $(itasecoin_cli_OBJECTS) $(itasecoin_cli_LDADD) $(LIBS)
+itasecore-cli$(EXEEXT): $(itasecore_cli_OBJECTS) $(itasecore_cli_DEPENDENCIES) $(EXTRA_itasecore_cli_DEPENDENCIES) 
+	@rm -f itasecore-cli$(EXEEXT)
+	$(AM_V_CXXLD)$(itasecore_cli_LINK) $(itasecore_cli_OBJECTS) $(itasecore_cli_LDADD) $(LIBS)
 
-itasecoin-tx$(EXEEXT): $(itasecoin_tx_OBJECTS) $(itasecoin_tx_DEPENDENCIES) $(EXTRA_itasecoin_tx_DEPENDENCIES) 
-	@rm -f itasecoin-tx$(EXEEXT)
-	$(AM_V_CXXLD)$(itasecoin_tx_LINK) $(itasecoin_tx_OBJECTS) $(itasecoin_tx_LDADD) $(LIBS)
+itasecore-tx$(EXEEXT): $(itasecore_tx_OBJECTS) $(itasecore_tx_DEPENDENCIES) $(EXTRA_itasecore_tx_DEPENDENCIES) 
+	@rm -f itasecore-tx$(EXEEXT)
+	$(AM_V_CXXLD)$(itasecore_tx_LINK) $(itasecore_tx_OBJECTS) $(itasecore_tx_LDADD) $(LIBS)
 
-itasecoind$(EXEEXT): $(itasecoind_OBJECTS) $(itasecoind_DEPENDENCIES) $(EXTRA_itasecoind_DEPENDENCIES) 
-	@rm -f itasecoind$(EXEEXT)
-	$(AM_V_CXXLD)$(itasecoind_LINK) $(itasecoind_OBJECTS) $(itasecoind_LDADD) $(LIBS)
-qt/qt_itasecoin_qt-bitcoin.$(OBJEXT): qt/$(am__dirstamp) \
+itasecored$(EXEEXT): $(itasecored_OBJECTS) $(itasecored_DEPENDENCIES) $(EXTRA_itasecored_DEPENDENCIES) 
+	@rm -f itasecored$(EXEEXT)
+	$(AM_V_CXXLD)$(itasecored_LINK) $(itasecored_OBJECTS) $(itasecored_LDADD) $(LIBS)
+qt/qt_itasecore_qt-bitcoin.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_itasecoin_qt-macdockiconhandler.$(OBJEXT): qt/$(am__dirstamp) \
+qt/qt_itasecore_qt-macdockiconhandler.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_itasecoin_qt-macnotificationhandler.$(OBJEXT):  \
+qt/qt_itasecore_qt-macnotificationhandler.$(OBJEXT):  \
 	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
 qt/res/$(am__dirstamp):
 	@$(MKDIR_P) qt/res
@@ -3672,22 +3672,22 @@ qt/res/$(DEPDIR)/$(am__dirstamp):
 qt/res/bitcoin-qt-res.$(OBJEXT): qt/res/$(am__dirstamp) \
 	qt/res/$(DEPDIR)/$(am__dirstamp)
 
-qt/itasecoin-qt$(EXEEXT): $(qt_itasecoin_qt_OBJECTS) $(qt_itasecoin_qt_DEPENDENCIES) $(EXTRA_qt_itasecoin_qt_DEPENDENCIES) qt/$(am__dirstamp)
-	@rm -f qt/itasecoin-qt$(EXEEXT)
-	$(AM_V_OBJCXXLD)$(qt_itasecoin_qt_LINK) $(qt_itasecoin_qt_OBJECTS) $(qt_itasecoin_qt_LDADD) $(LIBS)
+qt/itasecore-qt$(EXEEXT): $(qt_itasecore_qt_OBJECTS) $(qt_itasecore_qt_DEPENDENCIES) $(EXTRA_qt_itasecore_qt_DEPENDENCIES) qt/$(am__dirstamp)
+	@rm -f qt/itasecore-qt$(EXEEXT)
+	$(AM_V_OBJCXXLD)$(qt_itasecore_qt_LINK) $(qt_itasecore_qt_OBJECTS) $(qt_itasecore_qt_LDADD) $(LIBS)
 qt/test/$(am__dirstamp):
 	@$(MKDIR_P) qt/test
 	@: > qt/test/$(am__dirstamp)
 qt/test/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) qt/test/$(DEPDIR)
 	@: > qt/test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_itasecoin_qt-compattests.$(OBJEXT):  \
+qt/test/qt_test_test_itasecore_qt-compattests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_itasecoin_qt-rpcnestedtests.$(OBJEXT):  \
+qt/test/qt_test_test_itasecore_qt-rpcnestedtests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_itasecoin_qt-test_main.$(OBJEXT):  \
+qt/test/qt_test_test_itasecore_qt-test_main.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_itasecoin_qt-uritests.$(OBJEXT):  \
+qt/test/qt_test_test_itasecore_qt-uritests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
 test/$(am__dirstamp):
 	@$(MKDIR_P) test
@@ -3695,11 +3695,11 @@ test/$(am__dirstamp):
 test/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) test/$(DEPDIR)
 	@: > test/$(DEPDIR)/$(am__dirstamp)
-test/qt_test_test_itasecoin_qt-test_bitcoin.$(OBJEXT):  \
+test/qt_test_test_itasecore_qt-test_bitcoin.$(OBJEXT):  \
 	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_itasecoin_qt-paymentservertests.$(OBJEXT):  \
+qt/test/qt_test_test_itasecore_qt-paymentservertests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_itasecoin_qt-wallettests.$(OBJEXT):  \
+qt/test/qt_test_test_itasecore_qt-wallettests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
 wallet/test/$(am__dirstamp):
 	@$(MKDIR_P) wallet/test
@@ -3707,23 +3707,23 @@ wallet/test/$(am__dirstamp):
 wallet/test/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) wallet/test/$(DEPDIR)
 	@: > wallet/test/$(DEPDIR)/$(am__dirstamp)
-wallet/test/qt_test_test_itasecoin_qt-wallet_test_fixture.$(OBJEXT):  \
+wallet/test/qt_test_test_itasecore_qt-wallet_test_fixture.$(OBJEXT):  \
 	wallet/test/$(am__dirstamp) \
 	wallet/test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_itasecoin_qt-moc_compattests.$(OBJEXT):  \
+qt/test/qt_test_test_itasecore_qt-moc_compattests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_itasecoin_qt-moc_rpcnestedtests.$(OBJEXT):  \
+qt/test/qt_test_test_itasecore_qt-moc_rpcnestedtests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_itasecoin_qt-moc_uritests.$(OBJEXT):  \
+qt/test/qt_test_test_itasecore_qt-moc_uritests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_itasecoin_qt-moc_paymentservertests.$(OBJEXT):  \
+qt/test/qt_test_test_itasecore_qt-moc_paymentservertests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
-qt/test/qt_test_test_itasecoin_qt-moc_wallettests.$(OBJEXT):  \
+qt/test/qt_test_test_itasecore_qt-moc_wallettests.$(OBJEXT):  \
 	qt/test/$(am__dirstamp) qt/test/$(DEPDIR)/$(am__dirstamp)
 
-qt/test/test_itasecoin-qt$(EXEEXT): $(qt_test_test_itasecoin_qt_OBJECTS) $(qt_test_test_itasecoin_qt_DEPENDENCIES) $(EXTRA_qt_test_test_itasecoin_qt_DEPENDENCIES) qt/test/$(am__dirstamp)
-	@rm -f qt/test/test_itasecoin-qt$(EXEEXT)
-	$(AM_V_CXXLD)$(qt_test_test_itasecoin_qt_LINK) $(qt_test_test_itasecoin_qt_OBJECTS) $(qt_test_test_itasecoin_qt_LDADD) $(LIBS)
+qt/test/test_itasecore-qt$(EXEEXT): $(qt_test_test_itasecore_qt_OBJECTS) $(qt_test_test_itasecore_qt_DEPENDENCIES) $(EXTRA_qt_test_test_itasecore_qt_DEPENDENCIES) qt/test/$(am__dirstamp)
+	@rm -f qt/test/test_itasecore-qt$(EXEEXT)
+	$(AM_V_CXXLD)$(qt_test_test_itasecore_qt_LINK) $(qt_test_test_itasecore_qt_OBJECTS) $(qt_test_test_itasecore_qt_LDADD) $(LIBS)
 test/test_test_itasecoin-arith_uint256_tests.$(OBJEXT):  \
 	test/$(am__dirstamp) test/$(DEPDIR)/$(am__dirstamp)
 test/test_test_itasecoin-addrman_tests.$(OBJEXT):  \
@@ -3895,9 +3895,9 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/itasecoin_cli-bitcoin-cli.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/itasecoin_tx-bitcoin-tx.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/itasecoind-bitcoind.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/itasecore_cli-bitcoin-cli.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/itasecore_tx-bitcoin-tx.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/itasecored-bitcoind.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-base58.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-chainparams.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoin_common_a-coins.Po@am__quote@
@@ -4052,9 +4052,9 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@primitives/$(DEPDIR)/libbitcoin_consensus_a-transaction.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@primitives/$(DEPDIR)/libbitcoinconsensus_la-block.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@primitives/$(DEPDIR)/libbitcoinconsensus_la-transaction.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_itasecoin_qt-bitcoin.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_itasecoin_qt-macdockiconhandler.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_itasecoin_qt-macnotificationhandler.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_itasecore_qt-bitcoin.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_itasecore_qt-macdockiconhandler.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_itasecore_qt-macnotificationhandler.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-addressbookpage.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-addresstablemodel.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-askpassphrasedialog.Po@am__quote@
@@ -4153,17 +4153,17 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-walletmodeltransaction.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-walletview.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libbitcoinqt_a-winshutdownmonitor.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-compattests.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_compattests.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_paymentservertests.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_rpcnestedtests.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_uritests.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_wallettests.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-paymentservertests.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-rpcnestedtests.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-test_main.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-uritests.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-wallettests.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-compattests.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_compattests.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_paymentservertests.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_rpcnestedtests.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_uritests.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_wallettests.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-paymentservertests.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-rpcnestedtests.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-test_main.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-uritests.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-wallettests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@rpc/$(DEPDIR)/libbitcoin_cli_a-client.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@rpc/$(DEPDIR)/libbitcoin_server_a-blockchain.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@rpc/$(DEPDIR)/libbitcoin_server_a-mining.Po@am__quote@
@@ -4186,7 +4186,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libbitcoinconsensus_la-script_error.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@support/$(DEPDIR)/libbitcoin_util_a-cleanse.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@support/$(DEPDIR)/libbitcoin_util_a-lockedpool.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/qt_test_test_itasecoin_qt-test_bitcoin.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/qt_test_test_itasecore_qt-test_bitcoin.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_itasecoin-DoS_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_itasecoin-addrman_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_itasecoin-allocator_tests.Po@am__quote@
@@ -4253,7 +4253,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/$(DEPDIR)/libbitcoin_wallet_a-rpcwallet.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/$(DEPDIR)/libbitcoin_wallet_a-wallet.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/$(DEPDIR)/libbitcoin_wallet_a-walletdb.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@wallet/test/$(DEPDIR)/qt_test_test_itasecoin_qt-wallet_test_fixture.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@wallet/test/$(DEPDIR)/qt_test_test_itasecore_qt-wallet_test_fixture.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/test/$(DEPDIR)/test_test_itasecoin-accounting_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/test/$(DEPDIR)/test_test_itasecoin-crypto_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@wallet/test/$(DEPDIR)/test_test_itasecoin-wallet_test_fixture.Po@am__quote@
@@ -8094,243 +8094,243 @@ bench/bench_bench_itasecoin-coin_selection.obj: bench/coin_selection.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_itasecoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_itasecoin_CXXFLAGS) $(CXXFLAGS) -c -o bench/bench_bench_itasecoin-coin_selection.obj `if test -f 'bench/coin_selection.cpp'; then $(CYGPATH_W) 'bench/coin_selection.cpp'; else $(CYGPATH_W) '$(srcdir)/bench/coin_selection.cpp'; fi`
 
-itasecoin_cli-bitcoin-cli.o: bitcoin-cli.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecoin_cli_CPPFLAGS) $(CPPFLAGS) $(itasecoin_cli_CXXFLAGS) $(CXXFLAGS) -MT itasecoin_cli-bitcoin-cli.o -MD -MP -MF $(DEPDIR)/itasecoin_cli-bitcoin-cli.Tpo -c -o itasecoin_cli-bitcoin-cli.o `test -f 'bitcoin-cli.cpp' || echo '$(srcdir)/'`bitcoin-cli.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/itasecoin_cli-bitcoin-cli.Tpo $(DEPDIR)/itasecoin_cli-bitcoin-cli.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bitcoin-cli.cpp' object='itasecoin_cli-bitcoin-cli.o' libtool=no @AMDEPBACKSLASH@
+itasecore_cli-bitcoin-cli.o: bitcoin-cli.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecore_cli_CPPFLAGS) $(CPPFLAGS) $(itasecore_cli_CXXFLAGS) $(CXXFLAGS) -MT itasecore_cli-bitcoin-cli.o -MD -MP -MF $(DEPDIR)/itasecore_cli-bitcoin-cli.Tpo -c -o itasecore_cli-bitcoin-cli.o `test -f 'bitcoin-cli.cpp' || echo '$(srcdir)/'`bitcoin-cli.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/itasecore_cli-bitcoin-cli.Tpo $(DEPDIR)/itasecore_cli-bitcoin-cli.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bitcoin-cli.cpp' object='itasecore_cli-bitcoin-cli.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecoin_cli_CPPFLAGS) $(CPPFLAGS) $(itasecoin_cli_CXXFLAGS) $(CXXFLAGS) -c -o itasecoin_cli-bitcoin-cli.o `test -f 'bitcoin-cli.cpp' || echo '$(srcdir)/'`bitcoin-cli.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecore_cli_CPPFLAGS) $(CPPFLAGS) $(itasecore_cli_CXXFLAGS) $(CXXFLAGS) -c -o itasecore_cli-bitcoin-cli.o `test -f 'bitcoin-cli.cpp' || echo '$(srcdir)/'`bitcoin-cli.cpp
 
-itasecoin_cli-bitcoin-cli.obj: bitcoin-cli.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecoin_cli_CPPFLAGS) $(CPPFLAGS) $(itasecoin_cli_CXXFLAGS) $(CXXFLAGS) -MT itasecoin_cli-bitcoin-cli.obj -MD -MP -MF $(DEPDIR)/itasecoin_cli-bitcoin-cli.Tpo -c -o itasecoin_cli-bitcoin-cli.obj `if test -f 'bitcoin-cli.cpp'; then $(CYGPATH_W) 'bitcoin-cli.cpp'; else $(CYGPATH_W) '$(srcdir)/bitcoin-cli.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/itasecoin_cli-bitcoin-cli.Tpo $(DEPDIR)/itasecoin_cli-bitcoin-cli.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bitcoin-cli.cpp' object='itasecoin_cli-bitcoin-cli.obj' libtool=no @AMDEPBACKSLASH@
+itasecore_cli-bitcoin-cli.obj: bitcoin-cli.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecore_cli_CPPFLAGS) $(CPPFLAGS) $(itasecore_cli_CXXFLAGS) $(CXXFLAGS) -MT itasecore_cli-bitcoin-cli.obj -MD -MP -MF $(DEPDIR)/itasecore_cli-bitcoin-cli.Tpo -c -o itasecore_cli-bitcoin-cli.obj `if test -f 'bitcoin-cli.cpp'; then $(CYGPATH_W) 'bitcoin-cli.cpp'; else $(CYGPATH_W) '$(srcdir)/bitcoin-cli.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/itasecore_cli-bitcoin-cli.Tpo $(DEPDIR)/itasecore_cli-bitcoin-cli.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bitcoin-cli.cpp' object='itasecore_cli-bitcoin-cli.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecoin_cli_CPPFLAGS) $(CPPFLAGS) $(itasecoin_cli_CXXFLAGS) $(CXXFLAGS) -c -o itasecoin_cli-bitcoin-cli.obj `if test -f 'bitcoin-cli.cpp'; then $(CYGPATH_W) 'bitcoin-cli.cpp'; else $(CYGPATH_W) '$(srcdir)/bitcoin-cli.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecore_cli_CPPFLAGS) $(CPPFLAGS) $(itasecore_cli_CXXFLAGS) $(CXXFLAGS) -c -o itasecore_cli-bitcoin-cli.obj `if test -f 'bitcoin-cli.cpp'; then $(CYGPATH_W) 'bitcoin-cli.cpp'; else $(CYGPATH_W) '$(srcdir)/bitcoin-cli.cpp'; fi`
 
-itasecoin_tx-bitcoin-tx.o: bitcoin-tx.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecoin_tx_CPPFLAGS) $(CPPFLAGS) $(itasecoin_tx_CXXFLAGS) $(CXXFLAGS) -MT itasecoin_tx-bitcoin-tx.o -MD -MP -MF $(DEPDIR)/itasecoin_tx-bitcoin-tx.Tpo -c -o itasecoin_tx-bitcoin-tx.o `test -f 'bitcoin-tx.cpp' || echo '$(srcdir)/'`bitcoin-tx.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/itasecoin_tx-bitcoin-tx.Tpo $(DEPDIR)/itasecoin_tx-bitcoin-tx.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bitcoin-tx.cpp' object='itasecoin_tx-bitcoin-tx.o' libtool=no @AMDEPBACKSLASH@
+itasecore_tx-bitcoin-tx.o: bitcoin-tx.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecore_tx_CPPFLAGS) $(CPPFLAGS) $(itasecore_tx_CXXFLAGS) $(CXXFLAGS) -MT itasecore_tx-bitcoin-tx.o -MD -MP -MF $(DEPDIR)/itasecore_tx-bitcoin-tx.Tpo -c -o itasecore_tx-bitcoin-tx.o `test -f 'bitcoin-tx.cpp' || echo '$(srcdir)/'`bitcoin-tx.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/itasecore_tx-bitcoin-tx.Tpo $(DEPDIR)/itasecore_tx-bitcoin-tx.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bitcoin-tx.cpp' object='itasecore_tx-bitcoin-tx.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecoin_tx_CPPFLAGS) $(CPPFLAGS) $(itasecoin_tx_CXXFLAGS) $(CXXFLAGS) -c -o itasecoin_tx-bitcoin-tx.o `test -f 'bitcoin-tx.cpp' || echo '$(srcdir)/'`bitcoin-tx.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecore_tx_CPPFLAGS) $(CPPFLAGS) $(itasecore_tx_CXXFLAGS) $(CXXFLAGS) -c -o itasecore_tx-bitcoin-tx.o `test -f 'bitcoin-tx.cpp' || echo '$(srcdir)/'`bitcoin-tx.cpp
 
-itasecoin_tx-bitcoin-tx.obj: bitcoin-tx.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecoin_tx_CPPFLAGS) $(CPPFLAGS) $(itasecoin_tx_CXXFLAGS) $(CXXFLAGS) -MT itasecoin_tx-bitcoin-tx.obj -MD -MP -MF $(DEPDIR)/itasecoin_tx-bitcoin-tx.Tpo -c -o itasecoin_tx-bitcoin-tx.obj `if test -f 'bitcoin-tx.cpp'; then $(CYGPATH_W) 'bitcoin-tx.cpp'; else $(CYGPATH_W) '$(srcdir)/bitcoin-tx.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/itasecoin_tx-bitcoin-tx.Tpo $(DEPDIR)/itasecoin_tx-bitcoin-tx.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bitcoin-tx.cpp' object='itasecoin_tx-bitcoin-tx.obj' libtool=no @AMDEPBACKSLASH@
+itasecore_tx-bitcoin-tx.obj: bitcoin-tx.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecore_tx_CPPFLAGS) $(CPPFLAGS) $(itasecore_tx_CXXFLAGS) $(CXXFLAGS) -MT itasecore_tx-bitcoin-tx.obj -MD -MP -MF $(DEPDIR)/itasecore_tx-bitcoin-tx.Tpo -c -o itasecore_tx-bitcoin-tx.obj `if test -f 'bitcoin-tx.cpp'; then $(CYGPATH_W) 'bitcoin-tx.cpp'; else $(CYGPATH_W) '$(srcdir)/bitcoin-tx.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/itasecore_tx-bitcoin-tx.Tpo $(DEPDIR)/itasecore_tx-bitcoin-tx.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bitcoin-tx.cpp' object='itasecore_tx-bitcoin-tx.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecoin_tx_CPPFLAGS) $(CPPFLAGS) $(itasecoin_tx_CXXFLAGS) $(CXXFLAGS) -c -o itasecoin_tx-bitcoin-tx.obj `if test -f 'bitcoin-tx.cpp'; then $(CYGPATH_W) 'bitcoin-tx.cpp'; else $(CYGPATH_W) '$(srcdir)/bitcoin-tx.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecore_tx_CPPFLAGS) $(CPPFLAGS) $(itasecore_tx_CXXFLAGS) $(CXXFLAGS) -c -o itasecore_tx-bitcoin-tx.obj `if test -f 'bitcoin-tx.cpp'; then $(CYGPATH_W) 'bitcoin-tx.cpp'; else $(CYGPATH_W) '$(srcdir)/bitcoin-tx.cpp'; fi`
 
-itasecoind-bitcoind.o: bitcoind.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecoind_CPPFLAGS) $(CPPFLAGS) $(itasecoind_CXXFLAGS) $(CXXFLAGS) -MT itasecoind-bitcoind.o -MD -MP -MF $(DEPDIR)/itasecoind-bitcoind.Tpo -c -o itasecoind-bitcoind.o `test -f 'bitcoind.cpp' || echo '$(srcdir)/'`bitcoind.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/itasecoind-bitcoind.Tpo $(DEPDIR)/itasecoind-bitcoind.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bitcoind.cpp' object='itasecoind-bitcoind.o' libtool=no @AMDEPBACKSLASH@
+itasecored-bitcoind.o: bitcoind.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecored_CPPFLAGS) $(CPPFLAGS) $(itasecored_CXXFLAGS) $(CXXFLAGS) -MT itasecored-bitcoind.o -MD -MP -MF $(DEPDIR)/itasecored-bitcoind.Tpo -c -o itasecored-bitcoind.o `test -f 'bitcoind.cpp' || echo '$(srcdir)/'`bitcoind.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/itasecored-bitcoind.Tpo $(DEPDIR)/itasecored-bitcoind.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bitcoind.cpp' object='itasecored-bitcoind.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecoind_CPPFLAGS) $(CPPFLAGS) $(itasecoind_CXXFLAGS) $(CXXFLAGS) -c -o itasecoind-bitcoind.o `test -f 'bitcoind.cpp' || echo '$(srcdir)/'`bitcoind.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecored_CPPFLAGS) $(CPPFLAGS) $(itasecored_CXXFLAGS) $(CXXFLAGS) -c -o itasecored-bitcoind.o `test -f 'bitcoind.cpp' || echo '$(srcdir)/'`bitcoind.cpp
 
-itasecoind-bitcoind.obj: bitcoind.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecoind_CPPFLAGS) $(CPPFLAGS) $(itasecoind_CXXFLAGS) $(CXXFLAGS) -MT itasecoind-bitcoind.obj -MD -MP -MF $(DEPDIR)/itasecoind-bitcoind.Tpo -c -o itasecoind-bitcoind.obj `if test -f 'bitcoind.cpp'; then $(CYGPATH_W) 'bitcoind.cpp'; else $(CYGPATH_W) '$(srcdir)/bitcoind.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/itasecoind-bitcoind.Tpo $(DEPDIR)/itasecoind-bitcoind.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bitcoind.cpp' object='itasecoind-bitcoind.obj' libtool=no @AMDEPBACKSLASH@
+itasecored-bitcoind.obj: bitcoind.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecored_CPPFLAGS) $(CPPFLAGS) $(itasecored_CXXFLAGS) $(CXXFLAGS) -MT itasecored-bitcoind.obj -MD -MP -MF $(DEPDIR)/itasecored-bitcoind.Tpo -c -o itasecored-bitcoind.obj `if test -f 'bitcoind.cpp'; then $(CYGPATH_W) 'bitcoind.cpp'; else $(CYGPATH_W) '$(srcdir)/bitcoind.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/itasecored-bitcoind.Tpo $(DEPDIR)/itasecored-bitcoind.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bitcoind.cpp' object='itasecored-bitcoind.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecoind_CPPFLAGS) $(CPPFLAGS) $(itasecoind_CXXFLAGS) $(CXXFLAGS) -c -o itasecoind-bitcoind.obj `if test -f 'bitcoind.cpp'; then $(CYGPATH_W) 'bitcoind.cpp'; else $(CYGPATH_W) '$(srcdir)/bitcoind.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(itasecored_CPPFLAGS) $(CPPFLAGS) $(itasecored_CXXFLAGS) $(CXXFLAGS) -c -o itasecored-bitcoind.obj `if test -f 'bitcoind.cpp'; then $(CYGPATH_W) 'bitcoind.cpp'; else $(CYGPATH_W) '$(srcdir)/bitcoind.cpp'; fi`
 
-qt/qt_itasecoin_qt-bitcoin.o: qt/bitcoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_itasecoin_qt-bitcoin.o -MD -MP -MF qt/$(DEPDIR)/qt_itasecoin_qt-bitcoin.Tpo -c -o qt/qt_itasecoin_qt-bitcoin.o `test -f 'qt/bitcoin.cpp' || echo '$(srcdir)/'`qt/bitcoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_itasecoin_qt-bitcoin.Tpo qt/$(DEPDIR)/qt_itasecoin_qt-bitcoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/bitcoin.cpp' object='qt/qt_itasecoin_qt-bitcoin.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_itasecore_qt-bitcoin.o: qt/bitcoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_itasecore_qt-bitcoin.o -MD -MP -MF qt/$(DEPDIR)/qt_itasecore_qt-bitcoin.Tpo -c -o qt/qt_itasecore_qt-bitcoin.o `test -f 'qt/bitcoin.cpp' || echo '$(srcdir)/'`qt/bitcoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_itasecore_qt-bitcoin.Tpo qt/$(DEPDIR)/qt_itasecore_qt-bitcoin.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/bitcoin.cpp' object='qt/qt_itasecore_qt-bitcoin.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_itasecoin_qt-bitcoin.o `test -f 'qt/bitcoin.cpp' || echo '$(srcdir)/'`qt/bitcoin.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_itasecore_qt-bitcoin.o `test -f 'qt/bitcoin.cpp' || echo '$(srcdir)/'`qt/bitcoin.cpp
 
-qt/qt_itasecoin_qt-bitcoin.obj: qt/bitcoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_itasecoin_qt-bitcoin.obj -MD -MP -MF qt/$(DEPDIR)/qt_itasecoin_qt-bitcoin.Tpo -c -o qt/qt_itasecoin_qt-bitcoin.obj `if test -f 'qt/bitcoin.cpp'; then $(CYGPATH_W) 'qt/bitcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/bitcoin.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_itasecoin_qt-bitcoin.Tpo qt/$(DEPDIR)/qt_itasecoin_qt-bitcoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/bitcoin.cpp' object='qt/qt_itasecoin_qt-bitcoin.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_itasecore_qt-bitcoin.obj: qt/bitcoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_itasecore_qt-bitcoin.obj -MD -MP -MF qt/$(DEPDIR)/qt_itasecore_qt-bitcoin.Tpo -c -o qt/qt_itasecore_qt-bitcoin.obj `if test -f 'qt/bitcoin.cpp'; then $(CYGPATH_W) 'qt/bitcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/bitcoin.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_itasecore_qt-bitcoin.Tpo qt/$(DEPDIR)/qt_itasecore_qt-bitcoin.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/bitcoin.cpp' object='qt/qt_itasecore_qt-bitcoin.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_itasecoin_qt-bitcoin.obj `if test -f 'qt/bitcoin.cpp'; then $(CYGPATH_W) 'qt/bitcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/bitcoin.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_itasecore_qt-bitcoin.obj `if test -f 'qt/bitcoin.cpp'; then $(CYGPATH_W) 'qt/bitcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/bitcoin.cpp'; fi`
 
-qt/test/qt_test_test_itasecoin_qt-compattests.o: qt/test/compattests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-compattests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-compattests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-compattests.o `test -f 'qt/test/compattests.cpp' || echo '$(srcdir)/'`qt/test/compattests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-compattests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-compattests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/compattests.cpp' object='qt/test/qt_test_test_itasecoin_qt-compattests.o' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-compattests.o: qt/test/compattests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-compattests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-compattests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-compattests.o `test -f 'qt/test/compattests.cpp' || echo '$(srcdir)/'`qt/test/compattests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-compattests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-compattests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/compattests.cpp' object='qt/test/qt_test_test_itasecore_qt-compattests.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-compattests.o `test -f 'qt/test/compattests.cpp' || echo '$(srcdir)/'`qt/test/compattests.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-compattests.o `test -f 'qt/test/compattests.cpp' || echo '$(srcdir)/'`qt/test/compattests.cpp
 
-qt/test/qt_test_test_itasecoin_qt-compattests.obj: qt/test/compattests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-compattests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-compattests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-compattests.obj `if test -f 'qt/test/compattests.cpp'; then $(CYGPATH_W) 'qt/test/compattests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/compattests.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-compattests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-compattests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/compattests.cpp' object='qt/test/qt_test_test_itasecoin_qt-compattests.obj' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-compattests.obj: qt/test/compattests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-compattests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-compattests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-compattests.obj `if test -f 'qt/test/compattests.cpp'; then $(CYGPATH_W) 'qt/test/compattests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/compattests.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-compattests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-compattests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/compattests.cpp' object='qt/test/qt_test_test_itasecore_qt-compattests.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-compattests.obj `if test -f 'qt/test/compattests.cpp'; then $(CYGPATH_W) 'qt/test/compattests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/compattests.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-compattests.obj `if test -f 'qt/test/compattests.cpp'; then $(CYGPATH_W) 'qt/test/compattests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/compattests.cpp'; fi`
 
-qt/test/qt_test_test_itasecoin_qt-rpcnestedtests.o: qt/test/rpcnestedtests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-rpcnestedtests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-rpcnestedtests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-rpcnestedtests.o `test -f 'qt/test/rpcnestedtests.cpp' || echo '$(srcdir)/'`qt/test/rpcnestedtests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-rpcnestedtests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-rpcnestedtests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/rpcnestedtests.cpp' object='qt/test/qt_test_test_itasecoin_qt-rpcnestedtests.o' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-rpcnestedtests.o: qt/test/rpcnestedtests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-rpcnestedtests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-rpcnestedtests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-rpcnestedtests.o `test -f 'qt/test/rpcnestedtests.cpp' || echo '$(srcdir)/'`qt/test/rpcnestedtests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-rpcnestedtests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-rpcnestedtests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/rpcnestedtests.cpp' object='qt/test/qt_test_test_itasecore_qt-rpcnestedtests.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-rpcnestedtests.o `test -f 'qt/test/rpcnestedtests.cpp' || echo '$(srcdir)/'`qt/test/rpcnestedtests.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-rpcnestedtests.o `test -f 'qt/test/rpcnestedtests.cpp' || echo '$(srcdir)/'`qt/test/rpcnestedtests.cpp
 
-qt/test/qt_test_test_itasecoin_qt-rpcnestedtests.obj: qt/test/rpcnestedtests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-rpcnestedtests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-rpcnestedtests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-rpcnestedtests.obj `if test -f 'qt/test/rpcnestedtests.cpp'; then $(CYGPATH_W) 'qt/test/rpcnestedtests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/rpcnestedtests.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-rpcnestedtests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-rpcnestedtests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/rpcnestedtests.cpp' object='qt/test/qt_test_test_itasecoin_qt-rpcnestedtests.obj' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-rpcnestedtests.obj: qt/test/rpcnestedtests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-rpcnestedtests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-rpcnestedtests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-rpcnestedtests.obj `if test -f 'qt/test/rpcnestedtests.cpp'; then $(CYGPATH_W) 'qt/test/rpcnestedtests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/rpcnestedtests.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-rpcnestedtests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-rpcnestedtests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/rpcnestedtests.cpp' object='qt/test/qt_test_test_itasecore_qt-rpcnestedtests.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-rpcnestedtests.obj `if test -f 'qt/test/rpcnestedtests.cpp'; then $(CYGPATH_W) 'qt/test/rpcnestedtests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/rpcnestedtests.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-rpcnestedtests.obj `if test -f 'qt/test/rpcnestedtests.cpp'; then $(CYGPATH_W) 'qt/test/rpcnestedtests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/rpcnestedtests.cpp'; fi`
 
-qt/test/qt_test_test_itasecoin_qt-test_main.o: qt/test/test_main.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-test_main.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-test_main.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-test_main.o `test -f 'qt/test/test_main.cpp' || echo '$(srcdir)/'`qt/test/test_main.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-test_main.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-test_main.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/test_main.cpp' object='qt/test/qt_test_test_itasecoin_qt-test_main.o' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-test_main.o: qt/test/test_main.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-test_main.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-test_main.Tpo -c -o qt/test/qt_test_test_itasecore_qt-test_main.o `test -f 'qt/test/test_main.cpp' || echo '$(srcdir)/'`qt/test/test_main.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-test_main.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-test_main.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/test_main.cpp' object='qt/test/qt_test_test_itasecore_qt-test_main.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-test_main.o `test -f 'qt/test/test_main.cpp' || echo '$(srcdir)/'`qt/test/test_main.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-test_main.o `test -f 'qt/test/test_main.cpp' || echo '$(srcdir)/'`qt/test/test_main.cpp
 
-qt/test/qt_test_test_itasecoin_qt-test_main.obj: qt/test/test_main.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-test_main.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-test_main.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-test_main.obj `if test -f 'qt/test/test_main.cpp'; then $(CYGPATH_W) 'qt/test/test_main.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/test_main.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-test_main.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-test_main.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/test_main.cpp' object='qt/test/qt_test_test_itasecoin_qt-test_main.obj' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-test_main.obj: qt/test/test_main.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-test_main.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-test_main.Tpo -c -o qt/test/qt_test_test_itasecore_qt-test_main.obj `if test -f 'qt/test/test_main.cpp'; then $(CYGPATH_W) 'qt/test/test_main.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/test_main.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-test_main.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-test_main.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/test_main.cpp' object='qt/test/qt_test_test_itasecore_qt-test_main.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-test_main.obj `if test -f 'qt/test/test_main.cpp'; then $(CYGPATH_W) 'qt/test/test_main.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/test_main.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-test_main.obj `if test -f 'qt/test/test_main.cpp'; then $(CYGPATH_W) 'qt/test/test_main.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/test_main.cpp'; fi`
 
-qt/test/qt_test_test_itasecoin_qt-uritests.o: qt/test/uritests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-uritests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-uritests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-uritests.o `test -f 'qt/test/uritests.cpp' || echo '$(srcdir)/'`qt/test/uritests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-uritests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-uritests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/uritests.cpp' object='qt/test/qt_test_test_itasecoin_qt-uritests.o' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-uritests.o: qt/test/uritests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-uritests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-uritests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-uritests.o `test -f 'qt/test/uritests.cpp' || echo '$(srcdir)/'`qt/test/uritests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-uritests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-uritests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/uritests.cpp' object='qt/test/qt_test_test_itasecore_qt-uritests.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-uritests.o `test -f 'qt/test/uritests.cpp' || echo '$(srcdir)/'`qt/test/uritests.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-uritests.o `test -f 'qt/test/uritests.cpp' || echo '$(srcdir)/'`qt/test/uritests.cpp
 
-qt/test/qt_test_test_itasecoin_qt-uritests.obj: qt/test/uritests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-uritests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-uritests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-uritests.obj `if test -f 'qt/test/uritests.cpp'; then $(CYGPATH_W) 'qt/test/uritests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/uritests.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-uritests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-uritests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/uritests.cpp' object='qt/test/qt_test_test_itasecoin_qt-uritests.obj' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-uritests.obj: qt/test/uritests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-uritests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-uritests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-uritests.obj `if test -f 'qt/test/uritests.cpp'; then $(CYGPATH_W) 'qt/test/uritests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/uritests.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-uritests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-uritests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/uritests.cpp' object='qt/test/qt_test_test_itasecore_qt-uritests.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-uritests.obj `if test -f 'qt/test/uritests.cpp'; then $(CYGPATH_W) 'qt/test/uritests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/uritests.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-uritests.obj `if test -f 'qt/test/uritests.cpp'; then $(CYGPATH_W) 'qt/test/uritests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/uritests.cpp'; fi`
 
-test/qt_test_test_itasecoin_qt-test_bitcoin.o: test/test_bitcoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT test/qt_test_test_itasecoin_qt-test_bitcoin.o -MD -MP -MF test/$(DEPDIR)/qt_test_test_itasecoin_qt-test_bitcoin.Tpo -c -o test/qt_test_test_itasecoin_qt-test_bitcoin.o `test -f 'test/test_bitcoin.cpp' || echo '$(srcdir)/'`test/test_bitcoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/qt_test_test_itasecoin_qt-test_bitcoin.Tpo test/$(DEPDIR)/qt_test_test_itasecoin_qt-test_bitcoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/test_bitcoin.cpp' object='test/qt_test_test_itasecoin_qt-test_bitcoin.o' libtool=no @AMDEPBACKSLASH@
+test/qt_test_test_itasecore_qt-test_bitcoin.o: test/test_bitcoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT test/qt_test_test_itasecore_qt-test_bitcoin.o -MD -MP -MF test/$(DEPDIR)/qt_test_test_itasecore_qt-test_bitcoin.Tpo -c -o test/qt_test_test_itasecore_qt-test_bitcoin.o `test -f 'test/test_bitcoin.cpp' || echo '$(srcdir)/'`test/test_bitcoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/qt_test_test_itasecore_qt-test_bitcoin.Tpo test/$(DEPDIR)/qt_test_test_itasecore_qt-test_bitcoin.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/test_bitcoin.cpp' object='test/qt_test_test_itasecore_qt-test_bitcoin.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o test/qt_test_test_itasecoin_qt-test_bitcoin.o `test -f 'test/test_bitcoin.cpp' || echo '$(srcdir)/'`test/test_bitcoin.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o test/qt_test_test_itasecore_qt-test_bitcoin.o `test -f 'test/test_bitcoin.cpp' || echo '$(srcdir)/'`test/test_bitcoin.cpp
 
-test/qt_test_test_itasecoin_qt-test_bitcoin.obj: test/test_bitcoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT test/qt_test_test_itasecoin_qt-test_bitcoin.obj -MD -MP -MF test/$(DEPDIR)/qt_test_test_itasecoin_qt-test_bitcoin.Tpo -c -o test/qt_test_test_itasecoin_qt-test_bitcoin.obj `if test -f 'test/test_bitcoin.cpp'; then $(CYGPATH_W) 'test/test_bitcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/test/test_bitcoin.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/qt_test_test_itasecoin_qt-test_bitcoin.Tpo test/$(DEPDIR)/qt_test_test_itasecoin_qt-test_bitcoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/test_bitcoin.cpp' object='test/qt_test_test_itasecoin_qt-test_bitcoin.obj' libtool=no @AMDEPBACKSLASH@
+test/qt_test_test_itasecore_qt-test_bitcoin.obj: test/test_bitcoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT test/qt_test_test_itasecore_qt-test_bitcoin.obj -MD -MP -MF test/$(DEPDIR)/qt_test_test_itasecore_qt-test_bitcoin.Tpo -c -o test/qt_test_test_itasecore_qt-test_bitcoin.obj `if test -f 'test/test_bitcoin.cpp'; then $(CYGPATH_W) 'test/test_bitcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/test/test_bitcoin.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/qt_test_test_itasecore_qt-test_bitcoin.Tpo test/$(DEPDIR)/qt_test_test_itasecore_qt-test_bitcoin.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/test_bitcoin.cpp' object='test/qt_test_test_itasecore_qt-test_bitcoin.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o test/qt_test_test_itasecoin_qt-test_bitcoin.obj `if test -f 'test/test_bitcoin.cpp'; then $(CYGPATH_W) 'test/test_bitcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/test/test_bitcoin.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o test/qt_test_test_itasecore_qt-test_bitcoin.obj `if test -f 'test/test_bitcoin.cpp'; then $(CYGPATH_W) 'test/test_bitcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/test/test_bitcoin.cpp'; fi`
 
-qt/test/qt_test_test_itasecoin_qt-paymentservertests.o: qt/test/paymentservertests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-paymentservertests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-paymentservertests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-paymentservertests.o `test -f 'qt/test/paymentservertests.cpp' || echo '$(srcdir)/'`qt/test/paymentservertests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-paymentservertests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-paymentservertests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/paymentservertests.cpp' object='qt/test/qt_test_test_itasecoin_qt-paymentservertests.o' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-paymentservertests.o: qt/test/paymentservertests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-paymentservertests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-paymentservertests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-paymentservertests.o `test -f 'qt/test/paymentservertests.cpp' || echo '$(srcdir)/'`qt/test/paymentservertests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-paymentservertests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-paymentservertests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/paymentservertests.cpp' object='qt/test/qt_test_test_itasecore_qt-paymentservertests.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-paymentservertests.o `test -f 'qt/test/paymentservertests.cpp' || echo '$(srcdir)/'`qt/test/paymentservertests.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-paymentservertests.o `test -f 'qt/test/paymentservertests.cpp' || echo '$(srcdir)/'`qt/test/paymentservertests.cpp
 
-qt/test/qt_test_test_itasecoin_qt-paymentservertests.obj: qt/test/paymentservertests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-paymentservertests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-paymentservertests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-paymentservertests.obj `if test -f 'qt/test/paymentservertests.cpp'; then $(CYGPATH_W) 'qt/test/paymentservertests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/paymentservertests.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-paymentservertests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-paymentservertests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/paymentservertests.cpp' object='qt/test/qt_test_test_itasecoin_qt-paymentservertests.obj' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-paymentservertests.obj: qt/test/paymentservertests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-paymentservertests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-paymentservertests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-paymentservertests.obj `if test -f 'qt/test/paymentservertests.cpp'; then $(CYGPATH_W) 'qt/test/paymentservertests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/paymentservertests.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-paymentservertests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-paymentservertests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/paymentservertests.cpp' object='qt/test/qt_test_test_itasecore_qt-paymentservertests.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-paymentservertests.obj `if test -f 'qt/test/paymentservertests.cpp'; then $(CYGPATH_W) 'qt/test/paymentservertests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/paymentservertests.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-paymentservertests.obj `if test -f 'qt/test/paymentservertests.cpp'; then $(CYGPATH_W) 'qt/test/paymentservertests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/paymentservertests.cpp'; fi`
 
-qt/test/qt_test_test_itasecoin_qt-wallettests.o: qt/test/wallettests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-wallettests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-wallettests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-wallettests.o `test -f 'qt/test/wallettests.cpp' || echo '$(srcdir)/'`qt/test/wallettests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-wallettests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-wallettests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/wallettests.cpp' object='qt/test/qt_test_test_itasecoin_qt-wallettests.o' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-wallettests.o: qt/test/wallettests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-wallettests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-wallettests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-wallettests.o `test -f 'qt/test/wallettests.cpp' || echo '$(srcdir)/'`qt/test/wallettests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-wallettests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-wallettests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/wallettests.cpp' object='qt/test/qt_test_test_itasecore_qt-wallettests.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-wallettests.o `test -f 'qt/test/wallettests.cpp' || echo '$(srcdir)/'`qt/test/wallettests.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-wallettests.o `test -f 'qt/test/wallettests.cpp' || echo '$(srcdir)/'`qt/test/wallettests.cpp
 
-qt/test/qt_test_test_itasecoin_qt-wallettests.obj: qt/test/wallettests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-wallettests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-wallettests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-wallettests.obj `if test -f 'qt/test/wallettests.cpp'; then $(CYGPATH_W) 'qt/test/wallettests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/wallettests.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-wallettests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-wallettests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/wallettests.cpp' object='qt/test/qt_test_test_itasecoin_qt-wallettests.obj' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-wallettests.obj: qt/test/wallettests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-wallettests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-wallettests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-wallettests.obj `if test -f 'qt/test/wallettests.cpp'; then $(CYGPATH_W) 'qt/test/wallettests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/wallettests.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-wallettests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-wallettests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/wallettests.cpp' object='qt/test/qt_test_test_itasecore_qt-wallettests.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-wallettests.obj `if test -f 'qt/test/wallettests.cpp'; then $(CYGPATH_W) 'qt/test/wallettests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/wallettests.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-wallettests.obj `if test -f 'qt/test/wallettests.cpp'; then $(CYGPATH_W) 'qt/test/wallettests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/wallettests.cpp'; fi`
 
-wallet/test/qt_test_test_itasecoin_qt-wallet_test_fixture.o: wallet/test/wallet_test_fixture.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT wallet/test/qt_test_test_itasecoin_qt-wallet_test_fixture.o -MD -MP -MF wallet/test/$(DEPDIR)/qt_test_test_itasecoin_qt-wallet_test_fixture.Tpo -c -o wallet/test/qt_test_test_itasecoin_qt-wallet_test_fixture.o `test -f 'wallet/test/wallet_test_fixture.cpp' || echo '$(srcdir)/'`wallet/test/wallet_test_fixture.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) wallet/test/$(DEPDIR)/qt_test_test_itasecoin_qt-wallet_test_fixture.Tpo wallet/test/$(DEPDIR)/qt_test_test_itasecoin_qt-wallet_test_fixture.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='wallet/test/wallet_test_fixture.cpp' object='wallet/test/qt_test_test_itasecoin_qt-wallet_test_fixture.o' libtool=no @AMDEPBACKSLASH@
+wallet/test/qt_test_test_itasecore_qt-wallet_test_fixture.o: wallet/test/wallet_test_fixture.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT wallet/test/qt_test_test_itasecore_qt-wallet_test_fixture.o -MD -MP -MF wallet/test/$(DEPDIR)/qt_test_test_itasecore_qt-wallet_test_fixture.Tpo -c -o wallet/test/qt_test_test_itasecore_qt-wallet_test_fixture.o `test -f 'wallet/test/wallet_test_fixture.cpp' || echo '$(srcdir)/'`wallet/test/wallet_test_fixture.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) wallet/test/$(DEPDIR)/qt_test_test_itasecore_qt-wallet_test_fixture.Tpo wallet/test/$(DEPDIR)/qt_test_test_itasecore_qt-wallet_test_fixture.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='wallet/test/wallet_test_fixture.cpp' object='wallet/test/qt_test_test_itasecore_qt-wallet_test_fixture.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/qt_test_test_itasecoin_qt-wallet_test_fixture.o `test -f 'wallet/test/wallet_test_fixture.cpp' || echo '$(srcdir)/'`wallet/test/wallet_test_fixture.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/qt_test_test_itasecore_qt-wallet_test_fixture.o `test -f 'wallet/test/wallet_test_fixture.cpp' || echo '$(srcdir)/'`wallet/test/wallet_test_fixture.cpp
 
-wallet/test/qt_test_test_itasecoin_qt-wallet_test_fixture.obj: wallet/test/wallet_test_fixture.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT wallet/test/qt_test_test_itasecoin_qt-wallet_test_fixture.obj -MD -MP -MF wallet/test/$(DEPDIR)/qt_test_test_itasecoin_qt-wallet_test_fixture.Tpo -c -o wallet/test/qt_test_test_itasecoin_qt-wallet_test_fixture.obj `if test -f 'wallet/test/wallet_test_fixture.cpp'; then $(CYGPATH_W) 'wallet/test/wallet_test_fixture.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/wallet_test_fixture.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) wallet/test/$(DEPDIR)/qt_test_test_itasecoin_qt-wallet_test_fixture.Tpo wallet/test/$(DEPDIR)/qt_test_test_itasecoin_qt-wallet_test_fixture.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='wallet/test/wallet_test_fixture.cpp' object='wallet/test/qt_test_test_itasecoin_qt-wallet_test_fixture.obj' libtool=no @AMDEPBACKSLASH@
+wallet/test/qt_test_test_itasecore_qt-wallet_test_fixture.obj: wallet/test/wallet_test_fixture.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT wallet/test/qt_test_test_itasecore_qt-wallet_test_fixture.obj -MD -MP -MF wallet/test/$(DEPDIR)/qt_test_test_itasecore_qt-wallet_test_fixture.Tpo -c -o wallet/test/qt_test_test_itasecore_qt-wallet_test_fixture.obj `if test -f 'wallet/test/wallet_test_fixture.cpp'; then $(CYGPATH_W) 'wallet/test/wallet_test_fixture.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/wallet_test_fixture.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) wallet/test/$(DEPDIR)/qt_test_test_itasecore_qt-wallet_test_fixture.Tpo wallet/test/$(DEPDIR)/qt_test_test_itasecore_qt-wallet_test_fixture.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='wallet/test/wallet_test_fixture.cpp' object='wallet/test/qt_test_test_itasecore_qt-wallet_test_fixture.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/qt_test_test_itasecoin_qt-wallet_test_fixture.obj `if test -f 'wallet/test/wallet_test_fixture.cpp'; then $(CYGPATH_W) 'wallet/test/wallet_test_fixture.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/wallet_test_fixture.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o wallet/test/qt_test_test_itasecore_qt-wallet_test_fixture.obj `if test -f 'wallet/test/wallet_test_fixture.cpp'; then $(CYGPATH_W) 'wallet/test/wallet_test_fixture.cpp'; else $(CYGPATH_W) '$(srcdir)/wallet/test/wallet_test_fixture.cpp'; fi`
 
-qt/test/qt_test_test_itasecoin_qt-moc_compattests.o: qt/test/moc_compattests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-moc_compattests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_compattests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-moc_compattests.o `test -f 'qt/test/moc_compattests.cpp' || echo '$(srcdir)/'`qt/test/moc_compattests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_compattests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_compattests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_compattests.cpp' object='qt/test/qt_test_test_itasecoin_qt-moc_compattests.o' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-moc_compattests.o: qt/test/moc_compattests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-moc_compattests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_compattests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-moc_compattests.o `test -f 'qt/test/moc_compattests.cpp' || echo '$(srcdir)/'`qt/test/moc_compattests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_compattests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_compattests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_compattests.cpp' object='qt/test/qt_test_test_itasecore_qt-moc_compattests.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-moc_compattests.o `test -f 'qt/test/moc_compattests.cpp' || echo '$(srcdir)/'`qt/test/moc_compattests.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-moc_compattests.o `test -f 'qt/test/moc_compattests.cpp' || echo '$(srcdir)/'`qt/test/moc_compattests.cpp
 
-qt/test/qt_test_test_itasecoin_qt-moc_compattests.obj: qt/test/moc_compattests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-moc_compattests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_compattests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-moc_compattests.obj `if test -f 'qt/test/moc_compattests.cpp'; then $(CYGPATH_W) 'qt/test/moc_compattests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_compattests.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_compattests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_compattests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_compattests.cpp' object='qt/test/qt_test_test_itasecoin_qt-moc_compattests.obj' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-moc_compattests.obj: qt/test/moc_compattests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-moc_compattests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_compattests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-moc_compattests.obj `if test -f 'qt/test/moc_compattests.cpp'; then $(CYGPATH_W) 'qt/test/moc_compattests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_compattests.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_compattests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_compattests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_compattests.cpp' object='qt/test/qt_test_test_itasecore_qt-moc_compattests.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-moc_compattests.obj `if test -f 'qt/test/moc_compattests.cpp'; then $(CYGPATH_W) 'qt/test/moc_compattests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_compattests.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-moc_compattests.obj `if test -f 'qt/test/moc_compattests.cpp'; then $(CYGPATH_W) 'qt/test/moc_compattests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_compattests.cpp'; fi`
 
-qt/test/qt_test_test_itasecoin_qt-moc_rpcnestedtests.o: qt/test/moc_rpcnestedtests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-moc_rpcnestedtests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_rpcnestedtests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-moc_rpcnestedtests.o `test -f 'qt/test/moc_rpcnestedtests.cpp' || echo '$(srcdir)/'`qt/test/moc_rpcnestedtests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_rpcnestedtests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_rpcnestedtests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_rpcnestedtests.cpp' object='qt/test/qt_test_test_itasecoin_qt-moc_rpcnestedtests.o' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-moc_rpcnestedtests.o: qt/test/moc_rpcnestedtests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-moc_rpcnestedtests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_rpcnestedtests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-moc_rpcnestedtests.o `test -f 'qt/test/moc_rpcnestedtests.cpp' || echo '$(srcdir)/'`qt/test/moc_rpcnestedtests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_rpcnestedtests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_rpcnestedtests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_rpcnestedtests.cpp' object='qt/test/qt_test_test_itasecore_qt-moc_rpcnestedtests.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-moc_rpcnestedtests.o `test -f 'qt/test/moc_rpcnestedtests.cpp' || echo '$(srcdir)/'`qt/test/moc_rpcnestedtests.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-moc_rpcnestedtests.o `test -f 'qt/test/moc_rpcnestedtests.cpp' || echo '$(srcdir)/'`qt/test/moc_rpcnestedtests.cpp
 
-qt/test/qt_test_test_itasecoin_qt-moc_rpcnestedtests.obj: qt/test/moc_rpcnestedtests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-moc_rpcnestedtests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_rpcnestedtests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-moc_rpcnestedtests.obj `if test -f 'qt/test/moc_rpcnestedtests.cpp'; then $(CYGPATH_W) 'qt/test/moc_rpcnestedtests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_rpcnestedtests.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_rpcnestedtests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_rpcnestedtests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_rpcnestedtests.cpp' object='qt/test/qt_test_test_itasecoin_qt-moc_rpcnestedtests.obj' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-moc_rpcnestedtests.obj: qt/test/moc_rpcnestedtests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-moc_rpcnestedtests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_rpcnestedtests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-moc_rpcnestedtests.obj `if test -f 'qt/test/moc_rpcnestedtests.cpp'; then $(CYGPATH_W) 'qt/test/moc_rpcnestedtests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_rpcnestedtests.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_rpcnestedtests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_rpcnestedtests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_rpcnestedtests.cpp' object='qt/test/qt_test_test_itasecore_qt-moc_rpcnestedtests.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-moc_rpcnestedtests.obj `if test -f 'qt/test/moc_rpcnestedtests.cpp'; then $(CYGPATH_W) 'qt/test/moc_rpcnestedtests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_rpcnestedtests.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-moc_rpcnestedtests.obj `if test -f 'qt/test/moc_rpcnestedtests.cpp'; then $(CYGPATH_W) 'qt/test/moc_rpcnestedtests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_rpcnestedtests.cpp'; fi`
 
-qt/test/qt_test_test_itasecoin_qt-moc_uritests.o: qt/test/moc_uritests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-moc_uritests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_uritests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-moc_uritests.o `test -f 'qt/test/moc_uritests.cpp' || echo '$(srcdir)/'`qt/test/moc_uritests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_uritests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_uritests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_uritests.cpp' object='qt/test/qt_test_test_itasecoin_qt-moc_uritests.o' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-moc_uritests.o: qt/test/moc_uritests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-moc_uritests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_uritests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-moc_uritests.o `test -f 'qt/test/moc_uritests.cpp' || echo '$(srcdir)/'`qt/test/moc_uritests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_uritests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_uritests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_uritests.cpp' object='qt/test/qt_test_test_itasecore_qt-moc_uritests.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-moc_uritests.o `test -f 'qt/test/moc_uritests.cpp' || echo '$(srcdir)/'`qt/test/moc_uritests.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-moc_uritests.o `test -f 'qt/test/moc_uritests.cpp' || echo '$(srcdir)/'`qt/test/moc_uritests.cpp
 
-qt/test/qt_test_test_itasecoin_qt-moc_uritests.obj: qt/test/moc_uritests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-moc_uritests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_uritests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-moc_uritests.obj `if test -f 'qt/test/moc_uritests.cpp'; then $(CYGPATH_W) 'qt/test/moc_uritests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_uritests.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_uritests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_uritests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_uritests.cpp' object='qt/test/qt_test_test_itasecoin_qt-moc_uritests.obj' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-moc_uritests.obj: qt/test/moc_uritests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-moc_uritests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_uritests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-moc_uritests.obj `if test -f 'qt/test/moc_uritests.cpp'; then $(CYGPATH_W) 'qt/test/moc_uritests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_uritests.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_uritests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_uritests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_uritests.cpp' object='qt/test/qt_test_test_itasecore_qt-moc_uritests.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-moc_uritests.obj `if test -f 'qt/test/moc_uritests.cpp'; then $(CYGPATH_W) 'qt/test/moc_uritests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_uritests.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-moc_uritests.obj `if test -f 'qt/test/moc_uritests.cpp'; then $(CYGPATH_W) 'qt/test/moc_uritests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_uritests.cpp'; fi`
 
-qt/test/qt_test_test_itasecoin_qt-moc_paymentservertests.o: qt/test/moc_paymentservertests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-moc_paymentservertests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_paymentservertests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-moc_paymentservertests.o `test -f 'qt/test/moc_paymentservertests.cpp' || echo '$(srcdir)/'`qt/test/moc_paymentservertests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_paymentservertests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_paymentservertests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_paymentservertests.cpp' object='qt/test/qt_test_test_itasecoin_qt-moc_paymentservertests.o' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-moc_paymentservertests.o: qt/test/moc_paymentservertests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-moc_paymentservertests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_paymentservertests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-moc_paymentservertests.o `test -f 'qt/test/moc_paymentservertests.cpp' || echo '$(srcdir)/'`qt/test/moc_paymentservertests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_paymentservertests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_paymentservertests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_paymentservertests.cpp' object='qt/test/qt_test_test_itasecore_qt-moc_paymentservertests.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-moc_paymentservertests.o `test -f 'qt/test/moc_paymentservertests.cpp' || echo '$(srcdir)/'`qt/test/moc_paymentservertests.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-moc_paymentservertests.o `test -f 'qt/test/moc_paymentservertests.cpp' || echo '$(srcdir)/'`qt/test/moc_paymentservertests.cpp
 
-qt/test/qt_test_test_itasecoin_qt-moc_paymentservertests.obj: qt/test/moc_paymentservertests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-moc_paymentservertests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_paymentservertests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-moc_paymentservertests.obj `if test -f 'qt/test/moc_paymentservertests.cpp'; then $(CYGPATH_W) 'qt/test/moc_paymentservertests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_paymentservertests.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_paymentservertests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_paymentservertests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_paymentservertests.cpp' object='qt/test/qt_test_test_itasecoin_qt-moc_paymentservertests.obj' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-moc_paymentservertests.obj: qt/test/moc_paymentservertests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-moc_paymentservertests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_paymentservertests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-moc_paymentservertests.obj `if test -f 'qt/test/moc_paymentservertests.cpp'; then $(CYGPATH_W) 'qt/test/moc_paymentservertests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_paymentservertests.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_paymentservertests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_paymentservertests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_paymentservertests.cpp' object='qt/test/qt_test_test_itasecore_qt-moc_paymentservertests.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-moc_paymentservertests.obj `if test -f 'qt/test/moc_paymentservertests.cpp'; then $(CYGPATH_W) 'qt/test/moc_paymentservertests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_paymentservertests.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-moc_paymentservertests.obj `if test -f 'qt/test/moc_paymentservertests.cpp'; then $(CYGPATH_W) 'qt/test/moc_paymentservertests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_paymentservertests.cpp'; fi`
 
-qt/test/qt_test_test_itasecoin_qt-moc_wallettests.o: qt/test/moc_wallettests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-moc_wallettests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_wallettests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-moc_wallettests.o `test -f 'qt/test/moc_wallettests.cpp' || echo '$(srcdir)/'`qt/test/moc_wallettests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_wallettests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_wallettests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_wallettests.cpp' object='qt/test/qt_test_test_itasecoin_qt-moc_wallettests.o' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-moc_wallettests.o: qt/test/moc_wallettests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-moc_wallettests.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_wallettests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-moc_wallettests.o `test -f 'qt/test/moc_wallettests.cpp' || echo '$(srcdir)/'`qt/test/moc_wallettests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_wallettests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_wallettests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_wallettests.cpp' object='qt/test/qt_test_test_itasecore_qt-moc_wallettests.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-moc_wallettests.o `test -f 'qt/test/moc_wallettests.cpp' || echo '$(srcdir)/'`qt/test/moc_wallettests.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-moc_wallettests.o `test -f 'qt/test/moc_wallettests.cpp' || echo '$(srcdir)/'`qt/test/moc_wallettests.cpp
 
-qt/test/qt_test_test_itasecoin_qt-moc_wallettests.obj: qt/test/moc_wallettests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecoin_qt-moc_wallettests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_wallettests.Tpo -c -o qt/test/qt_test_test_itasecoin_qt-moc_wallettests.obj `if test -f 'qt/test/moc_wallettests.cpp'; then $(CYGPATH_W) 'qt/test/moc_wallettests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_wallettests.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_wallettests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecoin_qt-moc_wallettests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_wallettests.cpp' object='qt/test/qt_test_test_itasecoin_qt-moc_wallettests.obj' libtool=no @AMDEPBACKSLASH@
+qt/test/qt_test_test_itasecore_qt-moc_wallettests.obj: qt/test/moc_wallettests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_itasecore_qt-moc_wallettests.obj -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_wallettests.Tpo -c -o qt/test/qt_test_test_itasecore_qt-moc_wallettests.obj `if test -f 'qt/test/moc_wallettests.cpp'; then $(CYGPATH_W) 'qt/test/moc_wallettests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_wallettests.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_wallettests.Tpo qt/test/$(DEPDIR)/qt_test_test_itasecore_qt-moc_wallettests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/test/moc_wallettests.cpp' object='qt/test/qt_test_test_itasecore_qt-moc_wallettests.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecoin_qt-moc_wallettests.obj `if test -f 'qt/test/moc_wallettests.cpp'; then $(CYGPATH_W) 'qt/test/moc_wallettests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_wallettests.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_itasecore_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/test/qt_test_test_itasecore_qt-moc_wallettests.obj `if test -f 'qt/test/moc_wallettests.cpp'; then $(CYGPATH_W) 'qt/test/moc_wallettests.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/test/moc_wallettests.cpp'; fi`
 
 test/test_test_itasecoin-arith_uint256_tests.o: test/arith_uint256_tests.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_itasecoin_CPPFLAGS) $(CPPFLAGS) $(test_test_itasecoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_itasecoin-arith_uint256_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_itasecoin-arith_uint256_tests.Tpo -c -o test/test_test_itasecoin-arith_uint256_tests.o `test -f 'test/arith_uint256_tests.cpp' || echo '$(srcdir)/'`test/arith_uint256_tests.cpp
@@ -9254,33 +9254,33 @@ test/test_test_itasecoin_fuzzy-test_bitcoin_fuzzy.obj: test/test_bitcoin_fuzzy.c
 @AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	DEPDIR=$(DEPDIR) $(OBJCXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(LTOBJCXXCOMPILE) -c -o $@ $<
 
-qt/qt_itasecoin_qt-macdockiconhandler.o: qt/macdockiconhandler.mm
-@am__fastdepOBJCXX_TRUE@	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_itasecoin_qt-macdockiconhandler.o -MD -MP -MF qt/$(DEPDIR)/qt_itasecoin_qt-macdockiconhandler.Tpo -c -o qt/qt_itasecoin_qt-macdockiconhandler.o `test -f 'qt/macdockiconhandler.mm' || echo '$(srcdir)/'`qt/macdockiconhandler.mm
-@am__fastdepOBJCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_itasecoin_qt-macdockiconhandler.Tpo qt/$(DEPDIR)/qt_itasecoin_qt-macdockiconhandler.Po
-@AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX)source='qt/macdockiconhandler.mm' object='qt/qt_itasecoin_qt-macdockiconhandler.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_itasecore_qt-macdockiconhandler.o: qt/macdockiconhandler.mm
+@am__fastdepOBJCXX_TRUE@	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_itasecore_qt-macdockiconhandler.o -MD -MP -MF qt/$(DEPDIR)/qt_itasecore_qt-macdockiconhandler.Tpo -c -o qt/qt_itasecore_qt-macdockiconhandler.o `test -f 'qt/macdockiconhandler.mm' || echo '$(srcdir)/'`qt/macdockiconhandler.mm
+@am__fastdepOBJCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_itasecore_qt-macdockiconhandler.Tpo qt/$(DEPDIR)/qt_itasecore_qt-macdockiconhandler.Po
+@AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX)source='qt/macdockiconhandler.mm' object='qt/qt_itasecore_qt-macdockiconhandler.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	DEPDIR=$(DEPDIR) $(OBJCXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_itasecoin_qt-macdockiconhandler.o `test -f 'qt/macdockiconhandler.mm' || echo '$(srcdir)/'`qt/macdockiconhandler.mm
+@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_itasecore_qt-macdockiconhandler.o `test -f 'qt/macdockiconhandler.mm' || echo '$(srcdir)/'`qt/macdockiconhandler.mm
 
-qt/qt_itasecoin_qt-macdockiconhandler.obj: qt/macdockiconhandler.mm
-@am__fastdepOBJCXX_TRUE@	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_itasecoin_qt-macdockiconhandler.obj -MD -MP -MF qt/$(DEPDIR)/qt_itasecoin_qt-macdockiconhandler.Tpo -c -o qt/qt_itasecoin_qt-macdockiconhandler.obj `if test -f 'qt/macdockiconhandler.mm'; then $(CYGPATH_W) 'qt/macdockiconhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macdockiconhandler.mm'; fi`
-@am__fastdepOBJCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_itasecoin_qt-macdockiconhandler.Tpo qt/$(DEPDIR)/qt_itasecoin_qt-macdockiconhandler.Po
-@AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX)source='qt/macdockiconhandler.mm' object='qt/qt_itasecoin_qt-macdockiconhandler.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_itasecore_qt-macdockiconhandler.obj: qt/macdockiconhandler.mm
+@am__fastdepOBJCXX_TRUE@	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_itasecore_qt-macdockiconhandler.obj -MD -MP -MF qt/$(DEPDIR)/qt_itasecore_qt-macdockiconhandler.Tpo -c -o qt/qt_itasecore_qt-macdockiconhandler.obj `if test -f 'qt/macdockiconhandler.mm'; then $(CYGPATH_W) 'qt/macdockiconhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macdockiconhandler.mm'; fi`
+@am__fastdepOBJCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_itasecore_qt-macdockiconhandler.Tpo qt/$(DEPDIR)/qt_itasecore_qt-macdockiconhandler.Po
+@AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX)source='qt/macdockiconhandler.mm' object='qt/qt_itasecore_qt-macdockiconhandler.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	DEPDIR=$(DEPDIR) $(OBJCXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_itasecoin_qt-macdockiconhandler.obj `if test -f 'qt/macdockiconhandler.mm'; then $(CYGPATH_W) 'qt/macdockiconhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macdockiconhandler.mm'; fi`
+@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_itasecore_qt-macdockiconhandler.obj `if test -f 'qt/macdockiconhandler.mm'; then $(CYGPATH_W) 'qt/macdockiconhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macdockiconhandler.mm'; fi`
 
-qt/qt_itasecoin_qt-macnotificationhandler.o: qt/macnotificationhandler.mm
-@am__fastdepOBJCXX_TRUE@	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_itasecoin_qt-macnotificationhandler.o -MD -MP -MF qt/$(DEPDIR)/qt_itasecoin_qt-macnotificationhandler.Tpo -c -o qt/qt_itasecoin_qt-macnotificationhandler.o `test -f 'qt/macnotificationhandler.mm' || echo '$(srcdir)/'`qt/macnotificationhandler.mm
-@am__fastdepOBJCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_itasecoin_qt-macnotificationhandler.Tpo qt/$(DEPDIR)/qt_itasecoin_qt-macnotificationhandler.Po
-@AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX)source='qt/macnotificationhandler.mm' object='qt/qt_itasecoin_qt-macnotificationhandler.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_itasecore_qt-macnotificationhandler.o: qt/macnotificationhandler.mm
+@am__fastdepOBJCXX_TRUE@	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_itasecore_qt-macnotificationhandler.o -MD -MP -MF qt/$(DEPDIR)/qt_itasecore_qt-macnotificationhandler.Tpo -c -o qt/qt_itasecore_qt-macnotificationhandler.o `test -f 'qt/macnotificationhandler.mm' || echo '$(srcdir)/'`qt/macnotificationhandler.mm
+@am__fastdepOBJCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_itasecore_qt-macnotificationhandler.Tpo qt/$(DEPDIR)/qt_itasecore_qt-macnotificationhandler.Po
+@AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX)source='qt/macnotificationhandler.mm' object='qt/qt_itasecore_qt-macnotificationhandler.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	DEPDIR=$(DEPDIR) $(OBJCXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_itasecoin_qt-macnotificationhandler.o `test -f 'qt/macnotificationhandler.mm' || echo '$(srcdir)/'`qt/macnotificationhandler.mm
+@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_itasecore_qt-macnotificationhandler.o `test -f 'qt/macnotificationhandler.mm' || echo '$(srcdir)/'`qt/macnotificationhandler.mm
 
-qt/qt_itasecoin_qt-macnotificationhandler.obj: qt/macnotificationhandler.mm
-@am__fastdepOBJCXX_TRUE@	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_itasecoin_qt-macnotificationhandler.obj -MD -MP -MF qt/$(DEPDIR)/qt_itasecoin_qt-macnotificationhandler.Tpo -c -o qt/qt_itasecoin_qt-macnotificationhandler.obj `if test -f 'qt/macnotificationhandler.mm'; then $(CYGPATH_W) 'qt/macnotificationhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macnotificationhandler.mm'; fi`
-@am__fastdepOBJCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_itasecoin_qt-macnotificationhandler.Tpo qt/$(DEPDIR)/qt_itasecoin_qt-macnotificationhandler.Po
-@AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX)source='qt/macnotificationhandler.mm' object='qt/qt_itasecoin_qt-macnotificationhandler.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_itasecore_qt-macnotificationhandler.obj: qt/macnotificationhandler.mm
+@am__fastdepOBJCXX_TRUE@	$(AM_V_OBJCXX)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -MT qt/qt_itasecore_qt-macnotificationhandler.obj -MD -MP -MF qt/$(DEPDIR)/qt_itasecore_qt-macnotificationhandler.Tpo -c -o qt/qt_itasecore_qt-macnotificationhandler.obj `if test -f 'qt/macnotificationhandler.mm'; then $(CYGPATH_W) 'qt/macnotificationhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macnotificationhandler.mm'; fi`
+@am__fastdepOBJCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_itasecore_qt-macnotificationhandler.Tpo qt/$(DEPDIR)/qt_itasecore_qt-macnotificationhandler.Po
+@AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX)source='qt/macnotificationhandler.mm' object='qt/qt_itasecore_qt-macnotificationhandler.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepOBJCXX_FALSE@	DEPDIR=$(DEPDIR) $(OBJCXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecoin_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_itasecoin_qt-macnotificationhandler.obj `if test -f 'qt/macnotificationhandler.mm'; then $(CYGPATH_W) 'qt/macnotificationhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macnotificationhandler.mm'; fi`
+@am__fastdepOBJCXX_FALSE@	$(AM_V_OBJCXX@am__nodep@)$(OBJCXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_itasecore_qt_CPPFLAGS) $(CPPFLAGS) $(AM_OBJCXXFLAGS) $(OBJCXXFLAGS) -c -o qt/qt_itasecore_qt-macnotificationhandler.obj `if test -f 'qt/macnotificationhandler.mm'; then $(CYGPATH_W) 'qt/macnotificationhandler.mm'; else $(CYGPATH_W) '$(srcdir)/qt/macnotificationhandler.mm'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo
@@ -9565,9 +9565,9 @@ test/test_itasecoin.log: test/test_itasecoin$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
-qt/test/test_itasecoin-qt.log: qt/test/test_itasecoin-qt$(EXEEXT)
-	@p='qt/test/test_itasecoin-qt$(EXEEXT)'; \
-	b='qt/test/test_itasecoin-qt'; \
+qt/test/test_itasecore-qt.log: qt/test/test_itasecore-qt$(EXEEXT)
+	@p='qt/test/test_itasecore-qt$(EXEEXT)'; \
+	b='qt/test/test_itasecore-qt'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -9924,7 +9924,7 @@ check-security: $(bin_PROGRAMS)
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 @ENABLE_QT_TRUE@$(QT_MOC): $(QT_FORMS_H)
-@ENABLE_QT_TRUE@$(qt_libbitcoinqt_a_OBJECTS) $(qt_itasecoin_qt_OBJECTS) : | $(QT_MOC)
+@ENABLE_QT_TRUE@$(qt_libbitcoinqt_a_OBJECTS) $(qt_itasecore_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
@@ -9954,9 +9954,9 @@ check-security: $(bin_PROGRAMS)
 @ENABLE_QT_TRUE@	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
 @ENABLE_QT_TRUE@bitcoin_qt_clean: FORCE
-@ENABLE_QT_TRUE@	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_itasecoin_qt_OBJECTS) qt/itasecoin-qt$(EXEEXT) $(LIBBITCOINQT)
+@ENABLE_QT_TRUE@	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_itasecore_qt_OBJECTS) qt/itasecore-qt$(EXEEXT) $(LIBBITCOINQT)
 
-@ENABLE_QT_TRUE@bitcoin_qt : qt/itasecoin-qt$(EXEEXT)
+@ENABLE_QT_TRUE@bitcoin_qt : qt/itasecore-qt$(EXEEXT)
 
 @ENABLE_QT_TRUE@ui_%.h: %.ui
 @ENABLE_QT_TRUE@	@test -f $(UIC)
@@ -9976,9 +9976,9 @@ check-security: $(bin_PROGRAMS)
 @ENABLE_QT_TRUE@	@$(MKDIR_P) $(@D)
 @ENABLE_QT_TRUE@	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LRELEASE) -silent $< -qm $@
 
-@ENABLE_QT_TESTS_TRUE@test_bitcoin_qt : qt/test/test_itasecoin-qt$(EXEEXT)
+@ENABLE_QT_TESTS_TRUE@test_bitcoin_qt : qt/test/test_itasecore-qt$(EXEEXT)
 
-@ENABLE_QT_TESTS_TRUE@test_bitcoin_qt_check : qt/test/test_itasecoin-qt$(EXEEXT) FORCE
+@ENABLE_QT_TESTS_TRUE@test_bitcoin_qt_check : qt/test/test_itasecore-qt$(EXEEXT) FORCE
 @ENABLE_QT_TESTS_TRUE@	$(MAKE) check-TESTS TESTS=$^
 
 @ENABLE_QT_TESTS_TRUE@test_bitcoin_qt_clean: FORCE
