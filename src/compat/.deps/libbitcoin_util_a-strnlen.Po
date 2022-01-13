@@ -1,0 +1,60 @@
+compat/libbitcoin_util_a-strnlen.o: compat/strnlen.cpp \
+ /usr/arm-linux-gnueabihf/include/stdc-predef.h config/bitcoin-config.h \
+ /usr/arm-linux-gnueabihf/include/c++/7/cstring \
+ /usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/c++config.h \
+ /usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/os_defines.h \
+ /usr/arm-linux-gnueabihf/include/features.h \
+ /usr/arm-linux-gnueabihf/include/sys/cdefs.h \
+ /usr/arm-linux-gnueabihf/include/bits/wordsize.h \
+ /usr/arm-linux-gnueabihf/include/bits/long-double.h \
+ /usr/arm-linux-gnueabihf/include/gnu/stubs.h \
+ /usr/arm-linux-gnueabihf/include/gnu/stubs-hard.h \
+ /usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/cpu_defines.h \
+ /usr/arm-linux-gnueabihf/include/string.h \
+ /usr/arm-linux-gnueabihf/include/bits/libc-header-start.h \
+ /usr/lib/gcc-cross/arm-linux-gnueabihf/7/include/stddef.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/locale_t.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/__locale_t.h \
+ /usr/arm-linux-gnueabihf/include/strings.h \
+ /usr/arm-linux-gnueabihf/include/bits/strings_fortified.h \
+ /usr/arm-linux-gnueabihf/include/bits/string_fortified.h
+
+/usr/arm-linux-gnueabihf/include/stdc-predef.h:
+
+config/bitcoin-config.h:
+
+/usr/arm-linux-gnueabihf/include/c++/7/cstring:
+
+/usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/c++config.h:
+
+/usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/os_defines.h:
+
+/usr/arm-linux-gnueabihf/include/features.h:
+
+/usr/arm-linux-gnueabihf/include/sys/cdefs.h:
+
+/usr/arm-linux-gnueabihf/include/bits/wordsize.h:
+
+/usr/arm-linux-gnueabihf/include/bits/long-double.h:
+
+/usr/arm-linux-gnueabihf/include/gnu/stubs.h:
+
+/usr/arm-linux-gnueabihf/include/gnu/stubs-hard.h:
+
+/usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/cpu_defines.h:
+
+/usr/arm-linux-gnueabihf/include/string.h:
+
+/usr/arm-linux-gnueabihf/include/bits/libc-header-start.h:
+
+/usr/lib/gcc-cross/arm-linux-gnueabihf/7/include/stddef.h:
+
+/usr/arm-linux-gnueabihf/include/bits/types/locale_t.h:
+
+/usr/arm-linux-gnueabihf/include/bits/types/__locale_t.h:
+
+/usr/arm-linux-gnueabihf/include/strings.h:
+
+/usr/arm-linux-gnueabihf/include/bits/strings_fortified.h:
+
+/usr/arm-linux-gnueabihf/include/bits/string_fortified.h:

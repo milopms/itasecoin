@@ -1,0 +1,11 @@
+prefix=/home/milovan/Bureau/itase/depends/arm-linux-gnueabihf
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: Itasecoin Core consensus library
+Description: Library for the Bitcoin consensus protocol.
+Version: 0.15.1
+Libs: -L${libdir} -lbitcoinconsensus
+Cflags: -I${includedir}
+Requires.private: libcrypto

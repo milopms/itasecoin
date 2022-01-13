@@ -1,0 +1,69 @@
+compat/libbitcoinconsensus_la-glibc_compat.lo: compat/glibc_compat.cpp \
+ /usr/arm-linux-gnueabihf/include/stdc-predef.h config/bitcoin-config.h \
+ /usr/arm-linux-gnueabihf/include/c++/7/cstddef \
+ /usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/c++config.h \
+ /usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/os_defines.h \
+ /usr/arm-linux-gnueabihf/include/features.h \
+ /usr/arm-linux-gnueabihf/include/sys/cdefs.h \
+ /usr/arm-linux-gnueabihf/include/bits/wordsize.h \
+ /usr/arm-linux-gnueabihf/include/bits/long-double.h \
+ /usr/arm-linux-gnueabihf/include/gnu/stubs.h \
+ /usr/arm-linux-gnueabihf/include/gnu/stubs-hard.h \
+ /usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/cpu_defines.h \
+ /usr/lib/gcc-cross/arm-linux-gnueabihf/7/include/stddef.h \
+ /usr/arm-linux-gnueabihf/include/sys/select.h \
+ /usr/arm-linux-gnueabihf/include/bits/types.h \
+ /usr/arm-linux-gnueabihf/include/bits/typesizes.h \
+ /usr/arm-linux-gnueabihf/include/bits/select.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/sigset_t.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/__sigset_t.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/time_t.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/struct_timeval.h \
+ /usr/arm-linux-gnueabihf/include/bits/types/struct_timespec.h \
+ /usr/arm-linux-gnueabihf/include/bits/select2.h
+
+/usr/arm-linux-gnueabihf/include/stdc-predef.h:
+
+config/bitcoin-config.h:
+
+/usr/arm-linux-gnueabihf/include/c++/7/cstddef:
+
+/usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/c++config.h:
+
+/usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/os_defines.h:
+
+/usr/arm-linux-gnueabihf/include/features.h:
+
+/usr/arm-linux-gnueabihf/include/sys/cdefs.h:
+
+/usr/arm-linux-gnueabihf/include/bits/wordsize.h:
+
+/usr/arm-linux-gnueabihf/include/bits/long-double.h:
+
+/usr/arm-linux-gnueabihf/include/gnu/stubs.h:
+
+/usr/arm-linux-gnueabihf/include/gnu/stubs-hard.h:
+
+/usr/arm-linux-gnueabihf/include/c++/7/arm-linux-gnueabihf/bits/cpu_defines.h:
+
+/usr/lib/gcc-cross/arm-linux-gnueabihf/7/include/stddef.h:
+
+/usr/arm-linux-gnueabihf/include/sys/select.h:
+
+/usr/arm-linux-gnueabihf/include/bits/types.h:
+
+/usr/arm-linux-gnueabihf/include/bits/typesizes.h:
+
+/usr/arm-linux-gnueabihf/include/bits/select.h:
+
+/usr/arm-linux-gnueabihf/include/bits/types/sigset_t.h:
+
+/usr/arm-linux-gnueabihf/include/bits/types/__sigset_t.h:
+
+/usr/arm-linux-gnueabihf/include/bits/types/time_t.h:
+
+/usr/arm-linux-gnueabihf/include/bits/types/struct_timeval.h:
+
+/usr/arm-linux-gnueabihf/include/bits/types/struct_timespec.h:
+
+/usr/arm-linux-gnueabihf/include/bits/select2.h:
