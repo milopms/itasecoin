@@ -1,4 +1,4 @@
-wallet/test/qt_test_test_itasecoin_qt-wallet_test_fixture.o: \
+wallet/test/qt_test_test_itasecore_qt-wallet_test_fixture.o: \
  wallet/test/wallet_test_fixture.cpp wallet/test/wallet_test_fixture.h \
  test/test_bitcoin.h chainparamsbase.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/memory \

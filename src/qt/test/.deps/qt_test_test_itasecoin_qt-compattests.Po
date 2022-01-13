@@ -1,4 +1,4 @@
-qt/test/qt_test_test_itasecoin_qt-compattests.o: qt/test/compattests.cpp \
+qt/test/qt_test_test_itasecore_qt-compattests.o: qt/test/compattests.cpp \
  qt/paymentrequestplus.h qt/paymentrequest.pb.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/string \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/x86_64-w64-mingw32/bits/c++config.h \

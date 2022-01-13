@@ -1,4 +1,4 @@
-qt/test/qt_test_test_itasecoin_qt-moc_paymentservertests.o: \
+qt/test/qt_test_test_itasecore_qt-moc_paymentservertests.o: \
  qt/test/moc_paymentservertests.cpp qt/test/paymentservertests.h \
  qt/test/../paymentserver.h qt/test/../paymentrequestplus.h \
  qt/test/../paymentrequest.pb.h \

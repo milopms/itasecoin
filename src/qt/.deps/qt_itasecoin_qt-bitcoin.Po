@@ -1,4 +1,4 @@
-qt/qt_itasecoin_qt-bitcoin.o: qt/bitcoin.cpp config/bitcoin-config.h \
+qt/qt_itasecore_qt-bitcoin.o: qt/bitcoin.cpp config/bitcoin-config.h \
  qt/bitcoingui.h amount.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/stdint.h \
  /usr/share/mingw-w64/include/stdint.h \

@@ -15,25 +15,25 @@
 #define CLIENT_VERSION_IS_RELEASE true
 
 /* Major version */
-#define CLIENT_VERSION_MAJOR 0
+#define CLIENT_VERSION_MAJOR 1
 
 /* Minor version */
-#define CLIENT_VERSION_MINOR 15
+#define CLIENT_VERSION_MINOR 0
 
 /* Build revision */
-#define CLIENT_VERSION_REVISION 1
+#define CLIENT_VERSION_REVISION 0
 
 /* Copyright holder(s) before %s replacement */
-#define COPYRIGHT_HOLDERS "The %s developers"
+#define COPYRIGHT_HOLDERS "The %s developer"
 
 /* Copyright holder(s) */
-#define COPYRIGHT_HOLDERS_FINAL "The Itasecoin Core developers"
+#define COPYRIGHT_HOLDERS_FINAL "The Itasecore developer"
 
 /* Replacement for %s in copyright holders string */
-#define COPYRIGHT_HOLDERS_SUBSTITUTION "Itasecoin Core"
+#define COPYRIGHT_HOLDERS_SUBSTITUTION "Itasecore"
 
 /* Copyright year */
-#define COPYRIGHT_YEAR 2018
+#define COPYRIGHT_YEAR 2022
 
 /* Define to 1 to enable wallet functions */
 #define ENABLE_WALLET 1
@@ -45,7 +45,7 @@
 /* #undef EXPERIMENTAL_ASM */
 
 /* parameter and return value type for __fdelt_chk */
-#define FDELT_TYPE long int
+/* #undef FDELT_TYPE */
 
 /* define if the Boost library is available */
 #define HAVE_BOOST /**/
@@ -230,7 +230,7 @@
 /* #undef HAVE_LIBRPCRT4 */
 
 /* Define to 1 if you have the `rt' library (-lrt). */
-#define HAVE_LIBRT 1
+/* #undef HAVE_LIBRT */
 
 /* Define to 1 if you have the `shell32' library (-lshell32). */
 /* #undef HAVE_LIBSHELL32 */
@@ -347,22 +347,22 @@
 #define LT_OBJDIR ".libs/"
 
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT "https://github.com/itasecoin-project/itasecoin/issues"
+#define PACKAGE_BUGREPORT "https://github.com/milopms/itasecoin/issues"
 
 /* Define to the full name of this package. */
-#define PACKAGE_NAME "Itasecoin Core"
+#define PACKAGE_NAME "Itasecore"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "Itasecoin Core 0.15.1"
+#define PACKAGE_STRING "Itasecore 1.0.0"
 
 /* Define to the one symbol short name of this package. */
-#define PACKAGE_TARNAME "itasecoin"
+#define PACKAGE_TARNAME "itasecore"
 
 /* Define to the home page for this package. */
 #define PACKAGE_URL "https://itasecoin.org/"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "0.15.1"
+#define PACKAGE_VERSION "1.0.0"
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */
@@ -393,7 +393,7 @@
 /* #undef USE_COVERAGE */
 
 /* Define if dbus support should be compiled in */
-/* #undef USE_DBUS */
+#define USE_DBUS 1
 
 /* Define if QR support should be compiled in */
 /* #undef USE_QRCODE */
@@ -423,7 +423,7 @@
 #endif
 
 /* Number of bits in a file offset, on hosts where this is settable. */
-#define _FILE_OFFSET_BITS 64
+/* #undef _FILE_OFFSET_BITS */
 
 /* Define for large files, on AIX-style hosts. */
 /* #undef _LARGE_FILES */

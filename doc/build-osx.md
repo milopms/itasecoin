@@ -57,7 +57,7 @@ Build Itasecoin Core
 Running
 -------
 
-Itasecoin Core is now available at `./src/itasecoind`
+Itasecoin Core is now available at `./src/itasecored`
 
 Before running, it's recommended you create an RPC configuration file.
 
@@ -65,7 +65,7 @@ Before running, it's recommended you create an RPC configuration file.
 
     chmod 600 "/Users/${USER}/Library/Application Support/Itasecoin/itasecoin.conf"
 
-The first time you run itasecoind, it will start downloading the blockchain. This process could take several hours.
+The first time you run itasecored, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
@@ -74,9 +74,9 @@ You can monitor the download process by looking at the debug.log file:
 Other commands:
 -------
 
-    ./src/itasecoind -daemon # Starts the itasecoin daemon.
-    ./src/itasecoin-cli --help # Outputs a list of command-line options.
-    ./src/itasecoin-cli help # Outputs a list of RPC commands when the daemon is running.
+    ./src/itasecored -daemon # Starts the itasecoin daemon.
+    ./src/itasecore-cli --help # Outputs a list of command-line options.
+    ./src/itasecore-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Using Qt Creator as IDE
 ------------------------
@@ -87,7 +87,7 @@ Uncheck everything except Qt Creator during the installation process.
 1. Make sure you installed everything through Homebrew mentioned above
 2. Do a proper ./configure --enable-debug
 3. In Qt Creator do "New Project" -> Import Project -> Import Existing Project
-4. Enter "itasecoin-qt" as project name, enter src/qt as location
+4. Enter "itasecore-qt" as project name, enter src/qt as location
 5. Leave the file selection as it is
 6. Confirm the "summary page"
 7. In the "Projects" tab select "Manage Kits..."

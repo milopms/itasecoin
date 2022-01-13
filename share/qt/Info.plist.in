@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Itasecoin-Qt</string>
+  <string>itasecore-qt</string>
   
   <key>CFBundleName</key>
-  <string>Itasecoin-Qt</string>
+  <string>itasecore-qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.itasecoin.Itasecoin-Qt</string>
+  <string>org.itasecoin.itasecore-qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>

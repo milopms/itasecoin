@@ -1,4 +1,4 @@
-qt/test/qt_test_test_itasecoin_qt-rpcnestedtests.o: \
+qt/test/qt_test_test_itasecore_qt-rpcnestedtests.o: \
  qt/test/rpcnestedtests.cpp qt/test/rpcnestedtests.h \
  /home/milovan/Bureau/itase/depends/x86_64-w64-mingw32/share/../include/QtCore/QObject \
  /home/milovan/Bureau/itase/depends/x86_64-w64-mingw32/share/../include/QtCore/qobject.h \

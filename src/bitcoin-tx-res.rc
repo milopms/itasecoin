@@ -17,13 +17,13 @@ BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
             VALUE "CompanyName",        "Itasecoin"
-            VALUE "FileDescription",    "itasecoin-tx (CLI Itasecoin transaction editor utility)"
+            VALUE "FileDescription",    "itasecore-tx (CLI Itasecoin transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "itasecoin-tx"
+            VALUE "InternalName",       "itasecore-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "itasecoin-tx.exe"
-            VALUE "ProductName",        "itasecoin-tx"
+            VALUE "OriginalFilename",   "itasecore-tx.exe"
+            VALUE "ProductName",        "itasecore-tx"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

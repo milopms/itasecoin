@@ -17,28 +17,28 @@
   <string>APPL</string>
 
   <key>CFBundleGetInfoString</key>
-  <string>0.15.1, Copyright © 2009-2018 The Itasecoin Core developers</string>
+  <string>1.0.0, Copyright © 2009-2022 The Itasecore developer</string>
 
   <key>CFBundleShortVersionString</key>
-  <string>0.15.1</string>
+  <string>1.0.0</string>
 
   <key>CFBundleVersion</key>
-  <string>0.15.1</string>
+  <string>1.0.0</string>
 
   <key>CFBundleSignature</key>
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Itasecoin-Qt</string>
+  <string>itasecore-qt</string>
   
   <key>CFBundleName</key>
-  <string>Itasecoin-Qt</string>
+  <string>itasecore-qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.itasecoin.Itasecoin-Qt</string>
+  <string>org.itasecoin.itasecore-qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>

@@ -66,11 +66,11 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += itasecoind
+  bin_PROGRAMS += itasecored
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += itasecoin-cli itasecoin-tx
+  bin_PROGRAMS += itasecore-cli itasecore-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
@@ -370,16 +370,16 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-itasecoind_SOURCES = bitcoind.cpp
-itasecoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-itasecoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-itasecoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+itasecored_SOURCES = bitcoind.cpp
+itasecored_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+itasecored_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+itasecored_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-itasecoind_SOURCES += bitcoind-res.rc
+itasecored_SOURCES += bitcoind-res.rc
 endif
 
-itasecoind_LDADD = \
+itasecored_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -393,38 +393,38 @@ itasecoind_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-itasecoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+itasecored_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
 # bitcoin-cli binary #
-itasecoin_cli_SOURCES = bitcoin-cli.cpp
-itasecoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-itasecoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-itasecoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+itasecore_cli_SOURCES = bitcoin-cli.cpp
+itasecore_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+itasecore_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+itasecore_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-itasecoin_cli_SOURCES += bitcoin-cli-res.rc
+itasecore_cli_SOURCES += bitcoin-cli-res.rc
 endif
 
-itasecoin_cli_LDADD = \
+itasecore_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
-itasecoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+itasecore_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
 # bitcoin-tx binary #
-itasecoin_tx_SOURCES = bitcoin-tx.cpp
-itasecoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-itasecoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-itasecoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+itasecore_tx_SOURCES = bitcoin-tx.cpp
+itasecore_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+itasecore_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+itasecore_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-itasecoin_tx_SOURCES += bitcoin-tx-res.rc
+itasecore_tx_SOURCES += bitcoin-tx-res.rc
 endif
 
-itasecoin_tx_LDADD = \
+itasecore_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -432,7 +432,7 @@ itasecoin_tx_LDADD = \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-itasecoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+itasecore_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoinconsensus library #

@@ -1,4 +1,4 @@
-qt/test/qt_test_test_itasecoin_qt-test_main.o: qt/test/test_main.cpp \
+qt/test/qt_test_test_itasecore_qt-test_main.o: qt/test/test_main.cpp \
  config/bitcoin-config.h chainparams.h chainparamsbase.h \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/memory \
  /usr/lib/gcc/x86_64-w64-mingw32/7.3-posix/include/c++/bits/stl_algobase.h \

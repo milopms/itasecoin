@@ -1,28 +1,28 @@
-Name "Itasecoin Core (-bit)"
+Name "Itasecore (-bit)"
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 0.15.1
-!define COMPANY "Itasecoin Core project"
+!define VERSION 1.0.0
+!define COMPANY "Itasecore project"
 !define URL https://itasecoin.org/
 
 # MUI Symbol Definitions
-!define MUI_ICON "/home/milovan/Bureau/itase/share/pixmaps/bitcoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/milovan/Bureau/itase/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/home/milovan/Bureau/itasecoin/share/pixmaps/bitcoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/milovan/Bureau/itasecoin/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/home/milovan/Bureau/itase/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/home/milovan/Bureau/itasecoin/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER "Itasecoin Core"
-!define MUI_FINISHPAGE_RUN $INSTDIR\itasecoin-qt
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER "Itasecore"
+!define MUI_FINISHPAGE_RUN $INSTDIR\itasecore-qt
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/milovan/Bureau/itase/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/milovan/Bureau/itasecoin/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -48,7 +48,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /home/milovan/Bureau/itase/itasecoin-${VERSION}-win-setup.exe
+OutFile /home/milovan/Bureau/itasecoin/itasecore-${VERSION}-win-setup.exe
 !if "" == "64"
 InstallDir $PROGRAMFILES64\Itasecoin
 !else
@@ -59,7 +59,7 @@ XPStyle on
 BrandingText " "
 ShowInstDetails show
 VIProductVersion ${VERSION}.0
-VIAddVersionKey ProductName "Itasecoin Core"
+VIAddVersionKey ProductName "Itasecore"
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
@@ -73,14 +73,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /home/milovan/Bureau/itase/release/itasecoin-qt
-    File /oname=COPYING.txt /home/milovan/Bureau/itase/COPYING
-    File /oname=readme.txt /home/milovan/Bureau/itase/doc/README_windows.txt
+    File /home/milovan/Bureau/itasecoin/release/itasecore-qt
+    File /oname=COPYING.txt /home/milovan/Bureau/itasecoin/COPYING
+    File /oname=readme.txt /home/milovan/Bureau/itasecoin/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /home/milovan/Bureau/itase/release/itasecoind
-    File /home/milovan/Bureau/itase/release/itasecoin-cli
+    File /home/milovan/Bureau/itasecoin/release/itasecored
+    File /home/milovan/Bureau/itasecoin/release/itasecore-cli
     SetOutPath $INSTDIR\doc
-    File /r /home/milovan/Bureau/itase/doc\*.*
+    File /r /home/milovan/Bureau/itasecoin/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd
@@ -91,8 +91,8 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\itasecoin-qt
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Itasecoin Core (testnet, -bit).lnk" "$INSTDIR\itasecoin-qt" "-testnet" "$INSTDIR\itasecoin-qt" 1
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk" $INSTDIR\itasecore-qt
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Itasecore (testnet, -bit).lnk" "$INSTDIR\itasecore-qt" "-testnet" "$INSTDIR\itasecore-qt" 1
     CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
@@ -103,10 +103,10 @@ Section -post SEC0001
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" UninstallString $INSTDIR\uninstall.exe
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
-    WriteRegStr HKCR "itasecoin" "URL Protocol" ""
-    WriteRegStr HKCR "itasecoin" "" "URL:Itasecoin"
-    WriteRegStr HKCR "itasecoin\DefaultIcon" "" $INSTDIR\itasecoin-qt
-    WriteRegStr HKCR "itasecoin\shell\open\command" "" '"$INSTDIR\itasecoin-qt" "%1"'
+    WriteRegStr HKCR "itasecore" "URL Protocol" ""
+    WriteRegStr HKCR "itasecore" "" "URL:Itasecoin"
+    WriteRegStr HKCR "itasecore\DefaultIcon" "" $INSTDIR\itasecore-qt
+    WriteRegStr HKCR "itasecore\shell\open\command" "" '"$INSTDIR\itasecore-qt" "%1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -124,7 +124,7 @@ done${UNSECTION_ID}:
 
 # Uninstaller sections
 Section /o -un.Main UNSEC0000
-    Delete /REBOOTOK $INSTDIR\itasecoin-qt
+    Delete /REBOOTOK $INSTDIR\itasecore-qt
     Delete /REBOOTOK $INSTDIR\COPYING.txt
     Delete /REBOOTOK $INSTDIR\readme.txt
     RMDir /r /REBOOTOK $INSTDIR\daemon
@@ -136,7 +136,7 @@ Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Itasecoin Core (testnet, -bit).lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Itasecore (testnet, -bit).lnk"
     Delete /REBOOTOK "$SMSTARTUP\Itasecoin.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
@@ -145,7 +145,7 @@ Section -un.post UNSEC0001
     DeleteRegValue HKCU "${REGKEY}" Path
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
-    DeleteRegKey HKCR "itasecoin"
+    DeleteRegKey HKCR "itasecore"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0

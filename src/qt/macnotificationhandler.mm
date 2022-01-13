@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.itasecoin.Itasecoin-Qt";
+        return @"org.itasecoin.itasecore-qt";
     } else {
         return [self __bundleIdentifier];
     }

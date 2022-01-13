@@ -75,10 +75,10 @@ am__make_running_with_option = \
   test $$has_opt = yes
 am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
-pkgdatadir = $(datadir)/itasecoin
-pkgincludedir = $(includedir)/itasecoin
-pkglibdir = $(libdir)/itasecoin
-pkglibexecdir = $(libexecdir)/itasecoin
+pkgdatadir = $(datadir)/itasecore
+pkgincludedir = $(includedir)/itasecore
+pkglibdir = $(libdir)/itasecore
+pkglibexecdir = $(libexecdir)/itasecore
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -92,7 +92,7 @@ NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-pc-linux-gnu
-host_triplet = arm-unknown-linux-gnueabihf
+host_triplet = x86_64-pc-linux-gnu
 am__append_1 = doc/man
 subdir = .
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -237,7 +237,8 @@ am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/test/functional/test_runner.py \
 	$(top_srcdir)/test/util/bitcoin-util-test.py COPYING \
 	build-aux/compile build-aux/config.guess build-aux/config.sub \
-	build-aux/install-sh build-aux/ltmain.sh build-aux/missing
+	build-aux/depcomp build-aux/install-sh build-aux/ltmain.sh \
+	build-aux/missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -279,54 +280,54 @@ distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /home/milovan/Bureau/itase/build-aux/missing aclocal-1.15
+ACLOCAL = ${SHELL} /home/milovan/Bureau/itasecoin/build-aux/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
-AR = /usr/bin/arm-linux-gnueabihf-ar
+AR = /usr/bin/ar
 ARFLAGS = cr
-AUTOCONF = ${SHELL} /home/milovan/Bureau/itase/build-aux/missing autoconf
-AUTOHEADER = ${SHELL} /home/milovan/Bureau/itase/build-aux/missing autoheader
-AUTOMAKE = ${SHELL} /home/milovan/Bureau/itase/build-aux/missing automake-1.15
+AUTOCONF = ${SHELL} /home/milovan/Bureau/itasecoin/build-aux/missing autoconf
+AUTOHEADER = ${SHELL} /home/milovan/Bureau/itasecoin/build-aux/missing autoheader
+AUTOMAKE = ${SHELL} /home/milovan/Bureau/itasecoin/build-aux/missing automake-1.15
 AWK = mawk
 BDB_CFLAGS = 
 BDB_CPPFLAGS = 
 BDB_LIBS = -ldb_cxx-4.8
-BITCOIN_CLI_NAME = itasecoin-cli
-BITCOIN_DAEMON_NAME = itasecoind
-BITCOIN_GUI_NAME = itasecoin-qt
-BITCOIN_TX_NAME = itasecoin-tx
-BOOST_CHRONO_LIB = -lboost_chrono-mt
-BOOST_CPPFLAGS = -DBOOST_SP_USE_STD_ATOMIC -DBOOST_AC_USE_STD_ATOMIC -pthread -I/home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/share/../include
-BOOST_FILESYSTEM_LIB = -lboost_filesystem-mt
-BOOST_LDFLAGS = -L/home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/share/../lib
-BOOST_LIBS = -L/home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/share/../lib -lboost_system-mt -lboost_filesystem-mt -lboost_program_options-mt -lboost_thread-mt -lboost_chrono-mt
-BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options-mt
-BOOST_SYSTEM_LIB = -lboost_system-mt
-BOOST_THREAD_LIB = -lboost_thread-mt
-BOOST_UNIT_TEST_FRAMEWORK_LIB = -lboost_unit_test_framework-mt
+BITCOIN_CLI_NAME = itasecore-cli
+BITCOIN_DAEMON_NAME = itasecored
+BITCOIN_GUI_NAME = itasecore-qt
+BITCOIN_TX_NAME = itasecore-tx
+BOOST_CHRONO_LIB = -lboost_chrono
+BOOST_CPPFLAGS = -DBOOST_SP_USE_STD_ATOMIC -DBOOST_AC_USE_STD_ATOMIC -pthread -I/usr/include
+BOOST_FILESYSTEM_LIB = -lboost_filesystem
+BOOST_LDFLAGS = -L/usr/lib/x86_64-linux-gnu
+BOOST_LIBS = -L/usr/lib/x86_64-linux-gnu -lboost_system -lboost_filesystem -lboost_program_options -lboost_thread -lboost_chrono
+BOOST_PROGRAM_OPTIONS_LIB = -lboost_program_options
+BOOST_SYSTEM_LIB = -lboost_system
+BOOST_THREAD_LIB = -lboost_thread
+BOOST_UNIT_TEST_FRAMEWORK_LIB = -lboost_unit_test_framework
 BREW = 
-CC = /home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/share/../native/bin/ccache arm-linux-gnueabihf-gcc
-CCACHE = /home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/share/../native/bin/ccache
+CC = gcc
+CCACHE = 
 CCDEPMODE = depmode=gcc3
-CFLAGS = -pipe -O2 
+CFLAGS = -g -O2
 CLIENT_VERSION_BUILD = 0
 CLIENT_VERSION_IS_RELEASE = true
-CLIENT_VERSION_MAJOR = 0
-CLIENT_VERSION_MINOR = 15
-CLIENT_VERSION_REVISION = 1
-COPYRIGHT_HOLDERS = The %s developers
-COPYRIGHT_HOLDERS_FINAL = The Itasecoin Core developers
-COPYRIGHT_HOLDERS_SUBSTITUTION = Itasecoin Core
-COPYRIGHT_YEAR = 2018
-CPP = arm-linux-gnueabihf-gcc -E
-CPPFILT = /usr/bin/arm-linux-gnueabihf-c++filt
-CPPFLAGS = -I/home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/share/../include/  -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS -D_FILE_OFFSET_BITS=64
-CRYPTO_CFLAGS = -I/home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/include
-CRYPTO_LIBS = -L/home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/lib -lcrypto -ldl
-CXX = /home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/share/../native/bin/ccache arm-linux-gnueabihf-g++ -std=c++11
-CXXCPP = arm-linux-gnueabihf-g++ -std=c++11 -E
+CLIENT_VERSION_MAJOR = 1
+CLIENT_VERSION_MINOR = 0
+CLIENT_VERSION_REVISION = 0
+COPYRIGHT_HOLDERS = The %s developer
+COPYRIGHT_HOLDERS_FINAL = The Itasecore developer
+COPYRIGHT_HOLDERS_SUBSTITUTION = Itasecore
+COPYRIGHT_YEAR = 2022
+CPP = gcc -E
+CPPFILT = /usr/bin/c++filt
+CPPFLAGS =  -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS
+CRYPTO_CFLAGS = 
+CRYPTO_LIBS = -lcrypto
+CXX = g++ -std=c++11
+CXXCPP = g++ -std=c++11 -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -pipe -O2  -fvisibility=hidden
+CXXFLAGS = -g -O2 -Wall -Wextra -Wformat -Wvla -Wformat-security -Wno-unused-parameter -Wno-implicit-fallthrough
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
@@ -338,14 +339,14 @@ ECHO_N = -n
 ECHO_T = 
 EGREP = /bin/grep -E
 ERROR_CXXFLAGS = 
-EVENT_CFLAGS = -I/home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/include
-EVENT_LIBS = -L/home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/lib -levent
-EVENT_PTHREADS_CFLAGS = -pthread -I/home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/include
-EVENT_PTHREADS_LIBS = -L/home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/lib -levent_pthreads -levent
+EVENT_CFLAGS = 
+EVENT_LIBS = -levent
+EVENT_PTHREADS_CFLAGS = -pthread
+EVENT_PTHREADS_LIBS = -levent_pthreads -levent
 EXEEXT = 
 EXTENDED_FUNCTIONAL_TESTS = 
 FGREP = /bin/grep -F
-GCOV = /usr/bin/arm-linux-gnueabihf-gcov
+GCOV = /usr/bin/gcov
 GENHTML = 
 GENISOIMAGE = 
 GIT = /usr/bin/git
@@ -364,122 +365,122 @@ INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LCOV = 
 LCOV_OPTS = 
-LD = /usr/arm-linux-gnueabihf/bin/ld
-LDFLAGS = -L/home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/share/../lib -static-libstdc++
+LD = /usr/bin/ld -m elf_x86_64
+LDFLAGS = 
 LEVELDB_CPPFLAGS = 
 LEVELDB_TARGET_FLAGS = -DOS_LINUX
 LIBLEVELDB = 
 LIBMEMENV = 
 LIBOBJS = 
-LIBS = -lrt 
+LIBS = 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_APP_LDFLAGS = 
 LIPO = 
 LN_S = ln -s
-LRELEASE = 
+LRELEASE = /usr/lib/qt5/bin/lrelease
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
-LUPDATE = 
+LUPDATE = /usr/lib/qt5/bin/lupdate
 MAINT = 
-MAKEINFO = ${SHELL} /home/milovan/Bureau/itase/build-aux/missing makeinfo
+MAKEINFO = ${SHELL} /home/milovan/Bureau/itasecoin/build-aux/missing makeinfo
 MAKENSIS = 
 MANIFEST_TOOL = :
 MINIUPNPC_CPPFLAGS = 
 MINIUPNPC_LIBS = -lminiupnpc
 MKDIR_P = /bin/mkdir -p
-MOC = 
+MOC = /usr/lib/qt5/bin/moc
 MOC_DEFS = -DHAVE_CONFIG_H -I$(srcdir)
-NM = arm-linux-gnueabihf-nm
+NM = /usr/bin/nm -B
 NMEDIT = 
-OBJCOPY = /usr/bin/arm-linux-gnueabihf-objcopy
-OBJCXX = arm-linux-gnueabihf-g++ -std=c++11
+OBJCOPY = /usr/bin/objcopy
+OBJCXX = g++ -std=c++11
 OBJCXXDEPMODE = depmode=gcc3
 OBJCXXFLAGS = 
-OBJDUMP = arm-linux-gnueabihf-objdump
+OBJDUMP = objdump
 OBJEXT = o
 OTOOL = 
 OTOOL64 = 
-PACKAGE = itasecoin
-PACKAGE_BUGREPORT = https://github.com/itasecoin-project/itasecoin/issues
-PACKAGE_NAME = Itasecoin Core
-PACKAGE_STRING = Itasecoin Core 0.15.1
-PACKAGE_TARNAME = itasecoin
+PACKAGE = itasecore
+PACKAGE_BUGREPORT = https://github.com/milopms/itasecoin/issues
+PACKAGE_NAME = Itasecore
+PACKAGE_STRING = Itasecore 1.0.0
+PACKAGE_TARNAME = itasecore
 PACKAGE_URL = https://itasecoin.org/
-PACKAGE_VERSION = 0.15.1
+PACKAGE_VERSION = 1.0.0
 PATH_SEPARATOR = :
 PIC_FLAGS = -fPIC
 PIE_FLAGS = -fPIE
-PKG_CONFIG = /usr/bin/pkg-config --static
+PKG_CONFIG = /usr/bin/pkg-config
 PKG_CONFIG_LIBDIR = 
-PKG_CONFIG_PATH = /home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/share/../share/pkgconfig:/home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/share/../lib/pkgconfig
+PKG_CONFIG_PATH = 
 PORT = 
-PROTOBUF_CFLAGS = 
-PROTOBUF_LIBS = 
-PROTOC = 
-PTHREAD_CC = arm-linux-gnueabihf-gcc
+PROTOBUF_CFLAGS = -pthread
+PROTOBUF_LIBS = -lprotobuf -pthread -lpthread
+PROTOC = /usr/bin/protoc
+PTHREAD_CC = gcc
 PTHREAD_CFLAGS = -pthread
 PTHREAD_LIBS = 
 PYTHON = /usr/bin/python3.6
-PYTHONPATH = /home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/share/../native/lib/python/dist-packages:
+PYTHONPATH = 
 QR_CFLAGS = 
 QR_LIBS = 
 QT4_CFLAGS = 
 QT4_LIBS = 
-QT5_CFLAGS = 
-QT5_LIBS = 
+QT5_CFLAGS = -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT5_LIBS = -lQt5Network -lQt5Widgets -lQt5Gui -lQt5Core
 QTPLATFORM_CFLAGS = 
 QTPLATFORM_LIBS = 
 QTPRINT_CFLAGS = 
 QTPRINT_LIBS = 
 QTXCBQPA_CFLAGS = 
 QTXCBQPA_LIBS = 
-QT_DBUS_CFLAGS = 
-QT_DBUS_INCLUDES = 
-QT_DBUS_LIBS = 
-QT_INCLUDES = 
+QT_DBUS_CFLAGS = -I/usr/include/x86_64-linux-gnu/qt5/QtDBus -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_DBUS_INCLUDES = -I/usr/include/x86_64-linux-gnu/qt5/QtDBus -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_DBUS_LIBS = -lQt5DBus -lQt5Core
+QT_INCLUDES = -I/usr/include/x86_64-linux-gnu/qt5/QtNetwork -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
 QT_LDFLAGS = 
-QT_LIBS = 
-QT_PIE_FLAGS = 
-QT_SELECT = qt
-QT_TEST_CFLAGS = 
-QT_TEST_INCLUDES = 
-QT_TEST_LIBS = 
-QT_TRANSLATION_DIR = /home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/share/../translations
-RANLIB = /usr/bin/arm-linux-gnueabihf-ranlib
-RCC = 
-READELF = /usr/bin/arm-linux-gnueabihf-readelf
-RELDFLAGS = -Wl,--exclude-libs,ALL
+QT_LIBS = -lQt5Network -lQt5Widgets -lQt5Gui -lQt5Core
+QT_PIE_FLAGS = -fPIC
+QT_SELECT = qt5
+QT_TEST_CFLAGS = -I/usr/include/x86_64-linux-gnu/qt5/QtTest -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_TEST_INCLUDES = -I/usr/include/x86_64-linux-gnu/qt5/QtTest -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/x86_64-linux-gnu/qt5
+QT_TEST_LIBS = -lQt5Test -lQt5Core
+QT_TRANSLATION_DIR = 
+RANLIB = /usr/bin/ranlib
+RCC = /usr/lib/qt5/bin/rcc
+READELF = /usr/bin/readelf
+RELDFLAGS = 
 RSVG_CONVERT = 
 SED = /bin/sed
 SET_MAKE = 
 SHELL = /bin/bash
-SSE42_CXXFLAGS = 
-SSL_CFLAGS = -I/home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/include
-SSL_LIBS = -L/home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/lib -lssl -lcrypto -ldl
-STRIP = /usr/bin/arm-linux-gnueabihf-strip
-TESTDEFS = 
+SSE42_CXXFLAGS = -msse4.2
+SSL_CFLAGS = 
+SSL_LIBS = -lssl
+STRIP = /usr/bin/strip
+TESTDEFS =  -DBOOST_TEST_DYN_LINK
 TIFFCP = 
-UIC = 
+UIC = /usr/lib/qt5/bin/uic
 UNIVALUE_CFLAGS = -I$(srcdir)/univalue/include
 UNIVALUE_LIBS = univalue/libunivalue.la
 USE_QRCODE = 
 USE_SSE2 = 
 USE_UPNP = 
-VERSION = 0.15.1
+VERSION = 1.0.0
 WINDOWS_BITS = 
 WINDRES = 
 X11XCB_CFLAGS = 
 X11XCB_LIBS = 
 XGETTEXT = /usr/bin/xgettext
-ZMQ_CFLAGS = -I/home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/include
-ZMQ_LIBS = -L/home/milovan/Bureau/itase/depends/arm-linux-gnueabihf/lib -lzmq
-abs_builddir = /home/milovan/Bureau/itase
-abs_srcdir = /home/milovan/Bureau/itase
-abs_top_builddir = /home/milovan/Bureau/itase
-abs_top_srcdir = /home/milovan/Bureau/itase
-ac_ct_AR = 
-ac_ct_CC = 
-ac_ct_CXX = 
+ZMQ_CFLAGS = 
+ZMQ_LIBS = -lzmq
+abs_builddir = /home/milovan/Bureau/itasecoin
+abs_srcdir = /home/milovan/Bureau/itasecoin
+abs_top_builddir = /home/milovan/Bureau/itasecoin
+abs_top_srcdir = /home/milovan/Bureau/itasecoin
+ac_ct_AR = ar
+ac_ct_CC = gcc
+ac_ct_CXX = g++
 ac_ct_DUMPBIN = 
 ac_ct_OBJCXX = 
 am__include = include
@@ -500,15 +501,15 @@ datarootdir = ${prefix}/share
 docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
-host = arm-unknown-linux-gnueabihf
-host_alias = arm-linux-gnueabihf
-host_cpu = arm
-host_os = linux-gnueabihf
-host_vendor = unknown
+host = x86_64-pc-linux-gnu
+host_alias = 
+host_cpu = x86_64
+host_os = linux-gnu
+host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/milovan/Bureau/itase/build-aux/install-sh
+install_sh = ${SHELL} /home/milovan/Bureau/itasecoin/build-aux/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -517,7 +518,7 @@ mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /home/milovan/Bureau/itase/depends/arm-linux-gnueabihf
+prefix = /usr/local
 program_transform_name = s,x,x,
 psdir = ${docdir}
 runstatedir = ${localstatedir}/run
@@ -541,7 +542,7 @@ BITCOIN_CLI_BIN = $(top_builddir)/src/$(BITCOIN_CLI_NAME)$(EXEEXT)
 BITCOIN_WIN_INSTALLER = $(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EXEEXT)
 empty := 
 space := $(empty) $(empty)
-OSX_APP = Itasecoin-Qt.app
+OSX_APP = itasecore-qt.app
 OSX_VOLNAME = $(subst $(space),-,$(PACKAGE_NAME))
 OSX_DMG = $(OSX_VOLNAME).dmg
 OSX_BACKGROUND_SVG = background.svg
@@ -585,7 +586,7 @@ COVERAGE_INFO = baseline.info \
 
 OSX_APP_BUILT = $(OSX_APP)/Contents/PkgInfo $(OSX_APP)/Contents/Resources/empty.lproj \
   $(OSX_APP)/Contents/Resources/bitcoin.icns $(OSX_APP)/Contents/Info.plist \
-  $(OSX_APP)/Contents/MacOS/Itasecoin-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
+  $(OSX_APP)/Contents/MacOS/itasecore-qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
 
 APP_DIST_DIR = $(top_builddir)/dist
 APP_DIST_EXTRAS = $(APP_DIST_DIR)/.background/$(OSX_BACKGROUND_IMAGE) $(APP_DIST_DIR)/.DS_Store $(APP_DIST_DIR)/Applications
@@ -1196,7 +1197,7 @@ $(OSX_APP)/Contents/Resources/bitcoin.icns: $(OSX_INSTALLER_ICONS)
 	$(MKDIR_P) $(@D)
 	$(INSTALL_DATA) $< $@
 
-$(OSX_APP)/Contents/MacOS/Itasecoin-Qt: $(BITCOIN_QT_BIN)
+$(OSX_APP)/Contents/MacOS/itasecore-qt: $(BITCOIN_QT_BIN)
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $< $@
 
@@ -1223,7 +1224,7 @@ $(APP_DIST_DIR)/Applications:
 	@rm -f $@
 	@cd $(@D); $(LN_S) /Applications $(@F)
 
-$(APP_DIST_EXTRAS): $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Itasecoin-Qt
+$(APP_DIST_EXTRAS): $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/itasecore-qt
 
 $(OSX_DMG): $(APP_DIST_EXTRAS)
 	$(GENISOIMAGE) -no-cache-inodes -D -l -probe -V "$(OSX_VOLNAME)" -no-pad -r -dir-mode 0755 -apple -o $@ dist
@@ -1237,7 +1238,7 @@ $(APP_DIST_DIR)/.background/$(OSX_BACKGROUND_IMAGE): $(OSX_BACKGROUND_IMAGE_DPIF
 $(APP_DIST_DIR)/.DS_Store: $(OSX_DSSTORE_GEN)
 	$(PYTHON) $< "$@" "$(OSX_VOLNAME)"
 
-$(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Itasecoin-Qt: $(OSX_APP_BUILT) $(OSX_PACKAGING)
+$(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/itasecore-qt: $(OSX_APP_BUILT) $(OSX_PACKAGING)
 	INSTALLNAMETOOL=$(INSTALLNAMETOOL)  OTOOL=$(OTOOL) STRIP=$(STRIP) $(PYTHON) $(OSX_DEPLOY_SCRIPT) $(OSX_APP) -translations-dir=$(QT_TRANSLATION_DIR) -add-qt-tr $(OSX_QT_TRANSLATIONS) -verbose 2
 
 deploydir: $(APP_DIST_EXTRAS)
