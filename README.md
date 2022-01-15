@@ -8,11 +8,12 @@ Itasecore [ITASE, ŧ]
 
 Copyright (c) 2009-2022 Bitcoin Developers<br>
 Copyright (c) 2011-2022 Litecoin Developers<br>
+Copyright (c) 2013-2022 Dogecoin Developers<br>
 Copyright (c) 2022 Milovan PMS
 
 </div>
 
-Itasecoin is a cryptocurrency originally created for high school and college students in France. It is a very lite version of Litecoin, using the Scrypt hashing method as a proof-of-work algorithm. The Itasecore software allows anyone in the whole world to operate a node in the Itasecoin blockchain networks. It is adapted from Litecoin Core and other cryptocurrencies.
+Itasecoin is a cryptocurrency originally created for high school and college students in France. It is a very lite version of Litecoin, using the Scrypt hashing method as a proof-of-work algorithm. <br>The Itasecore software allows anyone in the whole world to operate a node in the Itasecoin blockchain networks. It is adapted from Litecoin Core and other cryptocurrencies.
  - 2 minute block targets
  - subsidy halves in 150k blocks (~261 days)
  - 3.75 million total coins
@@ -25,7 +26,8 @@ For more infomation, see [itasecoin.org](https://itasecoin.org)
 
 To get started with Itasecore, see the [installation guide](INSTALL.md) and the [getting started](doc/getting-started.md) tutorial.
 
-The JSON-RPC API provided by Itasecore is self-documenting and can be browsed with `dogecoin-cli help`, while detailed information for each command can be viewed with `dogecoin-cli help <command>`. Alternatively, see the [Bitcoin Core documentation](https://developer.bitcoin.org/reference/rpc/) - which implement a similar protocol - to get a browsable version.
+The JSON-RPC API provided by Itasecore is self-documenting and can be browsed with `itasecore-cli help`, while detailed information for each command can be viewed with `itasecore-cli help <command>`. 
+<br>Alternatively, see the [Bitcoin Core documentation](https://developer.bitcoin.org/reference/rpc/) - which implement a similar protocol - to get a browsable version.
 
 ### Ports
 
@@ -92,7 +94,7 @@ Here are some places to visit:
 
 ## Frequently Asked Questions 
 
-Do you have a question regarding Dogecoin? An answer is perhaps already in the
+Do you have a question about Itasecore? Your answer may be in the
 [FAQ](doc/FAQ.md) or the
 [Q&A section](https://github.com/milopms/itasecoin/discussions/categories/q-a)
 of the discussion board!
