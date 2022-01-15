@@ -1,79 +1,103 @@
-Itasecoin Core integration/staging tree
-=====================================
+<h1 align="center">
+Itasecore [ITASE, ŧ]  
+<br/><br/>
+<img src="https://cdn.discordapp.com/attachments/485464301516095509/931659437830205440/itasecoin.png" alt="Itasecoin" width="300"/>
+</h1>
 
-[![Build Status](https://travis-ci.org/itasecoin-project/itasecoin.svg?branch=master)](https://travis-ci.org/itasecoin-project/itasecoin)
+<div align="center">
 
-https://itasecoin.org
+Copyright (c) 2009-2022 Bitcoin Developers<br>
+Copyright (c) 2011-2022 Litecoin Developers<br>
+Copyright (c) 2022 Milovan PMS
 
-What is Itasecoin?
-----------------
+</div>
 
-Itasecoin is an experimental digital currency that enables instant payments to
-anyone, anywhere in the world. Itasecoin uses peer-to-peer technology to operate
-with no central authority: managing transactions and issuing money are carried
-out collectively by the network. Itasecoin Core is the name of open source
-software which enables the use of this currency.
+Itasecoin is a cryptocurrency originally created for high school and college students in France. It is a very lite version of Litecoin, using the Scrypt hashing method as a proof-of-work algorithm. The Itasecore software allows anyone in the whole world to operate a node in the Itasecoin blockchain networks. It is adapted from Litecoin Core and other cryptocurrencies.
+ - 2 minute block targets
+ - subsidy halves in 150k blocks (~261 days)
+ - 3.75 million total coins
+ - 60 coins per block
+ - 2016 blocks to retarget difficulty
 
-For more information, as well as an immediately useable, binary version of
-the Itasecoin Core software, see [https://itasecoin.org](https://itasecoin.org).
+For more infomation, see [itasecoin.org](https://itasecoin.org)
 
-License
--------
+## Usage
 
-Itasecoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
-information or see https://opensource.org/licenses/MIT.
+To get started with Itasecore, see the [installation guide](INSTALL.md) and the [getting started](doc/getting-started.md) tutorial.
 
-Development Process
--------------------
+The JSON-RPC API provided by Itasecore is self-documenting and can be browsed with `dogecoin-cli help`, while detailed information for each command can be viewed with `dogecoin-cli help <command>`. Alternatively, see the [Bitcoin Core documentation](https://developer.bitcoin.org/reference/rpc/) - which implement a similar protocol - to get a browsable version.
 
-The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/itasecoin-project/itasecoin/tags) are created
-regularly to indicate new official, stable release versions of Itasecoin Core.
+### Ports
 
-The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
+Itasecore by default uses port `25075` for peer-to-peer communication that
+is needed to synchronize the "mainnet" blockchain and stay informed of new
+transactions and blocks. Additionally, a JSONRPC port can be opened, which
+defaults to port `29045` for mainnet nodes. It is strongly recommended to not
+expose RPC ports to the public internet.
 
-The developer [mailing list](https://groups.google.com/forum/#!forum/itasecoin-dev)
-should be used to discuss complicated or controversial changes before working
-on a patch set.
+| Function | mainnet | testnet | regtest |
+| :------- | ------: | ------: | ------: |
+| P2P      |   25075 |   19107 |   ????? |
+| RPC      |   29045 |   ????? |   ????? |
 
-Developer IRC can be found on Freenode at #itasecoin-dev.
+## Ongoing development
 
-Testing
--------
+Itasecore is an open source and community driven software. The development
+process is open and publicly visible; anyone can see, discuss and work on the
+software. (even you!)
 
-Testing and code review is the bottleneck for development; we get more pull
-requests than we can review and test on short notice. Please be patient and help out by testing
-other people's pull requests, and remember this is a security-critical project where any mistake might cost people
-lots of money.
+Main development resources:
 
-### Automated Testing
+* [Github Projects](https://github.com/milopms/itasecoin/projects) is used to
+  follow planned and in-progress work for upcoming releases.
+* [Github Discussion](https://github.com/milopms/itasecoin/discussions) is used
+  to discuss features, planned and unplanned, related to both the development of
+  the Itasecore software, the underlying protocols and the ITASE asset.  
 
-Developers are strongly encouraged to write [unit tests](src/test/README.md) for new code, and to
-submit new unit tests for old code. Unit tests can be compiled and run
-(assuming they weren't disabled in configure) with: `make check`. Further details on running
-and extending unit tests can be found in [/src/test/README.md](/src/test/README.md).
+### Version strategy
+Version numbers are following ```major.minor.patch``` semantics.
 
-There are also [regression and integration tests](/test), written
-in Python, that are run automatically on the build server.
-These tests can be run (if the [test dependencies](/test) are installed) with: `test/functional/test_runner.py`
+### Branches
+There are 3 types of branches in this repository:
 
-The Travis CI system makes sure that every pull request is built for Windows, Linux, and OS X, and that unit/sanity tests are run automatically.
+- **master:** Stable, contains the latest version of the latest *major.minor* release.
+- **maintenance:** Stable, contains the latest version of previous releases, which are still under active maintenance. Format: ```<version>-maint```
+- **development:** Unstable, contains new code for planned releases. Format: ```<version>-dev```
 
-### Manual Quality Assurance (QA) Testing
+*Master and maintenance branches are exclusively mutable by release. Planned*
+*releases will always have a development branch and pull requests should be*
+*submitted against those. Maintenance branches are there for **bug fixes only,***
+*please submit new features against the development branch with the highest version.*
 
-Changes should be tested by somebody other than the developer who wrote the
-code. This is especially important for large or high-risk changes. It is useful
-to add a test plan to the pull request description if testing the changes is
-not straightforward.
+## Contributing
 
-Translations
-------------
+If you find a bug or experience issues with this software, please report it
+using the [issue system](https://github.com/milopms/itasecoin/issues/new?assignees=&labels=bug&template=bug_report.md&title=%5Bbug%5D+).
 
-We only accept translation fixes that are submitted through [Bitcoin Core's Transifex page](https://www.transifex.com/projects/p/bitcoin/).
-Translations are converted to Itasecoin periodically.
+Please see [the contribution guide](CONTRIBUTING.md) to see how you can
+participate in the development of Itasecore. There are often
+[topics seeking help](https://github.com/milopms/itasecoin/labels/help%20wanted)
+where your contributions will have high impact and get very appreciation.
 
-Translations are periodically pulled from Transifex and merged into the git repository. See the
-[translation process](doc/translation_process.md) for details on how this works.
+## Communities
 
-**Important**: We do not accept translation changes as GitHub pull requests because the next
-pull from Transifex would automatically overwrite them again.
+You can join the communities on different social media.
+To see what's going on, meet people & discuss, find the lastest meme, learn
+about Itasecoin, give or ask for help, to share your project.
+
+Here are some places to visit:
+
+* [Discord](https://discord.gg/itasecoin)
+* [Itasecoin Twitter](https://twitter.com/itasecoin)
+
+## Frequently Asked Questions 
+
+Do you have a question regarding Dogecoin? An answer is perhaps already in the
+[FAQ](doc/FAQ.md) or the
+[Q&A section](https://github.com/milopms/itasecoin/discussions/categories/q-a)
+of the discussion board!
+
+## License
+Itasecore is released under the terms of the MIT license. See
+[COPYING](COPYING) for more information or see
+[opensource.org](https://opensource.org/licenses/MIT)
