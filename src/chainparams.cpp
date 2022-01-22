@@ -124,8 +124,8 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x7deeaea742b3e95d97e01997f2466aa72933554551e25af30fe5e1b12dc0bd76"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.emplace_back("dnsseed.itasecoin.org", true);
-        //vSeeds.emplace_back("seed-a.faithcoin.loshan.co.uk", true);
+        vSeeds.emplace_back("dnsseed.itasecoin.com", true);
+        vSeeds.emplace_back("home.itasecoin.com", true);
         //vSeeds.emplace_back("dnsseed.thrasher.io", true);
         //vSeeds.emplace_back("dnsseed.faithcointools.com", true);
         //vSeeds.emplace_back("dnsseed.faithcoinpool.org", true);
@@ -232,7 +232,7 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.emplace_back("testdnsseed.itasecoin.org", true);
+        vSeeds.emplace_back("testdnsseed.itasecoin.com", true);
         //vSeeds.emplace_back("seed-a.faithcoin.loshan.co.uk", true);
         //vSeeds.emplace_back("dnsseed.thrasher.io", true);
         //vSeeds.emplace_back("dnsseed.faithcointools.com", true);
