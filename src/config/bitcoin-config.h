@@ -21,16 +21,16 @@
 #define CLIENT_VERSION_MINOR 0
 
 /* Build revision */
-#define CLIENT_VERSION_REVISION 0
+#define CLIENT_VERSION_REVISION 2
 
 /* Copyright holder(s) before %s replacement */
-#define COPYRIGHT_HOLDERS "The %s developer"
+#define COPYRIGHT_HOLDERS "%s PMS"
 
 /* Copyright holder(s) */
-#define COPYRIGHT_HOLDERS_FINAL "The Itasecore developer"
+#define COPYRIGHT_HOLDERS_FINAL "Milovan PMS"
 
 /* Replacement for %s in copyright holders string */
-#define COPYRIGHT_HOLDERS_SUBSTITUTION "Itasecore"
+#define COPYRIGHT_HOLDERS_SUBSTITUTION "Milovan"
 
 /* Copyright year */
 #define COPYRIGHT_YEAR 2022
@@ -353,7 +353,7 @@
 #define PACKAGE_NAME "Itasecore"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "Itasecore 1.0.0"
+#define PACKAGE_STRING "Itasecore 1.0.2"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "itasecore"
@@ -362,7 +362,7 @@
 #define PACKAGE_URL "https://itasecoin.org/"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "1.0.0"
+#define PACKAGE_VERSION "1.0.2"
 
 /* Define to necessary symbol if this constant uses a non-standard name on
    your system. */
