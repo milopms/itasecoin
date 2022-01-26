@@ -537,7 +537,7 @@ std::string LicenseInfo()
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2022, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +
            strprintf(_("Please contribute if you find %s useful. "
-                       "Visit %s for further information about the ."),
+                       "Visit %s for further information about Itase."),
                PACKAGE_NAME, URL_WEBSITE) +
            "\n" +
            strprintf(_("The source code is available from %s."),
