@@ -531,8 +531,8 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/itasecoin-project/itasecoin>";
-    const std::string URL_WEBSITE = "<https://itasecoin.org>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/milopms/itasecoin>";
+    const std::string URL_WEBSITE = "<https://itasecoin.com>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2022, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +
