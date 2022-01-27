@@ -883,6 +883,10 @@
         <translation>Erreur : le répertoire de données spécifié « %1 » ne peut pas être créé.</translation>
     </message>
     <message>
+        <source>When you click OK, %1 will begin to download and process the full %4 block chain (%2GB) starting with the earliest transactions in %3 when %4 initially launched.</source>
+        <translation>Lorsque vous cliquerez sur OK, %1 commencera à télécharger et mettre en place la chaîne de blocs (%2 Go) en commençant par les premières transactions en %3 lorsque %4 a été créé.</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
