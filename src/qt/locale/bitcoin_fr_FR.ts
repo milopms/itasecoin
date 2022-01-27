@@ -582,7 +582,7 @@
     </message>
     <message>
         <source>About %1</source>
-        <translation>A propos %1</translation>
+        <translation type="unfinished">A propos d&apos;%1</translation>
     </message>
     <message>
         <source>Command-line options</source>
