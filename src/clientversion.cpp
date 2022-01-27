@@ -49,13 +49,13 @@ const std::string CLIENT_NAME("Itasecore");
 #endif
 
 #define BUILD_DESC_WITH_SUFFIX(maj, min, rev) \
-    "v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev)
+     DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev)
 
 #define BUILD_DESC_FROM_COMMIT(maj, min, rev) \
-    "v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev)
+     DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev)
 
 #define BUILD_DESC_FROM_UNKNOWN(maj, min, rev) \
-    "v" DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev)
+     DO_STRINGIZE(maj) "." DO_STRINGIZE(min) "." DO_STRINGIZE(rev)
 
 #ifndef BUILD_DESC
 #ifdef BUILD_SUFFIX
