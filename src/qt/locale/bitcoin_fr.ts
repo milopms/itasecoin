@@ -890,6 +890,10 @@
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
+    <message>
+        <source>This initial synchronisation is very demanding, and may expose hardware problems with your computer that had previously gone unnoticed. Each time you run %1, it will continue downloading where it left off.</source>
+        <translation>Cette synchronisation de premier lancement d'Itasecore risque de partiellement ralentir votre ordinateur (s'il n'est pas très puissant) jusqu'à téléchargement complet de la chaîne de blocs. À chaque fois que vous lancerez %1, le téléchargement de la chaîne de blocs reprendra là où elle s'était arrêtée.</translation>
+    </message>
     <message numerus="yes">
         <source>%n GB of free space available</source>
         <translation>
