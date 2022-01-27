@@ -613,7 +613,7 @@
     </message>
     <message>
         <source>Welcome to %1.</source>
-        <translation>Bienvenue sur %1.</translation>
+        <translation type="unfinished">Bienvenue sur %1 !</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -640,9 +640,9 @@
     </message>
     <message numerus="yes">
         <source>(of %n GB needed)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>(%n GB nécessaire)</numerusform>
-            <numerusform>(%n GB nécessaire)</numerusform>
+            <numerusform>(%n GB nécessaires)</numerusform>
         </translation>
     </message>
 </context>
