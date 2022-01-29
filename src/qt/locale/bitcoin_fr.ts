@@ -429,7 +429,7 @@
     </message>
     <message>
         <source>Open a itasecoin: URI or payment request</source>
-        <translation>Ouvrir une URI itasecoin: ou une demande de paiement</translation>
+        <translation>Ouvrir une URL itasecoin: ou une demande de paiement</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -459,7 +459,7 @@
     </message>
     <message>
         <source>%1 behind</source>
-        <translation>en retard de %1</translation>
+        <translation>En retard de %1</translation>
     </message>
     <message>
         <source>Last received block was generated %1 ago.</source>
@@ -2007,6 +2007,10 @@
     <message>
         <source>Send Coins</source>
         <translation>Envoyer des pièces</translation>
+    </message>
+    <message>
+        <source>Warning: Fee estimation is currently not possible.</source>
+        <translation>Avertissement: Les frais de transaction ne sont pas disponibles pour le moment.</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
