@@ -8,7 +8,6 @@ Itasecore [ITASE, ŧ]
 
 Copyright (c) 2009-2022 Bitcoin Developers<br>
 Copyright (c) 2011-2022 Litecoin Developers<br>
-Copyright (c) 2013-2022 Dogecoin Developers<br>
 Copyright (c) 2022 Milovan PMS
 
 </div>
@@ -20,7 +19,7 @@ Itasecoin is a cryptocurrency originally created for high school and college stu
  - 60 coins per block
  - 2016 blocks to retarget difficulty
 
-For more infomation, see [itasecoin.org](https://itasecoin.org)
+For more infomation, see [itasecoin.com](https://itasecoin.com)
 
 ## Usage
 
@@ -39,8 +38,8 @@ expose RPC ports to the public internet.
 
 | Function | mainnet | testnet | regtest |
 | :------- | ------: | ------: | ------: |
-| P2P      |   25075 |   19107 |   ????? |
-| RPC      |   29045 |   ????? |   ????? |
+| P2P      |   25075 |   19107 |   13107 |
+| RPC      |   29045 |   12038 |   29074 |
 
 ## Ongoing development
 
