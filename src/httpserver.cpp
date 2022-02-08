@@ -4,6 +4,8 @@
 
 #include "httpserver.h"
 
+#include <queue>
+#include <deque>
 #include "chainparamsbase.h"
 #include "compat.h"
 #include "util.h"
