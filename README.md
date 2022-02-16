@@ -1,5 +1,5 @@
 <h1 align="center">
-Itasecore [ITASE, ŧ]  
+Itasecoin [ITASE, ŧ]  
 <br/><br/>
 <img src="https://cdn.discordapp.com/attachments/485464301516095509/931659437830205440/itasecoin.png" alt="Itasecoin" width="300"/>
 </h1>
