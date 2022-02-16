@@ -1,4 +1,4 @@
-Building Itasecoin
+Building Itasecore
 ================
 
 See doc/build-*.md for instructions on building the various
