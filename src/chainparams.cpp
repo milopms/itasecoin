@@ -74,14 +74,14 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 150000;
+        consensus.nSubsidyHalvingInterval = 630000;
         consensus.BIP34Height = 710000;
         consensus.BIP34Hash = uint256S("fa09d204a83a768ed5a7c8d441fa62f2043abf420cff1226c7b4329aeb9d51cf");
         consensus.BIP65Height = 918684; // bab3041e8977e0dc3eeff63fe707b92bde1dd449d8efafb248c27c8264cc311a
         consensus.BIP66Height = 811879; // 7aceee012833fa8952f8835d8b1b3ae233cd6ab08fdb27a771d2bd7bdc491894
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
-        consensus.nPowTargetTimespan = 2 * 24 * 60 * 60; // 2 days
-        consensus.nPowTargetSpacing = 2 * 60;
+        consensus.nPowTargetTimespan = 2 * 60 * 60; // 2 hours
+        consensus.nPowTargetSpacing = 60; // 1 minute
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 6048; // 75% of 8064
@@ -124,7 +124,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x7deeaea742b3e95d97e01997f2466aa72933554551e25af30fe5e1b12dc0bd76"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.emplace_back("dnsseed.itasecoin.com", true);
+        vSeeds.emplace_back("seed.itasecoin.com", true);
         vSeeds.emplace_back("home.itasecoin.com", true);
         //vSeeds.emplace_back("dnsseed.thrasher.io", true);
         //vSeeds.emplace_back("dnsseed.faithcointools.com", true);
