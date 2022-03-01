@@ -1,7 +1,7 @@
 Expectations for DNS Seed operators
 ====================================
 
-Itasecoin Core attempts to minimize the level of trust in DNS seeds,
+Itasecore attempts to minimize the level of trust in DNS seeds,
 but DNS seeds still pose a small amount of risk for the network.
 As such, DNS seeds must be run by entities which have some minimum
 level of trust within the Itasecoin community.
@@ -41,14 +41,9 @@ details of their operating practices.
 7. A reachable email contact address must be published for inquiries
 related to the DNS seed operation.
 
-If these expectations cannot be satisfied the operator should
-discontinue providing services and contact the active Itasecoin
-Core development team as well as posting on
-[itasecoin-dev](https://groups.google.com/forum/#!forum/itasecoin-dev).
-
 Behavior outside of these expectations may be reasonable in some
 situations but should be discussed in public in advance.
 
 See also
 ----------
-- [itasecoin-seeder](https://github.com/pooler/itasecoin-seeder) is a reference implementation of a DNS seed.
+- [itasecoin-seeder](https://github.com/milopms/itasecoinseeder) is a reference implementation of a DNS seed.
