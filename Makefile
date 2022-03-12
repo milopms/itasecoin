@@ -15,7 +15,6 @@
 
 
 # Copyright (c) 2013-2016 The Bitcoin Core developers
-# Copyright (c) 2022 Milovan PMS
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -281,15 +280,15 @@ distuninstallcheck_listfiles = find . -type f -print
 am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
   | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /home/milovan/Bureau/itasecoin/build-aux/missing aclocal-1.15
+ACLOCAL = ${SHELL} /home/milovan/Documents/itasecoin/build-aux/missing aclocal-1.15
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = /usr/bin/ar
 ARFLAGS = cr
-AUTOCONF = ${SHELL} /home/milovan/Bureau/itasecoin/build-aux/missing autoconf
-AUTOHEADER = ${SHELL} /home/milovan/Bureau/itasecoin/build-aux/missing autoheader
-AUTOMAKE = ${SHELL} /home/milovan/Bureau/itasecoin/build-aux/missing automake-1.15
-AWK = mawk
+AUTOCONF = ${SHELL} /home/milovan/Documents/itasecoin/build-aux/missing autoconf
+AUTOHEADER = ${SHELL} /home/milovan/Documents/itasecoin/build-aux/missing autoheader
+AUTOMAKE = ${SHELL} /home/milovan/Documents/itasecoin/build-aux/missing automake-1.15
+AWK = gawk
 BDB_CFLAGS = 
 BDB_CPPFLAGS = 
 BDB_LIBS = -ldb_cxx-4.8
@@ -314,7 +313,7 @@ CFLAGS = -g -O2
 CLIENT_VERSION_BUILD = 0
 CLIENT_VERSION_IS_RELEASE = true
 CLIENT_VERSION_MAJOR = 1
-CLIENT_VERSION_MINOR = 0
+CLIENT_VERSION_MINOR = 1
 CLIENT_VERSION_REVISION = 0
 COPYRIGHT_HOLDERS = The %s developer
 COPYRIGHT_HOLDERS_FINAL = The Itasecore developer
@@ -383,7 +382,7 @@ LTLIBOBJS =
 LT_SYS_LIBRARY_PATH = 
 LUPDATE = /usr/lib/qt5/bin/lupdate
 MAINT = 
-MAKEINFO = ${SHELL} /home/milovan/Bureau/itasecoin/build-aux/missing makeinfo
+MAKEINFO = ${SHELL} /home/milovan/Documents/itasecoin/build-aux/missing makeinfo
 MAKENSIS = 
 MANIFEST_TOOL = :
 MINIUPNPC_CPPFLAGS = 
@@ -404,10 +403,10 @@ OTOOL64 =
 PACKAGE = itasecore
 PACKAGE_BUGREPORT = https://github.com/milopms/itasecoin/issues
 PACKAGE_NAME = Itasecore
-PACKAGE_STRING = Itasecore 1.0.0
+PACKAGE_STRING = Itasecore 1.1.0
 PACKAGE_TARNAME = itasecore
-PACKAGE_URL = https://itasecoin.org/
-PACKAGE_VERSION = 1.0.0
+PACKAGE_URL = https://itasecoin.com/
+PACKAGE_VERSION = 1.1.0
 PATH_SEPARATOR = :
 PIC_FLAGS = -fPIC
 PIE_FLAGS = -fPIE
@@ -467,7 +466,7 @@ UNIVALUE_LIBS = univalue/libunivalue.la
 USE_QRCODE = 
 USE_SSE2 = 
 USE_UPNP = 
-VERSION = 1.0.0
+VERSION = 1.1.0
 WINDOWS_BITS = 
 WINDRES = 
 X11XCB_CFLAGS = 
@@ -475,10 +474,10 @@ X11XCB_LIBS =
 XGETTEXT = /usr/bin/xgettext
 ZMQ_CFLAGS = 
 ZMQ_LIBS = -lzmq
-abs_builddir = /home/milovan/Bureau/itasecoin
-abs_srcdir = /home/milovan/Bureau/itasecoin
-abs_top_builddir = /home/milovan/Bureau/itasecoin
-abs_top_srcdir = /home/milovan/Bureau/itasecoin
+abs_builddir = /home/milovan/Documents/itasecoin
+abs_srcdir = /home/milovan/Documents/itasecoin
+abs_top_builddir = /home/milovan/Documents/itasecoin
+abs_top_srcdir = /home/milovan/Documents/itasecoin
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -510,7 +509,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/milovan/Bureau/itasecoin/build-aux/install-sh
+install_sh = ${SHELL} /home/milovan/Documents/itasecoin/build-aux/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale

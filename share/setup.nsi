@@ -5,24 +5,24 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 1.0.0
-!define COMPANY "The Itasecoin Project"
+!define VERSION 1.1.0
+!define COMPANY "Itasecore project"
 !define URL https://itasecoin.com/
 
 # MUI Symbol Definitions
-!define MUI_ICON "/home/milovan/Bureau/itasecoin/share/pixmaps/bitcoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/milovan/Bureau/itasecoin/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/home/milovan/Documents/itasecoin/share/pixmaps/bitcoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/milovan/Documents/itasecoin/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/home/milovan/Bureau/itasecoin/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/home/milovan/Documents/itasecoin/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "Itasecore"
 !define MUI_FINISHPAGE_RUN $INSTDIR\itasecore-qt
-!define MUI_UNICON "/home/milovan/Bureau/itasecoin/share/pixmaps/bitcoin.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/milovan/Bureau/itasecoin/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/milovan/Documents/itasecoin/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -48,7 +48,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /home/milovan/Bureau/itasecoin/itasecore-${VERSION}-win-setup.exe
+OutFile /home/milovan/Documents/itasecoin/itasecore-${VERSION}-win-setup.exe
 !if "" == "64"
 InstallDir $PROGRAMFILES64\Itasecoin
 !else
@@ -73,14 +73,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /home/milovan/Bureau/itasecoin/release/itasecore-qt
-    File /oname=COPYING.txt /home/milovan/Bureau/itasecoin/COPYING
-    File /oname=readme.txt /home/milovan/Bureau/itasecoin/doc/README_windows.txt
+    File /home/milovan/Documents/itasecoin/release/itasecore-qt
+    File /oname=COPYING.txt /home/milovan/Documents/itasecoin/COPYING
+    File /oname=readme.txt /home/milovan/Documents/itasecoin/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /home/milovan/Bureau/itasecoin/release/itasecored
-    File /home/milovan/Bureau/itasecoin/release/itasecore-cli
+    File /home/milovan/Documents/itasecoin/release/itasecored
+    File /home/milovan/Documents/itasecoin/release/itasecore-cli
     SetOutPath $INSTDIR\doc
-    File /r /home/milovan/Bureau/itasecoin/doc\*.*
+    File /r /home/milovan/Documents/itasecoin/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd
