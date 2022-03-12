@@ -1,7 +1,7 @@
 <h1 align="center">
 Itasecoin [ITASE, ŧ]  
 <br/><br/>
-<img src="https://cdn.discordapp.com/attachments/485464301516095509/931659437830205440/itasecoin.png" alt="Itasecoin" width="300"/>
+<img src="https://cdn.discordapp.com/attachments/942530848635363471/948311944409006101/itasaaecoin.png" alt="Itasecoin" width="300"/>
 </h1>
 
 <div align="center">
