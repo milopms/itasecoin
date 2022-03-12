@@ -6,8 +6,8 @@ SetCompressor /SOLID lzma
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
 !define VERSION 1.0.0
-!define COMPANY "Itasecore project"
-!define URL https://itasecoin.org/
+!define COMPANY "The Itasecoin Project"
+!define URL https://itasecoin.com/
 
 # MUI Symbol Definitions
 !define MUI_ICON "/home/milovan/Bureau/itasecoin/share/pixmaps/bitcoin.ico"
@@ -21,7 +21,7 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "Itasecore"
 !define MUI_FINISHPAGE_RUN $INSTDIR\itasecore-qt
-!define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
+!define MUI_UNICON "/home/milovan/Bureau/itasecoin/share/pixmaps/bitcoin.ico"
 !define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/milovan/Bureau/itasecoin/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
