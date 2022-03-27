@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>674</width>
-    <height>415</height>
+    <height>440</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <item>
     <widget class="QLabel" name="welcomeLabel">
      <property name="styleSheet">
-      <string notr="true">QLabel { font-style:italic; }</string>
+      <string notr="true">QLabel</string>
      </property>
      <property name="text">
       <string>Welcome to %1.</string>

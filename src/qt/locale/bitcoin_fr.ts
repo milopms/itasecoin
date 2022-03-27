@@ -429,7 +429,7 @@
     </message>
     <message>
         <source>Open a itasecoin: URI or payment request</source>
-        <translation>Ouvrir une URI itasecoin: ou une demande de paiement</translation>
+        <translation>Ouvrir une URL itasecoin: ou une demande de paiement</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -459,7 +459,7 @@
     </message>
     <message>
         <source>%1 behind</source>
-        <translation>en retard de %1</translation>
+        <translation>En retard de %1</translation>
     </message>
     <message>
         <source>Last received block was generated %1 ago.</source>
@@ -859,8 +859,16 @@
         <translation>Puisque c&apos;est la première fois que le logiciel est lancé, vous pouvez choisir où %1 stockera ses données.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Itasecoin block chain. At least %2GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
-        <translation>%1 téléchargera et stockera une copie de la chaîne de blocs de Itasecoin. Au moins %2 Go de données seront stockés dans ce répertoire et sa taille augmentera avec le temps. Le porte-monnaie sera également stocké dans ce répertoire.</translation>
+        <source>%1 will download and store a copy of the Itasecoin block chain.</source>
+        <translation>%1 téléchargera et stockera une copie de la chaîne de blocs de Itasecoin.</translation>
+    </message>
+    <message>
+        <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
+        <translation>Au moins %2 Go de données seront stockés dans ce répertoire et sa taille augmentera avec le temps.</translation>
+    </message>
+    <message>
+        <source>The wallet will also be stored in this directory.</source>
+        <translation>Le porte-monnaie sera également stocké dans ce répertoire.</translation>
     </message>
     <message>
         <source>Use the default data directory</source>
@@ -875,8 +883,16 @@
         <translation>Erreur : le répertoire de données spécifié « %1 » ne peut pas être créé.</translation>
     </message>
     <message>
+        <source>When you click OK, %1 will begin to download and process the full %4 block chain (%2GB) starting with the earliest transactions in %3 when %4 initially launched.</source>
+        <translation>Lorsque vous cliquerez sur OK, %1 commencera à télécharger et mettre en place la chaîne de blocs (%2 Go) en commençant par les premières transactions en %3 lorsque %4 a été créé.</translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation>Erreur</translation>
+    </message>
+    <message>
+        <source>This initial synchronisation is very demanding, and may expose hardware problems with your computer that had previously gone unnoticed. Each time you run %1, it will continue downloading where it left off.</source>
+        <translation>Cette synchronisation de premier lancement d'Itasecore risque de partiellement ralentir votre ordinateur (s'il n'est pas très puissant) jusqu'à téléchargement complet de la chaîne de blocs. À chaque fois que vous lancerez %1, le téléchargement de la chaîne de blocs reprendra là où elle s'était arrêtée.</translation>
     </message>
     <message numerus="yes">
         <source>%n GB of free space available</source>
@@ -1993,6 +2009,10 @@
         <translation>Envoyer des pièces</translation>
     </message>
     <message>
+        <source>Warning: Fee estimation is currently not possible.</source>
+        <translation>Avertissement: Les frais de transaction ne sont pas disponibles pour le moment.</translation>
+    </message>
+    <message>
         <source>Coin Control Features</source>
         <translation>Fonctions de contrôle des pièces</translation>
     </message>
@@ -3069,7 +3089,7 @@
     </message>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
-        <translation>Distribué sous la licence MIT d&apos;utilisation d&apos;un logiciel. Consulter le fichier joint %s ou %s</translation>
+        <translation type="unfinished">Itasecore est distribué sous la license MIT. Merci de consulter le fichier joint %s ou le site web spécialisé: %s.</translation>
     </message>
     <message>
         <source>If &lt;category&gt; is not supplied or if &lt;category&gt; = 1, output all debugging information.</source>
@@ -3165,7 +3185,7 @@
     </message>
     <message>
         <source>Please contribute if you find %s useful. Visit %s for further information about the software.</source>
-        <translation>Si vous trouvez %s utile, vous pouvez y contribuer. Vous trouverez davantage d&apos;informations à propos du logiciel sur %s.</translation>
+        <translation>%s est un logiciel libre, vous pouvez y contribuer gratuitement et vous y êtes grandement invités! Vous trouverez davantage d&apos;informations à propos du projet sur le site web d&apos;Itasecoin. (%s)</translation>
     </message>
     <message>
         <source>Reduce storage requirements by enabling pruning (deleting) of old blocks. This allows the pruneblockchain RPC to be called to delete specific blocks, and enables automatic pruning of old blocks if a target size in MiB is provided. This mode is incompatible with -txindex and -rescan. Warning: Reverting this setting requires re-downloading the entire blockchain. (default: 0 = disable pruning blocks, 1 = allow manual pruning via RPC, &gt;%u = automatically prune block files to stay under the specified target size in MiB)</source>
@@ -3757,7 +3777,7 @@
     </message>
     <message>
         <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit %s and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
-        <translation>Ce produit comprend des logiciels développés par le Projet OpenSSL pour être utilisés dans la boîte à outils OpenSSL %s, et un logiciel cryptographique écrit par Eric Young, ainsi qu&apos;un logiciel UPnP écrit par Thomas Bernard.</translation>
+        <translation type="unfinished">Itasecore comprend des logiciels développés par le projet OpenSSL pour être utilisés dans la boîte à outils OpenSSL (%s), un logiciel cryptographique écrit par Eric Young, ainsi qu&apos;un logiciel UPnP écrit par Thomas Bernard.</translation>
     </message>
     <message>
         <source>Total length of network version string (%i) exceeds maximum length (%i). Reduce the number or size of uacomments.</source>

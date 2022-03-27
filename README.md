@@ -1,26 +1,24 @@
 <h1 align="center">
-Itasecore [ITASE, ŧ]  
+Itasecoin [ITASE, ŧ]  
 <br/><br/>
-<img src="https://cdn.discordapp.com/attachments/485464301516095509/931659437830205440/itasecoin.png" alt="Itasecoin" width="300"/>
+<img src="https://cdn.discordapp.com/attachments/942530848635363471/948311944409006101/itasaaecoin.png" alt="Itasecoin" width="300"/>
 </h1>
 
 <div align="center">
 
 Copyright (c) 2009-2022 Bitcoin Developers<br>
 Copyright (c) 2011-2022 Litecoin Developers<br>
-Copyright (c) 2013-2022 Dogecoin Developers<br>
 Copyright (c) 2022 Milovan PMS
 
 </div>
 
 Itasecoin is a cryptocurrency originally created for high school and college students in France. It is a very lite version of Litecoin, using the Scrypt hashing method as a proof-of-work algorithm. <br>The Itasecore software allows anyone in the whole world to operate a node in the Itasecoin blockchain networks. It is adapted from Litecoin Core and other cryptocurrencies.
- - 2 minute block targets
- - subsidy halves in 150k blocks (~261 days)
- - 3.75 million total coins
- - 60 coins per block
- - 2016 blocks to retarget difficulty
+ - 1 minute block targets
+ - subsidy halves in 630k blocks
+ - 63 million total coins
+ - 50 coins per block
 
-For more infomation, see [itasecoin.org](https://itasecoin.org)
+For more infomation, see [itasecoin.com](https://itasecoin.com)
 
 ## Usage
 
@@ -39,8 +37,8 @@ expose RPC ports to the public internet.
 
 | Function | mainnet | testnet | regtest |
 | :------- | ------: | ------: | ------: |
-| P2P      |   25075 |   19107 |   ????? |
-| RPC      |   29045 |   ????? |   ????? |
+| P2P      |   25075 |   19107 |   13107 |
+| RPC      |   29045 |   12038 |   29074 |
 
 ## Ongoing development
 
@@ -58,18 +56,6 @@ Main development resources:
 
 ### Version strategy
 Version numbers are following ```major.minor.patch``` semantics.
-
-### Branches
-There are 3 types of branches in this repository:
-
-- **master:** Stable, contains the latest version of the latest *major.minor* release.
-- **maintenance:** Stable, contains the latest version of previous releases, which are still under active maintenance. Format: ```<version>-maint```
-- **development:** Unstable, contains new code for planned releases. Format: ```<version>-dev```
-
-*Master and maintenance branches are exclusively mutable by release. Planned*
-*releases will always have a development branch and pull requests should be*
-*submitted against those. Maintenance branches are there for **bug fixes only,***
-*please submit new features against the development branch with the highest version.*
 
 ## Contributing
 
@@ -89,13 +75,15 @@ about Itasecoin, give or ask for help, to share your project.
 
 Here are some places to visit:
 
-* [Discord](https://discord.gg/itasecoin)
+* [Discord](https://discord.gg/M86FaRchGb)
 * [Itasecoin Twitter](https://twitter.com/itasecoin)
+* [Itasecoin Instagram](https://instagram.com/itasecoin)
+* [Itasecoin Reddit](https://reddit.com/r/itasecoin)
 
 ## Frequently Asked Questions 
 
 Do you have a question about Itasecore? Your answer may be in the
-[FAQ](doc/FAQ.md) or the
+[FAQ](https://itasecoin.com/faq) or the
 [Q&A section](https://github.com/milopms/itasecoin/discussions/categories/q-a)
 of the discussion board!
 
